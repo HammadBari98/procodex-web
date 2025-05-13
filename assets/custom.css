@@ -1,0 +1,175 @@
+html { overflow-x: hidden; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { overflow-x: hidden; }
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+.content, .animation-area { width: 100%; }
+.content { margin-bottom: 40px; }
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.content p {
+  font-size: 1.5rem;
+  color: #fff;
+  max-width: 600px;
+}
+
+.animation-area {
+  position: relative;
+  height: 500px;
+}
+
+.circle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgb(212 219 255) 0%, rgba(252, 70, 107, 1) 100%);
+  border-radius: 50%;
+  top: 40px; /* Swapped position */
+  left: 40px; /* Swapped position */
+  transition: transform 0.1s linear, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+.triangle {
+  position: absolute;
+  bottom: 40px; /* Swapped position */
+  right: 40px; /* Swapped position */
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 260px solid transparent; /* Make the main border transparent */
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  transform-origin: bottom right; /* Adjust transform origin */
+  z-index: 1; /* Ensure it's above the gradient */
+}
+
+.triangle.vanish {
+  transform: translateX(200px) rotate(40deg); /* Restored original transform */
+  opacity: 0;
+}
+
+.triangle::before {
+  content: '';
+  position: absolute;
+  left: -150px; /* Match the border-left width */
+  bottom: -260px; /* Match the border-bottom height */
+  width: 300px; /* Double the border-left/right width */
+  height: 260px; /* Match the border-bottom height */
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Create the triangle shape */
+  z-index: -1; /* Place it behind the main triangle */
+}
+
+@media (min-width: 1000px) {
+  .content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    margin-top: -200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 5%;
+    padding-top:10%;
+  }
+  .content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    margin-top: -300px;
+  }
+  .content, .animation-area { width: 50%; margin-top: 115px; left: 20%; }
+  .content { margin-bottom: 0; padding-right: 5%; }
+  .circle { left: -60px; }
+  .triangle {
+    border-bottom: 260px solid transparent; /* Make desktop border transparent too */
+  }
+
+  .triangle::before {
+    content: '';
+    position: absolute;
+    left: -150px; /* Adjust for desktop border width */
+    bottom: -260px; /* Adjust for desktop border height */
+    width: 300px; /* Adjust for desktop border width */
+    height: 260px; /* Adjust for desktop border height */
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    margin-top: 15%;
+  }
+  .content h1, .content p {
+    text-align: center !important;
+  }
+  .animation-area {
+    height: 372px;
+    left: 50px; /* Restored original left */
+    top: -60px;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    top: 60px !important;
+    left: calc(30% - 40px - 80px) !important;
+  }
+
+  .triangle {
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 140px solid transparent; /* Make mobile border transparent */
+    right: 50%; /* Restored original right */
+    transform: translateX(50%); /* Restored original transform */
+    bottom: 0; /* Adjusted bottom */
+    transform-origin: bottom center; /* Adjust transform origin */
+  }
+
+  .triangle.vanish {
+    transform: translateX(200px) rotate(40deg); /* Restored original transform */
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    top: 100px; /* Adjusted top */
+    left: calc(50% - 40px - 80px); /* Adjusted left */
+  }
+  .gs {
+    margin: auto;
+    text-align: center;
+  }
+
+  .triangle::before {
+    content: '';
+    position: absolute;
+    left: -80px; /* Match mobile border-left width */
+    bottom: -140px; /* Match mobile border-bottom height */
+    width: 160px; /* Double mobile border-left/right width */
+    height: 140px; /* Match mobile border-bottom height */
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: -1;
+  }
+}
+
+.transparent-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 40px;
+  margin-top: 20px;
+  cursor: pointer;
+}

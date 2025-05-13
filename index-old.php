@@ -5,145 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProCodeX</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/custom.css">
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a href="#" class="logo">ProCodeX</a>
-      <div class="menu-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="#" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Immersive Experiences</a></li>
-            <li><a href="#">Interactive Design</a></li>
-            <li><a href="#">Motion Graphics</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link">Products <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">ProCodeX Studio</a></li>
-            <li><a href="#">ProCodeX AR</a></li>
-            <li><a href="#">ProCodeX VR</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+ <?php include 'header.php' ?>
 
   <!-- Hero Section -->
-   <style>
-/* Hero Shapes - Updated for better visibility */
-.hero-shapes {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.shape {
-  position: absolute;
-  opacity: 0.8; /* Increased from 0.3 */
-  transition: transform 0.1s linear;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)); /* Added glow effect */
-}
-
-/* Larger Triangle */
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 100px solid transparent; /* Increased from 50px */
-  border-right: 100px solid transparent; /* Increased from 50px */
-  border-bottom: 200px solid var(--purple); /* Increased from 100px */
-  top: 15%;
-  left: 5%;
-  z-index: 5;
-}
-
-/* Larger Rectangle */
-.rectangle {
-  width: 180px; /* Increased from 100px */
-  height: 100px; /* Increased from 60px */
-  background: #ff7a7a;
-  transform: rotate(45deg);
-  top: 55%;
-  left: 75%;
-  z-index: 4;
-}
-
-/* Larger Circle */
-.circle {
-  width: 150px; /* Increased from 80px */
-  height: 150px; /* Increased from 80px */
-  border-radius: 50%;
-  background: var(--turquois);
-  top: 25%;
-  left: 85%;
-  z-index: 3;
-}
-
-/* Larger Trapezoid */
-.trapezoid {
-  width: 200px; /* Increased from 120px */
-  height: 0;
-  border-bottom: 120px solid var(--yellow); /* Increased from 80px */
-  border-left: 50px solid transparent; /* Increased from 30px */
-  border-right: 50px solid transparent; /* Increased from 30px */
-  top: 65%;
-  left: 15%;
-  z-index: 2;
-}
-
-/* Scroll Rectangle Animation - Updated for better visibility */
-.scroll-rectangle {
-  position: fixed;
-  right: 50px;
-  top: 30%;
-  width: 150px; /* Increased from 100px */
-  height: 150px; /* Increased from 100px */
-  background: linear-gradient(to bottom, var(--purple), var(--turquois));
-  z-index: 999;
-  transform-origin: right center;
-  will-change: transform;
-  transform: translateY(-50%) rotate(-15deg) translateX(20px);
-  opacity: 0.9;
-  filter: drop-shadow(0 0 15px rgba(163, 116, 255, 0.5)); /* Added glow */
-  border-radius: 10px; /* Added rounded corners */
-}
-   </style>
-   <div class="scroll-rectangle"></div>
-  <section class="hero">
+ <section>
+  <div class="scroll-rectangle"></div>
+  <div class="hero">
     <div class="hero-shapes">
       <div class="shape triangle"></div>
-      <!-- <div class="shape rectangle"></div> -->
       <div class="shape circle"></div>
-      <div class="shape trapezoid"></div>
     </div>
     <div class="hero-content">
       <h1>Create immersive digital experiences</h1>
       <p>Transforming ideas into interactive realities through cutting-edge technology and design</p>
       <button class="cta-button">Explore Now</button>
     </div>
-  </section>
+  </div>
+</section>
+<style>
+  
+</style>
 
   <!-- Original Content Section -->
   <section id="background">
@@ -303,6 +189,6 @@
     });
   </script>
   
-  <script src="./script.js"></script>
+  <script src="assets/script.js"></script>
 </body>
 </html>

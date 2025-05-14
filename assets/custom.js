@@ -1,3 +1,34 @@
+// nav
+ const mobileMenuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+    const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
+
+    
+    mobileMenuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active'); 
+    });
+
+    
+    dropdownItems.forEach(item => {
+        const link = item.querySelector('.nav-link'); 
+        link.addEventListener('click', function (e) {
+            
+            if (window.getComputedStyle(mobileMenuToggle).display !== 'none') {
+                
+                if (item.querySelector('.dropdown-menu')) {
+                    e.preventDefault();
+
+                    item.classList.toggle('active');
+                }
+                
+            }
+        });
+    });
+
+ 
+ 
+ 
  document.addEventListener("DOMContentLoaded", function () {
       const circle = document.querySelector(".circle");
       const triangle = document.querySelector(".triangle");

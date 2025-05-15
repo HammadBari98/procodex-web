@@ -88,3 +88,29 @@
         }
       });
     });
+
+
+
+    
+
+/* About */
+
+
+/* Out journey */
+
+ document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.timeline-item');
+
+    function revealItems() {
+      const trigger = window.innerHeight * 0.85;
+      items.forEach(item => {
+        const top = item.getBoundingClientRect().top;
+        if (top < trigger) {
+          item.classList.add('show');
+        }
+      });
+    }
+
+    revealItems();
+    window.addEventListener('scroll', revealItems);
+  });

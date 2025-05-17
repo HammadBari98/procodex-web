@@ -1,34 +1,4 @@
-// nav
- const mobileMenuToggle = document.getElementById('mobile-menu');
-    const navMenu = document.getElementById('nav-menu');
-    const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
 
-    
-    mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active'); 
-    });
-
-    
-    dropdownItems.forEach(item => {
-        const link = item.querySelector('.nav-link'); 
-        link.addEventListener('click', function (e) {
-            
-            if (window.getComputedStyle(mobileMenuToggle).display !== 'none') {
-                
-                if (item.querySelector('.dropdown-menu')) {
-                    e.preventDefault();
-
-                    item.classList.toggle('active');
-                }
-                
-            }
-        });
-    });
-
- 
- 
- 
  document.addEventListener("DOMContentLoaded", function () {
       const circle = document.querySelector(".circle");
       const triangle = document.querySelector(".triangle");
@@ -114,3 +84,37 @@
     revealItems();
     window.addEventListener('scroll', revealItems);
   });
+
+
+   /* home-projects */
+   let targetX = 0, targetY = 0;
+  let currentX = 0, currentY = 0;
+
+  // Track mouse position
+  document.addEventListener('mousemove', (e) => {
+    targetX = e.clientX;
+    targetY = e.clientY;
+  });
+
+  function animateFloatingImages() {
+    currentX += (targetX - currentX) * 0.1;
+    currentY += (targetY - currentY) * 0.1;
+
+    document.querySelectorAll('.floating-image.show').forEach(img => {
+      img.style.left = `${currentX}px`;
+      img.style.top = `${currentY}px`;
+    });
+
+    requestAnimationFrame(animateFloatingImages);
+  }
+
+  animateFloatingImages();
+
+  function showFloatingImage(id) {
+    document.querySelectorAll('.floating-image').forEach(img => img.classList.remove('show'));
+    document.getElementById(id).classList.add('show');
+  }
+
+  function hideFloatingImage(id) {
+    document.getElementById(id).classList.remove('show');
+  }

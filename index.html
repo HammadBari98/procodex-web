@@ -486,20 +486,52 @@
   .video-container {
     position: relative;
     width: 60%;
-    margin: auto;
+    max-width: 800px;
     border-radius: 40px;
     overflow: hidden;
   }
 
-  .video-container video {
+  video {
     width: 100%;
-    border-radius: 40px;
     display: block;
+    border-radius: 40px;
   }
 
-  .video-container:hover .video-controls {
-    opacity: 1;
-    pointer-events: auto;
+  /* Thumbnail */
+  .video-thumbnail-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    background-color: black;
+    border-radius: 40px;
+  }
+
+  .thumbnail-play-btn {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+    color: var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
   }
 
   .video-controls {
@@ -510,13 +542,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease;
+    z-index: 1;
   }
 
-  /* Custom Progress Bar Container */
+  .video-container:hover .video-controls {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .progress-container {
     width: 90%;
     height: 6px;
@@ -524,16 +561,14 @@
     border-radius: 5px;
     overflow: hidden;
   }
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background: var(--purple);
-  border-radius: 5px;
-  /* Remove transition for smoother JS animation */
-}
 
+  .progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--purple);
+    border-radius: 5px;
+  }
 
-  /* Play/Pause Button */
   #playPauseBtn {
     background: rgba(255, 255, 255, 0.9);
     color: var(--purple);
@@ -557,62 +592,73 @@
 
 <section id="video-section">
   <div class="video-container">
-    <video id="customVideo" src="assets/imgs/video.mp4"></video>
+    <!-- Thumbnail -->
+    <div class="video-thumbnail-wrapper" id="thumbnailWrapper">
+      <img src="assets/imgs/thumb3.PNG" alt="Video thumbnail" class="video-thumbnail" id="videoThumbnail" />
+      <button class="thumbnail-play-btn" id="thumbnailPlayBtn">
+        <i class="fa fa-play"></i>
+      </button>
+    </div>
+
+    <!-- Video -->
+    <video id="customVideo" src="assets/imgs/video.mp4" preload="metadata"></video>
 
     <!-- Controls -->
-    <div class="video-controls">
+    <div class="video-controls" id="videoControls">
       <div class="progress-container" id="progressContainer">
         <div class="progress-fill" id="progressFill"></div>
       </div>
-      <button id="playPauseBtn">
-        <i class="fa fa-play"></i>
-      </button>
+      <button id="playPauseBtn"><i class="fa fa-play"></i></button>
     </div>
   </div>
 </section>
 
-
 <script>
   const video = document.getElementById("customVideo");
   const playPauseBtn = document.getElementById("playPauseBtn");
-  const icon = playPauseBtn.querySelector("i");
   const progressFill = document.getElementById("progressFill");
-  const progressContainer = document.getElementById("progressContainer");
+  const thumbnailWrapper = document.getElementById("thumbnailWrapper");
+  const thumbnailPlayBtn = document.getElementById("thumbnailPlayBtn");
+  const icon = playPauseBtn.querySelector("i");
 
   let animationFrameId;
 
-  // Toggle Play/Pause
-  playPauseBtn.addEventListener("click", () => {
+  function updateProgressBar() {
+    const percent = (video.currentTime / video.duration) * 100;
+    progressFill.style.width = percent + "%";
+    animationFrameId = requestAnimationFrame(updateProgressBar);
+  }
+
+  function togglePlayPause() {
     if (video.paused) {
       video.play();
       icon.className = "fa fa-pause";
-      animateProgress();
+      updateProgressBar();
     } else {
       video.pause();
       icon.className = "fa fa-play";
       cancelAnimationFrame(animationFrameId);
     }
-  });
-
-  // Update progress continuously
-  function animateProgress() {
-    const update = () => {
-      const percent = (video.currentTime / video.duration) * 100;
-      progressFill.style.width = percent + "%";
-      animationFrameId = requestAnimationFrame(update);
-    };
-    update();
   }
 
-  // Click to seek
-  progressContainer.addEventListener("click", (e) => {
-    const rect = progressContainer.getBoundingClientRect();
+  // Show video & play on thumbnail click
+  thumbnailPlayBtn.addEventListener("click", () => {
+    thumbnailWrapper.style.display = "none";
+    video.play();
+    icon.className = "fa fa-pause";
+    updateProgressBar();
+  });
+
+  playPauseBtn.addEventListener("click", togglePlayPause);
+
+  // Allow seeking
+  document.getElementById("progressContainer").addEventListener("click", (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
     const percent = (e.clientX - rect.left) / rect.width;
     video.currentTime = percent * video.duration;
     progressFill.style.width = (percent * 100) + "%";
   });
 
-  // Sync if user drags timeline externally
   video.addEventListener("loadedmetadata", () => {
     progressFill.style.width = "0%";
   });

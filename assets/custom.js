@@ -118,3 +118,98 @@
   function hideFloatingImage(id) {
     document.getElementById(id).classList.remove('show');
   }
+
+  // Contact Section
+   const iconBox = document.getElementById('icon3d');
+  const section = document.getElementById('contact-section');
+
+  let active = false;
+
+  // Track visibility
+  const observer1 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      active = entry.isIntersecting;
+    });
+  }, {
+    threshold: 0.4
+  });
+
+  observer1.observe(section);
+
+  // Mouse movement
+  document.addEventListener('mousemove', (e) => {
+    if (!active) return;
+
+    const rect = section.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * 25;
+    const rotateY = ((x - centerX) / centerX) * 25;
+
+    iconBox.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  document.addEventListener('mouseleave', () => {
+    iconBox.style.transform = 'rotateX(0deg) rotateY(0deg)';
+  });
+
+
+  // Nav Button hide
+  window.addEventListener('scroll', function () {
+  const button = document.querySelector('.outline-button');
+
+  // Only run this on desktop (e.g. width > 768px)
+  if (window.innerWidth > 768) {
+    if (window.scrollY > 50) {
+      button.classList.add('hide-on-scroll');
+    } else {
+      button.classList.remove('hide-on-scroll');
+    }
+  } else {
+    // On mobile, always keep it visible
+    button.classList.remove('hide-on-scroll');
+  }
+});
+
+
+// Menu Toggle
+const openMenuBtn = document.getElementById('open-menu');
+const closeMenuBtn = document.getElementById('close-menu');
+const fullMenu = document.getElementById('fullscreen-menu');
+const mainHeader = document.getElementById('main-header');
+
+openMenuBtn.addEventListener('click', () => {
+  openMenuBtn.classList.add('active');
+  fullMenu.classList.add('active');
+  mainHeader.classList.add('menu-active');
+  document.body.style.overflow = 'hidden';
+});
+
+closeMenuBtn.addEventListener('click', () => {
+  openMenuBtn.classList.remove('active');
+  fullMenu.classList.remove('active');
+  mainHeader.classList.remove('menu-active');
+  document.body.style.overflow = '';
+});
+
+document.querySelectorAll('.menu-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    openMenuBtn.classList.remove('active');
+    fullMenu.classList.remove('active');
+    mainHeader.classList.remove('menu-active');
+    document.body.style.overflow = '';
+  });
+});
+
+
+
+// smmothscroll learn more
+ document.querySelector('.scroll-circle').addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth' });
+  });

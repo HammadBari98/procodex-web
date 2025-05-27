@@ -6,7 +6,6 @@
   <title>ProCodeX</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/custom.css">
   <script src="https://cdn.tailwindcss.com"></script>
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -20,7 +19,9 @@
 
 <!-- HTML Markup -->
 <header class="header" id="main-header">
-  <a href="#" class="logo-text" style="color: white;">ProCodeX</a>
+  <a href="#" class="logo-text" style="color: white;">
+    <img src="logo-dark.png" width="100" alt="">
+  </a>
   <div class="menu-toggle" id="open-menu">
     <button type="button" class="btn outline-button">
       <span class="text-wrap">
@@ -34,7 +35,9 @@
 
 <div class="fullscreen-menu" id="fullscreen-menu">
   <div class="menu-header">
-    <div class="logo-text">ProCodeX</div>
+    <div class="logo-text">
+        <img src="logo-dark.png" width="100" style=" padding-left: 10px;" alt="">
+    </div>
     <button class="close-btn" id="close-menu">
       <i class="fa-solid fa-x"></i>
     </button>
@@ -60,54 +63,243 @@
 
     
   <section id="background">
-    <div id="blob"></div>
+    <div id="blob"class="gradient-blob"></div>
     <div id="blur"></div>
   </section>
 
-  <div class="section">
-    <div class="content"> 
-      <h1><span class="md:ml-5"> Shaping </span> <br><span class="-ml-5"> your digital</span> <br> <span style="margin-left: 30px;">future</span></h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Discover how we craft digital excellence.</p>
+<section class="section to-orange-pink" id="section">
+  <!-- LEFT SHAPE: Tall 3D Cube -->
+  <div class="shape-container middle-left-3d">
+    <div class="cube">
+      <div class="face front"></div>
+      <div class="face back"></div>
+      <div class="face left"></div>
+      <div class="face right"></div>
+    </div>
+  </div>
 
+  <!-- RIGHT SHAPE: 3D Sphere -->
+  <div class="shape-container middle-right-3d">
+    <div class="sphere"></div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="content">
+    <h1>
+      <span class="shaping-your">shaping your</span><br>
+      <span class="digital-future">digital future</span>
+    </h1>
+
+    <div class="button-wrapper">
       <div class="gs">
-        <a href="#work" class="scroll-circle">
-          
-         <button id="replay">
+        <a href="our-approach.html">
+          <button id="replay">
             <span id="purple"></span>
             <span id="turquois"></span>
             <span id="yellow"></span>
-            <span class="text" id="text-static">Learn More <i class="fa-solid fa-angle-down"></i></span>
-            <span class="text" id="text-reveal">Learn More <i class="fa-solid fa-angle-down"></i></span>
-      </button>
+            <span class="text" id="text-static">Our approach</span>
+            <span class="text" id="text-reveal">Our approach</span>
+          </button>
         </a>
-      
       </div>
-      
-    </div>
-    <div class="animation-area">
-      <div class="circle"></div>
-      <div class="triangle"></div> 
+      <p class="discover-text">Discover how we craft <br>digital excellence.</p>
     </div>
   </div>
-  
+</section>
 
-<section id="work" class="centered-section">
+<style>
+/* Main section styles */
+.section {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content h1 {
+  font-family: "Antique Olive Std", sans-serif;
+  font-weight: bolder;
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+  -webkit-text-stroke: 5px white;
+  color: white;
+  line-height: 1;
+}
+
+.digital-future {
+  display: inline-block;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: -30px;
+}
+
+#replay {
+  transform: translate(-51px, -19px);
+  color: black;
+}
+
+.discover-text {
+  margin-left: 110px !important;
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .section {
+    padding: 80px 20px;
+  }
+
+  .content h1 {
+    font-size: 7rem;
+    margin-bottom: 40px;
+  }
+
+  .button-wrapper {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .digital-future {
+    margin-left: 200px;
+  }
+
+  .shaping-your {
+    margin-left: -200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  .discover-text {
+    font-size: 1rem;
+  }
+}
+
+/* 3D SHAPE STYLES */
+.shape-container {
+  position: absolute;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.middle-left-3d {
+  top: 40%;
+  left: 5%;
+}
+
+.middle-right-3d {
+  top: 40%;
+  right: 5%;
+}
+
+/* Cube (tall rectangular prism, 1:2) */
+.cube {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotateCube 20s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  background: linear-gradient(135deg, #ff6a00, #ffcc00, #ff6a00);
+  border: 2px solid white;
+  opacity: 0.9;
+}
+
+.face.front  { transform: translateZ(50px); }
+.face.back   { transform: rotateY(180deg) translateZ(50px); }
+.face.left   { transform: rotateY(-90deg) translateZ(50px); }
+.face.right  { transform: rotateY(90deg) translateZ(50px); }
+.face.top    { width: 100px; height: 100px; background: linear-gradient(135deg, #ff6a00, #ffcc00); transform: rotateX(90deg) translateZ(100px); }
+.face.bottom { width: 100px; height: 100px; background: linear-gradient(135deg, #ffcc00, #ff6a00); transform: rotateX(-90deg) translateZ(0); }
+
+@keyframes rotateCube {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+/* Sphere */
+.sphere {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #36d1dc, #5b86e5);
+  box-shadow: inset -10px -10px 20px rgba(255, 255, 255, 0.3),
+              inset 10px 10px 20px rgba(0, 0, 0, 0.2),
+              0 10px 30px rgba(0, 0, 0, 0.4);
+  animation: floatSphere 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatSphere {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-20px); }
+}
+</style>
+
+<script>
+const leftShape = document.querySelector('.middle-left-3d');
+const rightShape = document.querySelector('.middle-right-3d');
+
+// Mouse tilt effect
+document.addEventListener('mousemove', (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+  leftShape.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+  rightShape.style.transform = `rotateY(${-x}deg) rotateX(${y}deg)`;
+});
+</script>
+
+
+
+
+<section id="work" class="centered-section to-green-lightorange">
   <div class="work-section" >
-    <div class="left ar" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Memorable</div>
+    <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Memorable</div>
     <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
       <p>We'll craft a distinct brand <span class="ar">narrative</span> and impactful <span class="vr">experiences</span> to ensure your brand leaves a lasting <span class="web">impression</span>.</p>
     </div>
   </div>
 
   <div class="work-section">
-    <div class="left vr" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Scalable</div>
+    <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Scalable</div>
     <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
       <p>We'll build your brand to <span class="web">scale</span> efficiently across <span class="ar">web</span>, augmented reality, and <span class="vr">virtual</span> reality experiences.</p>
     </div>
   </div>
 
   <div class="work-section">
-    <div class="left web" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Unstoppable</div>
+    <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Unstoppable</div>
     <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
       <p>We'll empower your brand with <span class="ar">resilience</span> and <span class="vr">innovation</span>, ensuring it thrives in any environment and consistently overcomes <span class="web">challenges</span>.</p>
     </div>
@@ -133,17 +325,14 @@
   }
 
   .left {
-    font-size: 0.7rem;
+    padding-top: 10px;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     flex: 0 0 150px;
     padding-top: 0;
     text-align: left;
     transition: color 0.3s ease;
-  }
-
-  .left:hover {
-    color: var(--purple3);
   }
 
   .right {
@@ -157,13 +346,10 @@
     transition: color 0.3s ease;
   }
 
-  .right p:hover {
-    color: var(--yellow);
-  }
 
-  .web { color: var(--purple3); }
-  .ar { color: var(--green); }
-  .vr { color: var(--yellow); }
+  .web { color: var(--pink); }
+  .ar { color: var(--orange); }
+  .vr { color: var(--light-green); }
 
   @media (max-width: 768px) {
     .centered-section {
@@ -252,11 +438,193 @@
     </div>
   </div>
 </section> -->
+<section>
+  <div class="relative w-full h-screen flex items-center justify-center">
+    <div class="relative w-3/4 h-32" style="height: 500px; perspective: 1200px;">
+
+      <!-- MULTIPLE SHAPES (behind) -->
+      <div class="shapes-container absolute" 
+           style="top: 50%; left: 30%; width: 300px; height: 300px; margin-left: -150px; margin-top: -150px; z-index: 0; opacity: 1; pointer-events: none; transform-style: preserve-3d;">
+        <!-- Shapes -->
+        <div class="shape triangle" style="background-color: var(--light-orange);" data-index="0"></div>
+        <div class="shape square2" style="background-color: var(--pink);" data-index="1"></div>
+        <div class="shape square" style="background-color: var(--orange);" data-index="2"></div>
+        <div class="shape circle2" style="background-color: var(--light-green);" data-index="3"></div>
+      </div>
+
+      <!-- FIRST BOX (front) -->
+      <div class="animate-box1 absolute top-1/2 left-0 bg-gradient-to-r from-pink-500 to-yellow-400 flex items-center justify-center rounded transform -translate-y-1/2 box1" style="z-index: 10;">
+        <div>
+          <h1>ProCodeX Powers Innovation</h1>
+          <p>Explore creative digital solutions with modern design and interactivity.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    .animate-box1 {
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding: 20px;
+      color: white;
+      position: absolute;
+    }
+
+    .animate-box1 h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .animate-box1 p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .shapes-container {
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      width: 300px;
+      height: 300px;
+      margin-left: -150px;
+      margin-top: -150px;
+      pointer-events: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      opacity: 1;
+      transform-style: preserve-3d;
+      z-index: 0;
+    }
+
+    .shape {
+      flex-shrink: 0;
+      opacity: 1;
+      will-change: transform;
+      transform-style: preserve-3d;
+      transition: transform 0.2s ease-out;
+      position: relative;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    .circle2 {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .square {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+    }
+     .square2{
+      width: 200px;
+      height: 100px;
+      border-radius: 8px;
+    }
+
+  </style>
+
+  <!-- GSAP + SCROLLTRIGGER -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const container = document.querySelector('.relative.w-3\\/4');
+    const box1 = document.querySelector('.box1');
+    const shapesContainer = document.querySelector('.shapes-container');
+    const shapes = gsap.utils.toArray('.shape');
+
+    // Setup scroll animations
+    function setupAnimations() {
+      const containerWidth = container.offsetWidth;
+      const boxWidth = box1.offsetWidth;
+
+      const maxX1 = containerWidth - boxWidth;
+      const maxXShapes = -(containerWidth / 2 - boxWidth / 2);
+
+      const scrollDistanceBox1 = window.innerHeight * 0.5;
+      const scrollDistanceShapes = window.innerHeight * 0.3;
+
+      // BOX 1: left → right (delayed start)
+      gsap.to(box1, {
+        x: maxX1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container,
+          start: "top 50%",    // ← starts later (adjust here if needed)
+          end: `+=${scrollDistanceBox1}`,
+          scrub: true,
+        }
+      });
+
+      // SHAPES: move right → left faster
+      gsap.to(shapesContainer, {
+        x: maxXShapes,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container,
+          start: "top 50%",
+          end: `+=${scrollDistanceShapes}`,
+          scrub: true,
+        }
+      });
+    }
+
+    // Floating animation
+    function floatingAnimation() {
+      shapes.forEach((shape, i) => {
+        const amplitudeX = 10 + Math.random() * 15;
+        const amplitudeY = 5 + Math.random() * 10;
+        const amplitudeZ = 5 + Math.random() * 10;
+        const duration = 3 + Math.random() * 3;
+
+        gsap.to(shape, {
+          x: `+=${amplitudeX}`,
+          y: `+=${amplitudeY}`,
+          z: `+=${amplitudeZ}`,
+          duration: duration,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+          yoyoEase: true,
+          repeatRefresh: true,
+          delay: i * 0.3,
+        });
+      });
+    }
+
+    setupAnimations();
+    floatingAnimation();
+
+    window.addEventListener('resize', () => {
+      gsap.killTweensOf([box1, shapesContainer, ...shapes]);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      setupAnimations();
+      floatingAnimation();
+      ScrollTrigger.refresh();
+    });
+  </script>
+</section>
 
 
-
-
-<section class="relative h-[70vh] text-white flex items-center px-10 overflow-hidden">
+<section class="relative h-[70vh] text-white flex items-center px-10 overflow-hidden to-lightgreen-pink">
 
   <!-- Text Content -->
   <div class="z-10 w-1/2">
@@ -268,7 +636,7 @@
   <div class="giant-rectangle absolute top-1/2 left-0 w-[600px] h-[400px] -translate-y-1/2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-80"></div>
 </section>
 
-<section class="relative h-[70vh] text-white flex items-center justify-end px-10 overflow-hidden">
+<section class="relative h-[70vh] text-white flex items-center justify-end px-10 overflow-hidden to-orange-lightgreen">
 
   <!-- Text Content on Right -->
   <div class="z-10 w-1/2 text-right">
@@ -282,14 +650,14 @@
 
 
 <section>
- <div class="left2 web" style="text-align: center;margin:5% auto;color:white" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">Featured Projects</div>
+ <div class="left2 " style="text-align: center;margin:5% auto;color:white" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">Featured Projects</div>
   <div class="projects" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
 
     <!-- Card 1 -->
     <div class="hover-preview-container"
          onmouseenter="showFloatingImage('img1')"
          onmouseleave="hideFloatingImage('img1')">
-      <div class="left2 web">3D</div>
+      <div class="left2 ">3D</div>
       <div class="right2">
         <p>Unleashing immersive experiences: elevate your brand with custom 3D modelling</p>
       </div>
@@ -955,7 +1323,7 @@ Reach out and we'll be happy to discuss your plans!</div>
       position: absolute;
       bottom: 0;
       width: 100%;
-      background: var(--purple3);
+      background: var(--pink);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -972,7 +1340,7 @@ Reach out and we'll be happy to discuss your plans!</div>
       left: 0;
       width: 100%;
       height: 300px;
-      background: var(--purple3);
+      background: var(--pink);
       border-top-left-radius: 50% 100%;
       border-top-right-radius: 50% 100%;
       transform: scaleY(0);
@@ -1037,7 +1405,7 @@ Reach out and we'll be happy to discuss your plans!</div>
 
     button {
       background-color: white;
-      color: var(--purple3);
+      color: var(--pink);
       border-radius: 50%;
       padding: 10px;
       border: none;
@@ -1108,7 +1476,7 @@ Reach out and we'll be happy to discuss your plans!</div>
     left: 0;
     width: 100%;
     height: 160px;
-    background: var(--purple3);
+    background: var(--pink);
     border-top-left-radius: 50% 100%;
     border-top-right-radius: 50% 100%;
     transform: scaleY(0);
@@ -1460,7 +1828,6 @@ Reach out and we'll be happy to discuss your plans!</div>
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="assets/script.js"></script>
-  <script src="assets/custom.js"></script>
 <!-- GSAP + ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -1501,6 +1868,47 @@ Reach out and we'll be happy to discuss your plans!</div>
   AOS.init();
 </script>
 
+
+ <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create intersection observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Get the gradient class from the section
+                        const gradientClass = Array.from(entry.target.classList)
+                            .find(cls => cls.startsWith('to-'));
+                        
+                        if (gradientClass) {
+                            // Apply the gradient change
+                            document.documentElement.style.setProperty(
+                                '--gradient-opacity', '0.6'
+                            );
+                            
+                            setTimeout(() => {
+                                document.querySelector('.gradient-blob').className = 
+                                    'gradient-blob ' + gradientClass;
+                                
+                                setTimeout(() => {
+                                    document.documentElement.style.setProperty(
+                                        '--gradient-opacity', '0.8'
+                                    );
+                                }, 100);
+                            }, 50);
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.5,
+                rootMargin: '0px 0px -30% 0px'
+            });
+            
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
 

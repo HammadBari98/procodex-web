@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProCodeX</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Tailwind CSS (Optional, for styling) -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<!-- HTML Markup -->
+<header class="header" id="main-header">
+  <a href="#" class="logo-text" style="color: white;">
+    <img src="logo-dark.png" width="100" alt="">
+  </a>
+  <div class="menu-toggle" id="open-menu">
+    <button type="button" class="btn outline-button">
+      <span class="text-wrap">
+        <span>Get in touch</span>
+        <span>Get in touch</span>
+      </span>
+    </button>
+    <i class="fa-solid fa-bars"></i>
+  </div>
+</header>
+
+<div class="fullscreen-menu" id="fullscreen-menu">
+  <div class="menu-header">
+    <div class="logo-text">
+        <img src="logo-dark.png" width="100" style=" padding-left: 10px;" alt="">
+    </div>
+    <button class="close-btn" id="close-menu">
+      <i class="fa-solid fa-x"></i>
+    </button>
+  </div>
+
+  <div class="menu-content">
+    <div class="contact-info">
+      <p class="">Get in touch</p>
+      <p style="font-size:2rem !important">hello@procodex.com</p>
+      <p>+1 234 567 890</p>
+      <p>123 Creative Street</p>
+      <p>Digital City, 10001</p>
+    </div>
+    <ul class="menu-links">
+      <li><a href="#">WORK</a></li>
+      <li><a href="#">ABOUT us</a></li>
+      <li><a href="#">SERVICES</a></li>
+      <li><a href="#">INSIGHTS</a></li>
+    </ul>
+  </div>
+</div>
+
+
+    
+  <section id="background">
+    <div id="blob"class="gradient-blob"></div>
+    <div id="blur"></div>
+  </section>
+ <button id="replay"  style="display:none"></button>
+
+<section  class="section to-orange-pink" id="section">
+  <div class="content">
+    <h1>
+      <span class="headline-main">
+        we don’t guess. We define, design,<br>and deploy brands with precision.
+      </span><br>
+      <span class="headline-sub">
+        because great brands aren’t discovered,<br>they’re engineered.
+      </span>
+    </h1>
+  </div>
+
+  <!-- LEFT CORNER SHAPE -->
+  <div class="shape-container left-corner">
+    <div class="pyramid"></div>
+  </div>
+
+  <!-- CENTER RIGHT SHAPE -->
+  <div class="shape-container center-right">
+    <div class="prism"></div>
+  </div>
+
+  <!-- RIGHT CORNER SHAPE -->
+  <div class="shape-container right-corner">
+    <div class="diamond"></div>
+  </div>
+
+  <style>
+    .section {
+      position: relative;
+      margin-top: 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    /* .content h1{
+      max-width: 900px;
+    } */
+     h1 {
+      font-family: "Antique Olive Std", sans-serif;
+      font-weight: bolder;
+      margin-bottom: 20px;
+      color: white;
+      line-height: 1.4;
+    }
+
+    .headline-main {
+      display: inline-block;
+      font-size: 3rem !important;
+      -webkit-text-stroke: 2px white;
+    }
+
+    .headline-sub {
+      display: inline-block;
+      font-size: 2.5rem !important;
+      font-weight: normal;
+    }
+
+    @media (min-width: 768px) {
+      .content h1 {
+        font-size: 4rem;
+      }
+
+      .headline-main {
+        font-size: 4rem;
+      }
+
+      .headline-sub {
+        font-size: 2rem;
+      }
+    }
+
+    /* SHAPES COMMON */
+    .shape-container {
+      position: absolute;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      animation: float 6s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+
+    .left-corner {
+      top: 20%;
+      left: 15%;
+    }
+
+    .center-right {
+      top: 50%;
+      right: 20%;
+    }
+
+    .right-corner {
+      bottom: 10%;
+      right: 5%;
+    }
+
+    /* PYRAMID SHAPE */
+    .pyramid {
+      width: 0;
+      height: 0;
+      border-left: 130px solid transparent;
+      border-right: 130px solid transparent;
+      border-bottom: 130px solid #ff6a00;
+      transform: rotateX(10deg) rotateY(40deg);
+    }
+
+    /* PRISM SHAPE */
+    .prism {
+      width: 100px;
+      height: 150px;
+      background: linear-gradient(135deg, #36d1dc, #5b86e5);
+      transform: skewY(-20deg) rotateX(20deg) rotateY(20deg);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* DIAMOND SHAPE */
+    .diamond {
+      width: 160px;
+      height: 160px;
+      background: linear-gradient(135deg, #ffcc00, #ff6a00);
+      transform: rotate(45deg) scaleY(1.5);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+
+</section>
+<div style="height:100px;width:100%"></div>
+
+<section id="usecase-section" style="position: relative; overflow: hidden; padding: 100px 0;">
+
+  <!-- Floating 3D shapes -->
+  <div class="usecase-shape usecase-cube"></div>
+  <div class="usecase-shape usecase-sphere"></div>
+  <div class="usecase-shape usecase-pyramid"></div>
+  <div class="usecase-shape usecase-prism"></div>
+
+  <!-- First block: Our Use Cases -->
+  <div style="padding-left: 100px; align-items: start !important; text-align:left !important">
+    <div class="d-flex" style="display:flex; gap: 40px;">
+      <!-- Left content -->
+      <div class="content w-1/2" style="position: relative; z-index: 2;">
+        <h1 style="position: relative; z-index: 2; line-height: 0.8; -webkit-text-stroke: 5px white; color: white; font-size:8rem !important; text-align: left !important;">
+          <span style="display: block;">our use</span>
+          <span style="display: block;">cases</span>
+        </h1>
+        <p class="text-lg pt-4" style="font-size: 1.1rem; color: white; max-width: 500px;">
+          We leverage the power of different technologies and platforms to deliver a wide range of immersive experiences.
+        </p>
+      </div>
+
+      <!-- Right accordion -->
+      <div class="content w-1/2" style="position: relative; z-index: 2;">
+        <div class="usecase-accordion">
+          <div class="usecase-accordion-item">
+            <button class="usecase-accordion-header">Metaverse experiences</button>
+            <div class="usecase-accordion-body">We craft interactive metaverse spaces...</div>
+          </div>
+          <div class="usecase-accordion-item">
+            <button class="usecase-accordion-header">Premium virtual tours</button>
+            <div class="usecase-accordion-body">High-quality 360° virtual tours...</div>
+          </div>
+          <div class="usecase-accordion-item">
+            <button class="usecase-accordion-header">Digital twins</button>
+            <div class="usecase-accordion-body">We build precise digital replicas...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 100px;"></div> <!-- Spacer -->
+
+  <!-- Second block: Our Process -->
+  <div style="padding-left: 100px; align-items: start !important; text-align:left !important">
+    <div class="d-flex" style="display:flex; gap: 40px;">
+      
+      <!-- Left accordion -->
+      <div class="content w-1/2" style="position: relative; z-index: 2;">
+        <div class="usecase-accordion">
+          <div class="usecase-accordion-item">
+            <button class="usecase-accordion-header">Discovery & Research</button>
+            <div class="usecase-accordion-body">We begin by understanding your goals, target audience, and challenges.</div>
+          </div>
+          <div class="usecase-accordion-item">
+            <button class="usecase-accordion-header">Ideation & Planning</button>
+            <div class="usecase-accordion-body">Our team brainstorms creative solutions and builds a project roadmap.</div>
+          </div>
+          <div class="usecase-accordion-item">
+            <button class="usecase-accordion-header">Design & Development</button>
+            <div class="usecase-accordion-body">We craft interactive prototypes and refine them through feedback.</div>
+          </div>
+          <div class="usecase-accordion-item">
+            <button class="usecase-accordion-header">Testing & Launch</button>
+            <div class="usecase-accordion-body">After rigorous QA, we deploy and monitor the live experience.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right content -->
+      <div class="content w-1/2" style="position: relative; z-index: 2;">
+        <h1 style="position: relative; z-index: 2; line-height: 0.8; -webkit-text-stroke: 5px white; color: white; font-size:8rem !important; text-align: left !important;">
+          <span style="display: block;">our</span>
+          <span style="display: block;">process</span>
+        </h1>
+        <p class="text-lg pt-4" style="font-size: 1.1rem; color: white; max-width: 500px;">
+          We follow a structured, creative, and iterative process to deliver meaningful results tailored to your needs.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STYLES -->
+  <style>
+    .usecase-accordion { width: 90%; }
+    .usecase-accordion-item {
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .usecase-accordion-header {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      text-align: left;
+      padding: 12px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .usecase-accordion-header:hover { color: #ffcc00; }
+    .usecase-accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      opacity: 0;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      padding-left: 10px;
+    }
+    .usecase-accordion-item.active .usecase-accordion-body {
+      max-height: 200px;
+      opacity: 1;
+      margin-bottom: 10px;
+    }
+
+    /* Shape styles */
+    .usecase-shape {
+      position: absolute;
+      z-index: 0;
+      opacity: 0.6;
+      transition: transform 6s ease-in-out;
+    }
+    .usecase-cube {
+      width: 80px; height: 80px;
+      background: linear-gradient(45deg, #ff6b6b, #ffcc00);
+      top: 20px; left: 20px;
+      border-radius: 8px;
+    }
+    .usecase-sphere {
+      width: 60px; height: 60px;
+      background: radial-gradient(circle, #4facfe, #00f2fe);
+      border-radius: 50%;
+      top: 40%; right: 40px;
+    }
+    .usecase-pyramid {
+      width: 0; height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 70px solid #a18cd1;
+      bottom: 20px; left: 40px;
+    }
+    .usecase-prism {
+      width: 50px; height: 100px;
+      background: linear-gradient(to top, #f093fb, #f5576c);
+      bottom: 30px; right: 50px;
+      transform: skewY(-20deg);
+    }
+  </style>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Accordion toggle
+    document.querySelectorAll('.usecase-accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        document.querySelectorAll('.usecase-accordion-item').forEach(i => {
+          if (i !== item) i.classList.remove('active');
+        });
+        item.classList.toggle('active');
+      });
+    });
+
+    // Random floating animation
+    function randomFloat(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function animateShapes() {
+      document.querySelectorAll('.usecase-shape').forEach(shape => {
+        const x = randomFloat(-30, 30);  // left/right drift
+        const y = randomFloat(-30, 30);  // up/down drift
+        const rotate = randomFloat(-20, 20);
+        shape.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
+      });
+    }
+
+    setInterval(animateShapes, 5000); // every 5 seconds
+    animateShapes(); // initial run
+  </script>
+</section>
+
+
+
+<div style="height:100px;width:100%"></div>
+
+<section style="position: relative;">
+    <style>
+     
+        /* 3D Floating Shapes CSS */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        /* Basic 3D effect for shapes */
+        .shape-sphere-3d {
+            background: radial-gradient(circle at 30% 30%, #cc05ab, #e2346e);
+            border-radius: 50%;
+            box-shadow: 
+                inset -5px -5px 10px rgba(0, 0, 0, 0.2),
+                5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+         .shape-sphere2-3d {
+            background: radial-gradient(circle at 30% 30%, #31ec02, #437008);
+            border-radius: 50%;
+            box-shadow: 
+                inset -5px -5px 10px rgba(0, 0, 0, 0.2),
+                5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .shape-cube-3d {
+            background: linear-gradient(135deg, #ff9b74, #c1cc5b);
+            border-radius: 5px;
+            transform: rotateX(25deg) rotateY(-25deg); /* Slight rotation for 3D feel */
+            
+        }
+
+         .shape-cube2-3d {
+            background: linear-gradient(135deg, #74ff9e, #cc5b64);
+            border-radius: 5px;
+            transform: rotateX(25deg) rotateY(-25deg); /* Slight rotation for 3D feel */
+            
+        }
+
+        /* Positioning and animation for floating shapes */
+        .shape-1 {
+            top: 5%;
+            left: 5%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            bottom: 5%;
+            right: 5%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            top: 15%;
+            right: 10%;
+            width: 70px;
+            height: 70px;
+            animation-delay: 1s;
+        }
+
+        .shape-4 {
+            bottom: 10%;
+            left: 10%;
+            width: 90px;
+            height: 90px;
+            animation-delay: 3s;
+        }
+
+      
+
+        /* Curved Section Container for the top curve */
+        .curved-section-container-top {
+            position: relative;
+            height: 180px; /* Needs to be tall enough to contain the curve */
+            overflow: hidden;
+            background-color: transparent; /* Allows background from section to show through */
+        }
+
+        /* Top Curve (concave) */
+        .curved-top-transition {
+            background-color: rgb(252, 252, 252);
+            height: 150px;
+            position: absolute;
+            bottom: 0; /* Position at the bottom of its container */
+            left: 0;
+            width: 100%;
+            border-top-left-radius: 50% 100px;
+            border-top-right-radius: 50% 100px;
+        }
+
+        /* Main content area, now including the bottom curve */
+        .content-area-below-curve {
+            padding: 40px 0;
+            background-color: rgb(252, 252, 252);
+            position: relative;
+            /* Added styles for the bottom curve directly to this element */
+            border-bottom-left-radius: 50% 100px; /* Same curve shape as top, but at bottom */
+            border-bottom-right-radius: 50% 100px; /* Same curve shape as top, but at bottom */
+            margin-bottom: 20px; /* Add some space below the section if needed */
+        }
+
+        .content-area-below-curve h1 {
+            font-size: 7rem;
+            line-height: 0.8 !important;
+            font-weight: bold;
+            -webkit-text-stroke: 5px #000;
+            color: #000;
+            text-align: center;
+        }
+
+        .two-column-section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            gap: 20px;
+        }
+
+        .column-half {
+            width: calc(50% - 10px);
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-image {
+            flex-shrink: 0;
+            margin-right: 20px;
+        }
+
+        /* Image for feature headings */
+        .feature-image img {
+            max-width: 100px; /* Adjust size of icon images */
+            height: auto;
+        }
+
+        .feature-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: "Antique Olive Std", sans-serif;
+            font-weight: 400 !important;
+            letter-spacing: -.06em;
+        }
+
+        .feature-content p {
+            font-size: 1.1rem;
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .column-half {
+                width: 100%;
+                padding: 20px 0;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .feature-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .content-area-below-curve h1 {
+                font-size: 4rem;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+    </style>
+
+    <div class="curved-section-container-top" style="background-color: transparent;">
+        <div class="curved-top-transition" style="background-color: rgb(252, 252, 252);"></div>
+    </div>
+
+    <div class="floating-shape shape-2 shape-cube-3d"></div>
+    <div class="floating-shape shape-3 shape-sphere2-3d"></div>
+    <div class="floating-shape shape-4 shape-cube2-3d"></div>
+
+
+    <div class="content-area-below-curve">
+        <h1 style="margin-left: -100px;" data-aos="fade-right">what makes</h1>
+        <h1 style="margin-left: 100px;" data-aos="fade-left">us different</h1>
+
+        <div style="width: 90%; margin: 100px auto;"></div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+            <div class="two-column-section">
+                <div class="column-half" data-aos="fade-right" data-aos-delay="200">
+                    <div class="feature-image">
+                        <img src="https://static.vecteezy.com/system/resources/previews/008/470/778/non_2x/3d-render-basic-shape-ico-sphere-primitive-icon-illustration-with-glossy-finish-element-free-png.png" alt="360 Camera">
+                    </div>
+                    <div class="feature-content">
+                        <h2 style="color: var(--pink);">Branding and design</h2>
+                        <p>
+                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
+                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+            <div class="two-column-section" style="justify-content: flex-end;">
+                <div class="column-half" data-aos="fade-left" data-aos-delay="200">
+                    <div class="feature-image">
+                        <img src="https://static.vecteezy.com/system/resources/previews/008/470/778/non_2x/3d-render-basic-shape-ico-sphere-primitive-icon-illustration-with-glossy-finish-element-free-png.png" alt="360 Camera">
+                    </div>
+                    <div class="feature-content">
+                        <h2 style="color: var(--orange);">T-Shaped Marketing</h2>
+                        <p>
+                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
+                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+            <div class="two-column-section">
+                <div class="column-half" data-aos="fade-right" data-aos-delay="200">
+                    <div class="feature-image">
+                        <img src="https://static.vecteezy.com/system/resources/previews/008/470/778/non_2x/3d-render-basic-shape-ico-sphere-primitive-icon-illustration-with-glossy-finish-element-free-png.png" alt="360 Camera">
+                    </div>
+                    <div class="feature-content">
+                        <h2 style="color: var(--green);">Video and Photography</h2>
+                        <p>
+                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
+                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+            <div class="two-column-section" style="justify-content: flex-end;">
+                <div class="column-half" data-aos="fade-left" data-aos-delay="200">
+                    <div class="feature-image">
+                        <img src="https://static.vecteezy.com/system/resources/previews/008/470/778/non_2x/3d-render-basic-shape-ico-sphere-primitive-icon-illustration-with-glossy-finish-element-free-png.png" alt="360 Camera">
+                    </div>
+                    <div class="feature-content">
+                        <h2 style="color: var(--pink);">Campaign Launch</h2>
+                        <p>
+                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
+                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+            <div class="two-column-section">
+                <div class="column-half" data-aos="fade-right" data-aos-delay="200">
+                    <div class="feature-image">
+                        <img src="https://static.vecteezy.com/system/resources/previews/008/470/778/non_2x/3d-render-basic-shape-ico-sphere-primitive-icon-illustration-with-glossy-finish-element-free-png.png" alt="360 Camera">
+                    </div>
+                    <div class="feature-content">
+                        <h2 style="color: var(--light-orange);">Conversion Rate Optimization</h2>
+                        <p>
+                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
+                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+            <div class="two-column-section" style="justify-content: flex-end;">
+                <div class="column-half" data-aos="fade-left" data-aos-delay="200">
+                    <div class="feature-image">
+                        <img src="https://static.vecteezy.com/system/resources/previews/008/470/778/non_2x/3d-render-basic-shape-ico-sphere-primitive-icon-illustration-with-glossy-finish-element-free-png.png" alt="360 Camera">
+                    </div>
+                    <div class="feature-content">
+                        <h2 style="color: var(--light-green);">AI Based Content</h2>
+                        <p>
+                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
+                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+            <div class="two-column-section">
+                <div class="column-half" data-aos="fade-right" data-aos-delay="200">
+                    <div class="feature-image">
+                        <img src="https://static.vecteezy.com/system/resources/previews/008/470/778/non_2x/3d-render-basic-shape-ico-sphere-primitive-icon-illustration-with-glossy-finish-element-free-png.png" alt="360 Camera">
+                    </div>
+                    <div class="feature-content">
+                        <h2 style="color: var(--orange);">Immersive Content</h2>
+                        <p>
+                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
+                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+<div style="width: 90%; margin: 100px auto;"></div>
+
+<section class="to-green-lightorange" id="contact-section" style="position: relative;  color: white; padding: 80px 0;">
+
+<style>
+  :root {
+    --gradient: linear-gradient(to right, #9b5de5, #a01777);
+    --label-color: #ffffff;
+    --focus-color: #fcd34d;
+    --purple: #9b5de5;
+    --yellow: #fcd34d;
+    --black: #111;
+  }
+
+  .styled-form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .form-left,
+  .form-right {
+    flex: 1 1 300px;
+    box-sizing: border-box;
+  }
+
+  .form-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 10px 5px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-image: var(--gradient);
+    border-image-slice: 1;
+    background: none;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+  }
+
+  .form-group label {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    font-size: 1rem;
+    color: var(--label-color);
+    pointer-events: none;
+    transition: 0.3s ease all;
+  }
+
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown):valid + label {
+    top: -12px;
+    left: 0;
+    font-size: 0.8rem;
+    color: var(--focus-color);
+  }
+
+  .message-box textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid var(--purple);
+    border-radius: 20px;
+    background: none;
+    color: white;
+    outline: none;
+  }
+
+  .message-box textarea::placeholder {
+    color: #fff;
+  }
+
+  .form-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    color: white;
+  }
+
+  .form-check input[type="checkbox"] {
+    display: none;
+  }
+
+  .form-check label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  .form-check label::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--purple);
+    border-radius: 4px;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .form-check input[type="checkbox"]:checked + label::before {
+    background: var(--yellow);
+    border-color: var(--yellow);
+  }
+
+  .form-check label::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 6px;
+    height: 10px;
+    border: solid var(--black);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .form-check input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+  }
+
+  .icon-3d-container {
+    width: 160px;
+    height: 160px;
+    margin: -90px auto 0;
+    perspective: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  .icon-3d-box {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 30%, #a78bfa 0%, #4c1d95 100%);
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 10px 20px rgba(167, 139, 250, 0.3),
+      0 -10px 15px rgba(255, 255, 255, 0.05),
+      inset 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+
+  .icon-3d-box i {
+    font-size: 3rem;
+    color: white;
+    transform: translateZ(30px);
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  }
+</style>
+
+
+  <div class="section" style="position: relative;">
+    <div class="contact-flex" style="display:flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+      
+      <!-- Left Content -->
+      <div class="content" style="position: relative; z-index: 2; flex: 1 1 400px;">
+
+        <h1 style="line-height: 0.5; -webkit-text-stroke: 3px white; color: white; font-size: 5rem;">
+          <span style="display: block; margin-left: -10rem;">Interested?</span><br/>
+          <span style="display: block; margin-left: 1.875rem;">set meeting</span>
+        </h1>
+
+        <!-- Floating Image Behind Text -->
+        <div style="
+          margin-left: -80px;
+          border-radius: 2rem;
+          background-color: rgba(66, 66, 66, 1);
+          width: 27rem;
+          height: 18.5rem;
+          transform: rotate(-8deg);
+          overflow: hidden;
+          margin-top: -10px;
+          position: relative;
+          z-index: -10;">
+          <img src="https://www.poppr.be/assets/general/_jpgTransform/Screenshot-2022-07-07-at-14.51.33.jpg" style="object-fit: cover; width: 100%; height: 100%;" alt="">
+        </div>
+
+        <!-- 3D Icon -->
+        <div class="icon-3d-container">
+          <div class="icon-3d-box" id="icon3d">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Text -->
+      <div class="contact-description" style="flex: 1 1 300px; margin-left: 50px; text-align: left; max-width: 400px;font-size:1.5rem;margin-top:10%">
+        Together, we'll make your organization thrive through premium, personalized immersive experiences. <br><br>
+        Curious about how we can help you with your projects?<br><br>
+        Reach out and we'll be happy to discuss your plans!
+      </div>
+
+    </div>
+  </div>
+  
+  <form style="width: 90%; margin:auto;margin-top:100px;">
+    <div class="styled-form-container">
+      
+      <!-- Left Fields -->
+      <div class="form-left">
+        <div class="form-group">
+          <input type="text" id="name" required placeholder=" " />
+          <label for="name">Name</label>
+        </div>
+        <div class="form-group">
+          <input type="name" id="name" required placeholder=" " />
+          <label for="name">Email</label>
+        </div>
+        <div class="form-group">
+          <input type="text" id="date" required placeholder=" " />
+          <label for="date">date</label>
+        </div>
+      </div>
+
+      <!-- Right Message Field -->
+      <div class="form-right">
+        <div class="message-box">
+          <textarea rows="8" placeholder="Your Message"></textarea>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top: 2rem;">
+      <div class="form-check">
+        <input type="checkbox" id="newsletter" />
+        <label for="newsletter"> Subscribe to our newsletter</label>
+      </div>
+
+      <button type="button" class="btn outline-button ob-solid">
+        <span class="text-wrap">
+          <span>Submit</span>
+          <span>Submit</span>
+          <span>Submit</span>
+        </span>
+      </button>
+    </div>
+
+  </form>
+</section>
+
+
+<!-- footer -->
+
+<section>
+  <style>
+   
+    .footer-container {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: var(--pink);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      transition: border-radius 1s ease;
+      z-index: 2;
+    }
+
+    /* Arc Background */
+    footer::before {
+      content: "";
+      position: absolute;
+      top: -160px;
+      left: 0;
+      width: 100%;
+      height: 300px;
+      background: var(--pink);
+      border-top-left-radius: 50% 100%;
+      border-top-right-radius: 50% 100%;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 1s ease;
+      z-index: -1;
+    }
+
+    footer.scrolled::before {
+      transform: scaleY(1);
+    }
+
+    .footer-content {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 60px 20px 20px;
+      box-sizing: border-box;
+    }
+
+    .footer-newsletter,
+    .footer-owl,
+    .footer-contact {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-owl {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: var(--black);
+    }
+
+
+    .input-container {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid white;
+      background-color: transparent;
+      color: white;
+      margin-right: 10px;
+      width: 200px;
+    }
+
+    input[type="email"]::placeholder {
+      color: lightgray;
+    }
+
+    button {
+      background-color: white;
+      color: var(--pink);
+      border-radius: 50%;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateX(5px);
+    }
+
+    .footer-bottom {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.7em;
+      color: var(--black);
+      font-weight: 700;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .f-bottom p{
+      margin-right: 30px;
+    }
+    .footer-bottom a {
+      color: white;
+      margin: 0 5px;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      text-decoration: underline;
+    }
+
+    .language-button {
+      border: 1px solid white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-newsletter,
+      .footer-owl,
+      .footer-contact {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    footer::before {
+    content: "";
+    position: absolute;
+    top: -160px;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: var(--pink);
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 1sease;
+    z-index: -1;
+}
+  </style>
+
+<style>
+  .ob-solid:hover {
+    background: var(--yellow) !important;
+    color: black;
+    transition: all 0.4s ease;
+
+  }.outline-button-hor {
+  width: 60px !important;
+  height: 60px !important;
+  padding: 0 !important; /* override previous padding */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white !important;
+  transition: all 0.4s ease;
+}
+
+
+  /* Text wrapper */
+  .outline-button-hor .text-wrap {
+    display: block;
+    position: relative;
+    height: 1em;
+    overflow: hidden;
+  }
+
+  .outline-button-hor .text-wrap span {
+    display: block;
+    transition: transform 0.8s ease;
+    line-height: 1em;
+  }
+
+  .outline-button-hor .text-wrap span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: -100%;
+  }
+
+  /* Hover text effect */
+  .outline-button-hor:hover .text-wrap span:nth-child(1) {
+    transform: translateX(100%);
+  }
+
+  .outline-button-hor:hover .text-wrap span:nth-child(2) {
+    transform: translateX(100%);
+  }
+
+  /* Hide white border on hover */
+  .outline-button-hor:hover {
+    border-color: transparent;
+  }
+
+  /* Gradient animated border */
+  .outline-button-hor::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    background: linear-gradient(
+      270deg,
+      var(--purple),
+      var(--turquois),
+      var(--yellow),
+      var(--purple)
+    );
+    background-size: 400% 400%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: animatedBorder 4s linear infinite;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    background-clip: border-box;
+  }
+
+  .outline-button-hor:hover::before {
+    opacity: 1;
+  }
+
+  /* Keep background transparent */
+  .outline-button-hor::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    border-radius: inherit;
+    z-index: -2;
+  }
+
+  @keyframes animatedBorder {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .outline-button-hor.hide-on-scroll {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+
+ .hov-und {
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+
+.hov-und::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: none;
+}
+
+.hov-und:hover {
+  cursor:pointer;
+  /* border-bottom: 2px solid var(--purple); */
+}
+
+.hov-und:hover::after {
+  animation: underlineEaseSmooth 0.8s forwards linear;
+}
+
+@keyframes underlineEaseSmooth {
+  0%   { transform: scaleX(0); }
+  50%  { transform: scaleX(0.75); }
+  75%  { transform: scaleX(0.90); }
+  90%  { transform: scaleX(0.96); }
+  100% { transform: scaleX(1); }
+}
+
+</style>
+
+  <div class="footer-container" id="footerContainer">
+    <footer id="footer">
+      <div class="footer-content">
+        <div class="footer-newsletter">
+          <div class="" style="margin-bottom: 10px; font-weight:bold;font-size:0.8rem;">STAY UP TO DATE</div>
+         
+          <p style="font-size: 4.5rem;margin-bottom:50px; font-weight: bold; color:var(--black);line-height:0.8;  -webkit-text-stroke: 3px var(--black);">get our newsletter</p>
+          <div class="input-container">
+              <div class="form-group" style="width:80%;margin-right: 20px;">
+              <input type="text" id="text" required />
+              <label for="text">Email</label>
+            </div>
+            <button type="button" class="btn outline-button-hor ob-solid">
+            <span class="text-wrap">
+              <span> <i class="fa fa-right-long"></i> </span>
+              <span> <i class="fa fa-right-long"></i> </span>
+            </span>
+          </button>
+          </div>
+        </div>
+
+      
+        <div class="footer-owl">
+          <img src="https://i.gifer.com/3V1k.gif" alt="ProCodeX" style="max-width: 150px; height: auto; margin: auto;" />
+        </div>
+
+        <div class="footer-contact">
+          
+            <div class="" style="margin-bottom: 10px; font-weight:bold;font-size:0.8rem;">GET IN TOUCH</div>
+          <p class="hov-und" style="  color: var(--black);    font-size: 30px;    font-weight: 500;    letter-spacing: -2px;line-height: 1.2;">
+            hello@procodex<span style="color:white">.</span>com
+          </p>
+           <p  class="hov-und" style="  color: var(--black);    font-size: 30px;    font-weight: 500;    letter-spacing: -2px;line-height: 1.2;">
+          +32 (0)9 335 33 33
+          </p>
+          <br>
+          <p  class="hov-und" style=" margin-top: 10px; font-size: 1em; margin-top: 10px; color:var(--black);  font-weight: 500; line-height: 1.2;">Stapelplein 70/303<br />9000 Ghent</p>
+        </div>
+      </div>
+<div style="background-color: var(--purple); width: 95%; margin:auto; height:1px;opacity: 0.5; margin-top: 50px;">
+  
+</div>
+
+      <div class="footer-bottom">
+        
+     <div style="display: flex; justify-content: space-evenly;" class="f-bottom">
+  <p >PRIVACY POLICY</p>
+  <p >DISCLAIMER</p>
+  <p >TERMS AND CONDITIONS</p>
+  <p >BE017 327 189</p>
+</div>
+
+        <div style="display: flex;justify-content: space-between;"class="f-bottom">
+           <p>SEE WHAT WE'RE UP TO</p>
+        <a href="#">
+         <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#">
+         <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        </div >
+     
+        <div style="display: flex;"class="f-bottom">
+             <p>NEDERLANDS</p>
+        
+        <p>ENGLISH</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  
+  <script>
+    const footer = document.getElementById("footer");
+    const observer3 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            footer.classList.add("scrolled");
+          } else {
+            footer.classList.remove("scrolled");
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    observer3.observe(document.getElementById("footerContainer"));
+  </script>
+</section>
+
+
+  <!-- <div class="original-main">
+    <div id="video-container">
+      <video poster="/assets/general/_webpTransform/ezgif.com-gif-maker.webp" src="https://videos.pexels.com/video-files/28561591/12421521_640_360_30fps.mp4" muted autoplay loop playsinline></video>
+    </div>
+
+    <div id="title">
+      <span class="word">
+        <span class="char">c</span><span class="char">o</span><span class="char">n</span>
+        <span class="char">v</span><span class="char">e</span><span class="char">r</span>
+        <span class="char">s</span><span class="char">i</span><span class="char">o</span>
+        <span class="char">n</span>
+      </span>
+      <span class="word">
+        <span class="char">t</span><span class="char">h</span><span class="char">r</span>
+        <span class="char">o</span><span class="char">u</span><span class="char">g</span>
+        <span class="char">h</span>
+      </span>
+      <span class="word">
+        <span class="char">i</span><span class="char">m</span><span class="char">m</span>
+        <span class="char">e</span><span class="char">r</span><span class="char">s</span>
+        <span class="char">i</span><span class="char">o</span><span class="char">n</span>
+      </span>
+    </div>
+
+    <button id="replay">
+      <span id="purple"></span>
+      <span id="turquois"></span>
+      <span id="yellow"></span>
+      <span class="text" id="text-static">Replay animation</span>
+      <span class="text" id="text-reveal">Replay animation</span>
+    </button>
+  </div> -->
+
+
+  <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 2,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: true,
+    },
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 100,
+      depth: 300,
+      modifier: 1,
+      slideShadows: true,
+    },
+  });
+
+  
+  let lastScrollTop = window.scrollY;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        window.addEventListener('scroll', handleScroll);
+      } else {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  observer.observe(document.querySelector('#project-slider-section'));
+
+  function handleScroll() {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScrollTop) {
+      swiper.slideNext();
+    } else if (currentScroll < lastScrollTop) {
+      swiper.slidePrev();
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  }
+</script>
+
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="assets/script.js"></script>
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".giant-rectangle", {
+    scrollTrigger: {
+      trigger: ".giant-rectangle",
+      start: "top 60%",
+      end: "bottom top",
+      scrub: true,
+    },
+    x: 800, 
+    opacity: 0,
+    ease: "power2.out"
+  });
+</script>
+<script>
+  gsap.to(".giant-rectangle-rtl", {
+    scrollTrigger: {
+      trigger: ".giant-rectangle-rtl",
+      start: "top 60%",
+      end: "bottom top",
+      scrub: true,
+    },
+    x: -800, 
+    opacity: 0,
+    ease: "power2.out"
+  });
+</script>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script>
+  AOS.init();
+</script>
+
+
+ <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create intersection observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Get the gradient class from the section
+                        const gradientClass = Array.from(entry.target.classList)
+                            .find(cls => cls.startsWith('to-'));
+                        
+                        if (gradientClass) {
+                            // Apply the gradient change
+                            document.documentElement.style.setProperty(
+                                '--gradient-opacity', '0.6'
+                            );
+                            
+                            setTimeout(() => {
+                                document.querySelector('.gradient-blob').className = 
+                                    'gradient-blob ' + gradientClass;
+                                
+                                setTimeout(() => {
+                                    document.documentElement.style.setProperty(
+                                        '--gradient-opacity', '0.8'
+                                    );
+                                }, 100);
+                            }, 50);
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.5,
+                rootMargin: '0px 0px -30% 0px'
+            });
+            
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+

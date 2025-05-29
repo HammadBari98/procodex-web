@@ -20,7 +20,7 @@ body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   color: #fff;
 }
-h1 h2 h3{
+h1 , h2 , h3 , h4 , h5 , h6{
   font-family: "Antique Olive Std", sans-serif !important;
 }
 :root {

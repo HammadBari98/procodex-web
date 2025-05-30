@@ -15,6 +15,11 @@
 
   <link rel="stylesheet" href="assets/style.css">
 
+  
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  
   <style>
     /* Main section styles */
     .section {
@@ -1151,303 +1156,281 @@
 
   <div style="height:100px;width:100%"></div>
 
-  <section class="relative py-16 px-4" id="services-section">
-    <div class="absolute top-0 left-0 w-32 h-32 bg-pink-500 rounded-full opacity-70 transform translate-x-[-10px] translate-y-[-10px] transition-transform duration-[6000ms] ease-in-out hover:translate-x-[10px] hover:translate-y-[10px]"></div>
-    <div class="absolute top-0 right-0 w-0 h-0 border-l-[50px] border-r-[50px] border-b-[80px] border-l-transparent border-r-transparent border-b-purple-500 opacity-70 transform translate-x-[10px] translate-y-[-10px] transition-transform duration-[7000ms] ease-in-out hover:translate-x-[-10px] hover:translate-y-[10px]"></div>
-    <div class="absolute bottom-0 left-0 w-24 h-24 bg-green-400 opacity-70 transform translate-x-[-10px] translate-y-[10px] transition-transform duration-[8000ms] ease-in-out hover:translate-x-[10px] hover:translate-y-[-10px] "></div>
-    <div class="absolute bottom-0 right-0 w-28 h-28 bg-yellow-400 rounded-full opacity-70 transform translate-x-[10px] translate-y-[10px] transition-transform duration-[9000ms] ease-in-out hover:translate-x-[-10px] hover:translate-y-[-10px]"></div>
 
-    <div class="max-w-6xl mx-auto text-center mb-12">
-      <h1 class="main-heading">Our Services</h1>
-      <h5 class="sub-heading">Solutions That Deliver</h5>
-    </div>
+  <style>
+        .services-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #6a11cb 0%, #fff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            position: relative;
+            padding: 50px 30px;
+            border-radius: 20px;
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(106, 17, 203, 0.3);
+        }
+
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        /* Unique shapes for each icon */
+        .icon-container.strategic {
+            background: rgba(106, 17, 203, 0.2);
+            border-radius: 24px;
+            transform: rotate(45deg);
+        }
+
+        .icon-container.creative {
+            background: rgba(37, 117, 252, 0.2);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .icon-container.digital {
+            background: rgba(29, 209, 161, 0.2);
+            border-radius: 50%;
+        }
+
+        .icon-container svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+        }
+
+        .strategic svg {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .service-card .cta {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .service-card .cta:hover {
+            color: #eeff00;
+        }
+
+        .service-card .cta::after {
+            content: '→';
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card .cta:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .services-grid {
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-section {
+                padding: 70px 20px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-card {
+                padding: 40px 25px;
+            }
+        }
+  </style>
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="text-center relative p-8 rounded-xl shadow-lg transform transition hover:-translate-y-2 hover:scale-105">
-        <div class="text-blue-400 mb-4 text-center">
-          <i class="fas fa-chess-king fa-3x"></i> </div>
-        <h3 class="text-xl font-semibold text-white mb-2 text-center">Strategic</h3>
-        <p class="text-lg text-center">
-          Crafting winning strategies to drive your business forward with clarity.
-        </p>
-        <a href="strategic.php" class="mt-4 inline-block relative group text-blue-100">
-          Find out more
-          <span class="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
-        </a>
-      </div>
-      <div class="text-center relative p-8 rounded-xl shadow-lg transform transition hover:-translate-y-2 hover:scale-105">
-        <div class="text-pink-400 mb-4 text-center">
-          <i class="fas fa-lightbulb fa-3x"></i>
+  <section class="to-orange-pink" id="mojo-section" style="    display: flex;    flex-direction: column;    align-items: center;    width: 80%;    margin: 0 auto;">
+    <h1 class="main-heading">our services</h1>
+    <h5 class="sub-heading mb-5">Solutions That Deliver</h5>
+        
+
+        <div class="services-grid">
+            <!-- Strategic -->
+            <div class="service-card">
+                <div class="icon-container strategic">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6L6 18M6 6l12 12"></path>
+                    </svg>
+                </div>
+                <h3>Strategic</h3>
+                <p>Data-driven business strategies that align with your objectives and drive measurable results through careful planning and execution.</p>
+                <a href="#" class="cta">Find out more</a>
+            </div>
+            
+            <!-- Creative -->
+            <div class="service-card">
+                <div class="icon-container creative">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"></path>
+                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </div>
+                <h3>Creative</h3>
+                <p>Innovative design solutions that capture attention and communicate your brand's unique story through compelling visuals.</p>
+                <a href="#" class="cta">Find out more</a>
+            </div>
+            
+            <!-- Digital -->
+            <div class="service-card">
+                <div class="icon-container digital">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M8 21h8M12 17v4"></path>
+                    </svg>
+                </div>
+                <h3>Digital</h3>
+                <p>Cutting-edge digital transformation services that leverage technology to optimize operations and enhance customer experiences.</p>
+                <a href="#" class="cta">Find out more</a>
+            </div>
         </div>
-        <h3 class="text-xl font-semibold text-white mb-2 text-center">Creative</h3>
-        <p class="text-lg text-center">
-          Delivering bold, imaginative solutions that captivate your audience.
-        </p>
-        <a href="strategic.php" class="mt-4 inline-block relative group text-blue-100"> Find out more
-          <span class="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-pink-400 transition-all duration-300 group-hover:w-full"></span> </a>
+  </section>
+    
+
+  
+  <style>
+        .testimonial-slider {
+            padding: 50px 0;
+        }
+        .testimonial-item {
+            padding: 10px;
+            margin: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .testimonial-item img {
+            width: 80px  !important;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            object-fit: cover;
+        }
+        .testimonial-item h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .testimonial-item span {
+            display: block;
+            color: #777;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .testimonial-item p {
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+        }
+  </style>
+
+
+  <section class="to-orange-pink" id="mojo-section" style="    display: flex;    flex-direction: column;    align-items: center;    width: 100%;    margin: 0 auto;">
+     
+    <h1 class="main-heading">testimonials</h1>
+    <h5 class="sub-heading mb-5">Real stories from satisfied partners.</h5>
+
+
+      <div class="m-auto" style="background-color: white;border-radius:10px;width: 95%;">
+          <div class="owl-carousel owl-theme">
+              <!-- Testimonial 1 -->
+              <div class="testimonial-item">
+                  <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client">
+                  <h4>Sarah Johnson</h4>
+                  <span>Marketing Director</span>
+                  <p>"This service completely transformed our workflow. The team is responsive and professional. Highly recommended!"</p>
+              </div>
+              
+              <!-- Testimonial 2 -->
+              <div class="testimonial-item">
+                  <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client">
+                  <h4>Michael Chen</h4>
+                  <span>CEO, TechStart</span>
+                  <p>"We've seen a 40% increase in productivity since implementing their solution. The support is exceptional."</p>
+              </div>
+              
+              <!-- Testimonial 3 -->
+              <div class="testimonial-item">
+                  <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client">
+                  <h4>Emma Rodriguez</h4>
+                  <span>Small Business Owner</span>
+                  <p>"Affordable, reliable, and exactly what my growing business needed. I couldn't be happier with the results."</p>
+              </div>
+          </div>
       </div>
-      <div class="text-center relative p-8 rounded-xl shadow-lg transform transition hover:-translate-y-2 hover:scale-105">
-        <div class="text-green-400 mb-4 text-center">
-          <i class="fas fa-laptop-code fa-3x"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-white mb-2 text-center">Digital</h3>
-        <p class="text-lg text-center">
-          Building cutting-edge digital experiences for innovation.
-        </p>
-        <a href="strategic.php" class="mt-4 inline-block relative group text-blue-100"> Find out more
-          <span class="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-green-400 transition-all duration-300 group-hover:w-full"></span> </a>
-      </div>
-    </div>
   </section>
 
-  <section id="testimonials-section" class="py-16 px-4 to-green-lightorange">
-  <!-- 
-    Add the 'to-...' class (e.g., to-green-lightorange) 
-    to this section if you want the background blob to change color 
-    when this section is in view. 
-    Ensure your main script for the gradient blob observer is active.
-  -->
-  <div class="max-w-6xl mx-auto text-center mb-12">
-    <h2 class="main-heading" style="font-size: 4rem; -webkit-text-stroke-width: 2px;">What Our Clients Say</h2>
-    <p class="sub-heading" style="font-size: 1.5rem;">Real stories from satisfied partners.</p>
-    <!-- 
-      Note: The .main-heading and .sub-heading classes are assumed to be defined globally in your CSS.
-      If not, you'll need to add their styles or adjust these.
-    -->
-  </div>
-
-  <div class="swiper-container testimonial-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide testimonial-card">
-        <div class="testimonial-rating mb-4">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <p class="testimonial-text">"Working with ProCodeX was a game-changer for our business. Their innovative solutions and attention to detail were outstanding. Highly recommended!"</p>
-        <div class="testimonial-author-info">
-          <p class="testimonial-author">Jane Doe</p>
-          <p class="testimonial-title">CEO, Innovatech</p>
-        </div>
-      </div>
-      <div class="swiper-slide testimonial-card">
-        <div class="testimonial-rating mb-4">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-        </div>
-        <p class="testimonial-text">"The team at ProCodeX is incredibly talented and professional. They delivered beyond our expectations and helped us achieve our digital goals."</p>
-        <div class="testimonial-author-info">
-          <p class="testimonial-author">John Smith</p>
-          <p class="testimonial-title">Marketing Director, TechSolutions Ltd.</p>
-        </div>
-      </div>
-      <div class="swiper-slide testimonial-card">
-         <div class="testimonial-rating mb-4">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <p class="testimonial-text">"Exceptional service and creativity. ProCodeX transformed our online presence. We've seen a significant increase in engagement since partnering with them."</p>
-        <div class="testimonial-author-info">
-          <p class="testimonial-author">Alice Brown</p>
-          <p class="testimonial-title">Founder, Creative Hub</p>
-        </div>
-      </div>
-       <div class="swiper-slide testimonial-card">
-         <div class="testimonial-rating mb-4">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-        </div>
-        <p class="testimonial-text">"Their expertise in immersive technologies is unparalleled. The AR experience they developed for us was a huge hit with our customers!"</p>
-        <div class="testimonial-author-info">
-          <p class="testimonial-author">Mark Wilson</p>
-          <p class="testimonial-title">CTO, Future Interactive</p>
-        </div>
-      </div>
-      <!-- Add more slides if you want a longer continuous scroll before looping, 
-           though loop:true handles the infinite aspect with these 4. 
-           For a marquee effect, more slides can make the loop point less obvious. -->
-      <div class="swiper-slide testimonial-card">
-        <div class="testimonial-rating mb-4">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <p class="testimonial-text">"ProCodeX delivers excellence every time. Their strategic insights combined with creative execution make them a top-tier partner."</p>
-        <div class="testimonial-author-info">
-          <p class="testimonial-author">Sarah Miller</p>
-          <p class="testimonial-title">VP of Growth, Alpha Corp</p>
-        </div>
-      </div>
-      <div class="swiper-slide testimonial-card">
-        <div class="testimonial-rating mb-4">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-        </div>
-        <p class="testimonial-text">"The digital transformation ProCodeX led for us was seamless and impactful. We are thrilled with the results and their collaborative approach."</p>
-        <div class="testimonial-author-info">
-          <p class="testimonial-author">David Lee</p>
-          <p class="testimonial-title">Operations Head, Beta Industries</p>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-pagination testimonial-pagination"></div> 
-    <div class="swiper-button-next testimonial-button-next"></div>
-    <div class="swiper-button-prev testimonial-button-prev"></div>
-  </div>
-</section>
-<style>
-  /* Testimonial Section Styles */
-  #testimonials-section {
-    position: relative; 
-    overflow: hidden; 
-    padding-top: 60px; 
-    padding-bottom: 40px; /* Reduced bottom padding as nav/pagination are hidden */
-    color: white; 
-  }
-
-  #testimonials-section .main-heading {
-    font-size: clamp(2.5rem, 5vw, 4rem); 
-    font-weight: bold;
-    -webkit-text-stroke: 2px white;
-    color: white;
-    margin-bottom: 0.25em; 
-  }
-  #testimonials-section .sub-heading {
-    font-size: clamp(1rem, 2.5vw, 1.5rem); 
-    color: #e0e0e0; 
-    margin-bottom: 2.5em; 
-  }
-
-  .testimonial-swiper {
-    width: 100%;
-    margin: 0 auto; 
-    /* padding-bottom: 40px; /* Padding for pagination removed/reduced */
-  }
-
-  .testimonial-swiper .swiper-wrapper {
-    display: flex;
-    align-items: stretch; 
-    transition-timing-function: linear !important; 
-  }
-
-  .testimonial-card {
-    width: 320px; 
-    flex-shrink: 0; 
-    height: auto; 
-    min-height: 340px; 
-    background-color: rgba(255, 255, 255, 0.03); 
-    border: 1px solid rgba(255, 255, 255, 0.08); 
-    border-radius: 16px; 
-    padding: 30px 25px; 
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    color: #e0e0e0; 
-  }
-
-  .testimonial-text {
-    font-size: 1rem; 
-    line-height: 1.6;
-    font-style: italic;
-    max-width: 100%; 
-    margin-bottom: 1.25rem; 
-    flex-grow: 1; 
-  }
-
-  .testimonial-author-info {
-      margin-top: auto; 
-  }
-
-  .testimonial-author {
-    font-size: 1.05rem; 
-    font-weight: 600; 
-    color: #ffffff; 
-    margin-bottom: 0.25rem; 
-  }
-
-  .testimonial-title {
-    font-size: 0.8rem;
-    color: #b0b0b0; 
-  }
-
-  .testimonial-rating {
-      margin-bottom: 1rem; 
-  }
-  .testimonial-rating .fa-star { 
-    font-size: 1rem; 
-    color: #FFD700; 
-    margin: 0 1px; 
-  }
-  .testimonial-rating .far.fa-star {  
-      opacity: 0.5; 
-      color: #FFD700;
-  }
-   .testimonial-rating .fas.fa-star-half-alt { 
-      font-size: 1rem;
-      color: #FFD700;
-      margin: 0 1px;
-  }
-
-  /* Hide Swiper Pagination and Navigation for marquee effect */
-  .testimonial-pagination,
-  .testimonial-button-next,
-  .testimonial-button-prev {
-    display: none !important; 
-  }
-
-  @media (max-width: 768px) {
-    .testimonial-card { width: 280px; min-height: 320px; padding: 25px 20px;}
-    .testimonial-text { font-size: 0.9rem; }
-    #testimonials-section .main-heading { font-size: 2.5rem !important; } 
-    #testimonials-section .sub-heading { font-size: 1rem !important; } 
-    /* .testimonial-swiper { padding-bottom: 0; } /* No padding needed if controls are hidden */
-  }
-  @media (max-width: 480px) {
-      .testimonial-card { width: 260px; min-height: 300px; }
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-      const testimonialSwiperEl = document.querySelector('.testimonial-swiper');
-      if (testimonialSwiperEl) {
-        if (typeof Swiper === 'undefined') {
-          console.error('Swiper library is not loaded. Please ensure Swiper.js is included before this script.');
-          return;
-        }
-        const testimonialSwiper = new Swiper(testimonialSwiperEl, {
-          slidesPerView: 'auto', 
-          spaceBetween: 25,    
-          loop: true,            
-          freeMode: true,        
-          allowTouchMove: false, // Prevents manual dragging
-          grabCursor: false,       
-          centeredSlides: false,   
-          autoplay: {
-            delay: 0,  // Set delay to 0 for immediate start with speed controlling pace
-            disableOnInteraction: false, // Autoplay continues even if user somehow interacts (though touch is off)
-            pauseOnMouseEnter: true,     // Pause autoplay when mouse is over the slider
-          },
-          speed: 7000, // Speed of the continuous scroll. Higher value = slower. Adjust to desired pace.
-          
-          // Pagination and Navigation are disabled in JS as well by not providing 'el' or removing these blocks
-          // pagination: {
-          //   el: '.testimonial-pagination', // This would be needed if not hidden by CSS
-          //   clickable: true,
-          // },
-          // navigation: {
-          //   nextEl: '.testimonial-button-next', // This would be needed if not hidden by CSS
-          //   prevEl: '.testimonial-button-prev',
-          // },
-          
-          breakpoints: { // These can still adjust spaceBetween or other non-interaction parameters
-            640: {
-              spaceBetween: 30,
-              // speed: 9000, // Example: Optionally adjust speed for different screen sizes
-            },
-            1024: {
-              spaceBetween: 40,
-              // speed: 10000,
-            }
-          }
-        });
-      }
-  });
-</script>
 
   <div style="height:100px;width:100%"></div>
 
@@ -1587,6 +1570,31 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  
+<!-- jQuery and Owl Carousel JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            dots: true,
+            responsive: {
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                }
+            }
+        });
+    });
+</script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {

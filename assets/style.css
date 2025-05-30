@@ -1089,3 +1089,172 @@ h1 , h2 , h3 , h4 , h5 , h6{
 }
 
 
+
+/* Meeting  form */
+
+  :root {
+    --gradient: linear-gradient(to right, #9b5de5, #a01777);
+    --label-color: #ffffff;
+    --focus-color: #fcd34d;
+    --purple: #9b5de5;
+    --yellow: #fcd34d;
+    --black: #111;
+  }
+
+  .styled-form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .form-left,
+  .form-right {
+    flex: 1 1 300px;
+    box-sizing: border-box;
+  }
+
+  .form-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 10px 5px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-image: var(--gradient);
+    border-image-slice: 1;
+    background: none;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+  }
+
+  .form-group label {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    font-size: 1rem;
+    color: var(--label-color);
+    pointer-events: none;
+    transition: 0.3s ease all;
+  }
+
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown):valid + label {
+    top: -12px;
+    left: 0;
+    font-size: 0.8rem;
+    color: var(--focus-color);
+  }
+
+  .message-box textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid var(--purple);
+    border-radius: 20px;
+    background: none;
+    color: white;
+    outline: none;
+  }
+
+  .message-box textarea::placeholder {
+    color: #fff;
+  }
+
+  .form-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    color: white;
+  }
+
+  .form-check input[type="checkbox"] {
+    display: none;
+  }
+
+  .form-check label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  .form-check label::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--purple);
+    border-radius: 4px;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .form-check input[type="checkbox"]:checked + label::before {
+    background: var(--yellow);
+    border-color: var(--yellow);
+  }
+
+  .form-check label::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 6px;
+    height: 10px;
+    border: solid var(--black);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .form-check input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+  }
+
+  .icon-3d-container {
+    width: 160px;
+    height: 160px;
+    margin: -90px auto 0;
+    perspective: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  .icon-3d-box {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 30%, #a78bfa 0%, #4c1d95 100%);
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 10px 20px rgba(167, 139, 250, 0.3),
+      0 -10px 15px rgba(255, 255, 255, 0.05),
+      inset 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+
+  .icon-3d-box i {
+    font-size: 3rem;
+    color: white;
+    transform: translateZ(30px);
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  }

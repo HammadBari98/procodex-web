@@ -1,0 +1,73 @@
+/* --- Variable Definitions --- */
+:root {
+    /* Color Palette */
+    --orange: #ff8c00;
+    --pink: #ff69b4;
+    --green: #2e8b57;
+    --lightblue: #add8e6;
+    --purple: #8a2be2;
+    --yellow: #ffd700;
+
+    /* Initial State for the Gradient */
+    --gradient-color-1: var(--orange);
+    --gradient-color-2: var(--pink);
+}
+
+body {
+    font-family: sans-serif;
+    color: white;
+    margin: 0;
+    background-color: #111;
+}
+
+/* --- The Gradient Blob --- */
+.gradient-blob {
+    position: fixed;
+    width: 30vmax;
+    height: 30vmax;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -2;
+    background: linear-gradient(to right, var(--gradient-color-1), var(--gradient-color-2));
+    
+    /* THIS IS THE TRANSITION! */
+    transition: 
+        --gradient-color-1 0.8s cubic-bezier(0.65, 0, 0.35, 1),
+        --gradient-color-2 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#blur-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    backdrop-filter: blur(80px); /* This creates the blurry effect */
+    -webkit-backdrop-filter: blur(80px);
+}
+
+
+/* --- Color-Changing Classes --- */
+.to-orange-pink {
+    --gradient-color-1: var(--orange);
+    --gradient-color-2: var(--pink);
+}
+.to-green-lightblue {
+    --gradient-color-1: var(--green);
+    --gradient-color-2: var(--lightblue);
+}
+.to-purple-yellow {
+    --gradient-color-1: var(--purple);
+    --gradient-color-2: var(--yellow);
+}
+
+/* --- Helper classes for content --- */
+.content-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}

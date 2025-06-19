@@ -15,908 +15,13 @@
 
   <link rel="stylesheet" href="assets/style.css">
 
+  <link rel="stylesheet" href="assets/home.css">
   
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
   
-  <style>
-    /* Main section styles */
-    .section {
-      margin-top: 10%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .content {
-      width: 100%;
-      max-width: 1200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .content h1 {
-      font-family: "Antique Olive Std", sans-serif;
-      font-weight: bolder;
-      font-size: 2.3rem;
-      margin-bottom: 20px;
-      -webkit-text-stroke: 5px white;
-      color: white;
-      line-height: 1;
-    }
-
-    .digital-future {
-      display: inline-block;
-    }
-
-    .button-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin-top: -30px;
-    }
-
-    #replay {
-      transform: translate(-51px, -19px);
-      color: black;
-    }
-
-    .discover-text {
-      margin-left: 110px !important;
-      font-size: 1.2rem;
-      color: #fff;
-      margin: 0;
-    }
-
-    /* Responsive */
-    @media (min-width: 768px) {
-      .section {
-        padding: 80px 20px;
-      }
-
-      .content h1 {
-        font-size: 7rem;
-        margin-bottom: 40px;
-      }
-
-      .button-wrapper {
-        flex-direction: row;
-        gap: 30px;
-      }
-
-      .digital-future {
-        margin-left: 200px;
-      }
-
-      .shaping-your {
-        margin-left: -200px;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .content h1 {
-        font-size: 3rem;
-      }
-
-      .discover-text {
-        font-size: 1rem;
-      }
-    }
-
-    /* 3D SHAPE STYLES */
-    .shape-container {
-      position: absolute;
-      transform-style: preserve-3d;
-      perspective: 1000px;
-      transition: transform 0.3s ease;
-      pointer-events: none;
-    }
-
-    .middle-left-3d {
-      top: 40%;
-      left: 5%;
-    }
-
-    .middle-right-3d {
-      top: 40%;
-      right: 5%;
-    }
-
-    /* Cube (tall rectangular prism, 1:2) */
-    .cube {
-      position: relative;
-      width: 100px;
-      height: 200px;
-      transform-style: preserve-3d;
-      animation: rotateCube 20s linear infinite;
-    }
-
-    .face {
-      position: absolute;
-      width: 100px;
-      height: 200px;
-      background: linear-gradient(135deg, #ff6a00, #ffcc00, #ff6a00);
-      border: 2px solid white;
-      opacity: 0.9;
-    }
-
-    .face.front { transform: translateZ(50px); }
-    .face.back { transform: rotateY(180deg) translateZ(50px); }
-    .face.left { transform: rotateY(-90deg) translateZ(50px); }
-    .face.right { transform: rotateY(90deg) translateZ(50px); }
-    .face.top { width: 100px; height: 100px; background: linear-gradient(135deg, #ff6a00, #ffcc00); transform: rotateX(90deg) translateZ(100px); }
-    .face.bottom { width: 100px; height: 100px; background: linear-gradient(135deg, #ffcc00, #ff6a00); transform: rotateX(-90deg) translateZ(0); }
-
-    @keyframes rotateCube {
-      from { transform: rotateY(0deg); }
-      to { transform: rotateY(360deg); }
-    }
-
-    /* Sphere */
-    .sphere {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #36d1dc, #5b86e5);
-      box-shadow: inset -10px -10px 20px rgba(255, 255, 255, 0.3),
-        inset 10px 10px 20px rgba(0, 0, 0, 0.2),
-        0 10px 30px rgba(0, 0, 0, 0.4);
-      animation: floatSphere 8s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatSphere {
-      from { transform: translateY(0px); }
-      to { transform: translateY(-20px); }
-    }
-
-    /* Styles for centered-section and work-section */
-    .centered-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 60%;
-      margin: 0 auto;
-    }
-
-    .work-section {
-      display: flex;
-      justify-content: flex-start;
-      max-width: 100%;
-      padding: 40px 0;
-      gap: 50px;
-      align-items: flex-start;
-    }
-
-    .left {
-      padding-top: 10px;
-      font-size: 1rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      flex: 0 0 150px;
-      padding-top: 0;
-      text-align: left;
-      transition: color 0.3s ease;
-    }
-
-    .right {
-      font-size: 2rem;
-      text-align: left;
-      flex: 1;
-      padding-top: 0;
-    }
-
-    .right p {
-      transition: color 0.3s ease;
-    }
-
-    .web { color: var(--pink); }
-    .ar { color: var(--orange); }
-    .vr { color: var(--light-green); }
-
-    @media (max-width: 768px) {
-      .centered-section {
-        width: 95%;
-      }
-      .work-section {
-        flex-direction: row; /* Was column, but row seems more appropriate with gap */
-        gap: 20px !important; /* Adjusted gap for smaller screens */
-      }
-      .left {
-        text-align: left;
-        flex: 0 0 100px; /* Adjust basis if needed */
-      }
-      .right {
-        font-size: 1.5rem;
-      }
-    }
-
-    /* Styles for animate-box1 section */
-    .animate-box1 {
-      align-items: center;
-      justify-content: center;
-      height: 300px;
-      width: 600px;
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      padding: 20px;
-      color: white;
-      position: absolute;
-    }
-
-    .animate-box1 h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .animate-box1 p {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .shapes-container {
-      position: absolute;
-      top: 50%;
-      left: 30%;
-      width: 300px;
-      height: 300px;
-      margin-left: -150px;
-      margin-top: -150px;
-      pointer-events: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-      opacity: 1;
-      transform-style: preserve-3d;
-      z-index: 0;
-    }
-
-    .shape {
-      flex-shrink: 0;
-      opacity: 1;
-      will-change: transform;
-      transform-style: preserve-3d;
-      transition: transform 0.2s ease-out;
-      position: relative;
-    }
-
-    .circle { /* .circle was defined but not used, keeping for potential future use */
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-    }
-    .circle2 {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-    }
-
-    .square {
-      width: 100px;
-      height: 100px;
-      border-radius: 8px;
-    }
-    .square2 {
-      width: 200px;
-      height: 100px;
-      border-radius: 8px;
-    }
-
-    /* Swiper specific styles */
-    .swiper-container-wrapper {
-      transform: rotate(7deg);
-      transition: transform 0.5s ease;
-      width: 120%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
-    }
-
-    .swiper-container { /* This is the class Swiper targets */
-      width: 100vw;
-      max-width: 1400px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
-
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 400px;
-      height: 400px;
-      background-color: #252525;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      transform: scaleY(1.4);
-      transform-origin: center center;
-      transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.8s ease;
-    }
-
-    .swiper-slide-active {
-      transform: scaleY(1);
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    .swiper-slide-active img,
-    .swiper-slide:hover img {
-      transform: scale(1.08);
-    }
-    
-    .swiper-slide:not(.swiper-slide-active) img {
-      transform: scale(1.0);
-    }
-    .swiper-slide:not(.swiper-slide-active):hover img {
-      transform: scale(1.05);
-    }
-
-    .slide-content {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding: 24px;
-      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0) 100%);
-      color: white;
-      border-radius: 0 0 20px 20px;
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 0.5s ease-out 0.1s, transform 0.5s ease-out 0.1s;
-    }
-
-    .swiper-slide:hover .slide-content,
-    .swiper-slide-active .slide-content {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .slide-content h3 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      line-height: 1.2;
-    }
-
-    .slide-content p {
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-      opacity: 0.85;
-    }
-
-    .slide-content a {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: rgba(255, 255, 255, 0.1);
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .slide-content a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px) scale(1.02);
-    }
-
-    /* Mouse-following "Drag or click" indicator */
-    .mouse-drag-indicator {
-      position: fixed;
-      width: 80px;
-      height: 80px;
-      background-color: #6A0DAD;
-      color: white;
-      border-radius: 50%;
-      font-size: 0.7rem;
-      font-weight: 500;
-      z-index: 9999;
-      pointer-events: none;
-      opacity: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      line-height: 1.1;
-      transition: opacity 0.2s ease-out, transform 0.1s linear;
-      transform: translate(-50%, -50%) scale(0.9);
-    }
-    
-    .mouse-drag-indicator.visible {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    .header-text { /* This class was defined but not seen in use in the body */
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #e0e0e0;
-      z-index: 10;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.6);
-      text-align: center;
-      width: 100%;
-      padding-top: 40px;
-      margin-bottom: -20px;
-    }
-
-    /* Main heading and sub-heading styles */
-    .main-heading {
-      font-size: 6rem;
-      font-weight: bold;
-      -webkit-text-stroke: 3px white;
-      color: white;
-      margin-top:50px;
-    }
-    .sub-heading {
-      font-size: 2rem;
-    }
-
-    /* Video section styles */
-    #video-section {
-      padding: 40px 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      border-radius: 40px;
-      overflow: hidden;
-    }
-
-    video {
-      width: 100%;
-      display: block;
-      border-radius: 40px;
-    }
-
-    /* Thumbnail */
-    .video-thumbnail-wrapper {
-      margin: auto;
-      text-align: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .video-thumbnail {
-      width: 100%;
-      height: 100%;
-      object-fit:contain;
-      background-color: black;
-      border-radius: 40px;
-    }
-
-    .thumbnail-play-btn {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.9);
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 22px;
-      color: var(--purple);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 3;
-    }
-
-    .video-controls {
-      position: absolute;
-      bottom: 20px;
-      left: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-      z-index: 1; /* ensure it's above video but below thumbnail if it was visible */
-    }
-
-    .video-container:hover .video-controls {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .progress-container {
-      width: 90%;
-      height: 6px;
-      background: rgba(255, 255, 255, 0.4);
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      background: var(--purple);
-      border-radius: 5px;
-    }
-
-    #playPauseBtn {
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--purple);
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 20px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #playPauseBtn:hover {
-      background: white;
-      transform: scale(1.05);
-    }
-
-    .top-button-center {
-      margin:auto;
-      text-align:center
-    }
-    .mojo-btn { /* class was used on a button, assumed it means text-align center for its container */
-      text-align: center;
-      margin: auto; /* This would center the button if it's a block or its parent uses flex/grid */
-    }
-    
-    /* Footer styles */
-    .footer-container {
-      position: relative;
-      min-height: 100vh; /* This makes the container itself very tall */
-      overflow: hidden; /* Clips the ::before pseudo-element if it extends too far */
-    }
-
-    footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background: var(--pink);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end; /* Content at the bottom of the footer area */
-      transition: border-radius 1s ease; /* For the arc effect */
-      z-index: 2;
-    }
-
-    /* Arc Background */
-    footer::before {
-      content: "";
-      position: absolute;
-      top: -160px; /* Height of the arc */
-      left: 0;
-      width: 100%;
-      height: 160px; /* Should match top value for a smooth curve */
-      background: var(--pink); /* Same as footer background */
-      border-top-left-radius: 50% 100%; /* Creates the arc */
-      border-top-right-radius: 50% 100%; /* Creates the arc */
-      transform: scaleY(0);
-      transform-origin: bottom;
-      transition: transform 1s ease;
-      z-index: -1; /* Behind the footer content */
-    }
-
-    footer.scrolled::before {
-      transform: scaleY(1); /* Animate the arc in */
-    }
-
-    .footer-content {
-      width: 100%;
-      max-width: 1200px;
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      padding: 60px 20px 20px; /* Padding for content inside footer */
-      box-sizing: border-box;
-    }
-
-    .footer-newsletter,
-    .footer-owl,
-    .footer-contact {
-      flex: 1;
-      min-width: 250px; /* Ensure they don't get too squished */
-      padding: 10px; /* Add some spacing around columns */
-    }
-
-    .footer-owl {
-      text-align: center;
-    }
-
-    /* Assuming h2 within footer, if not, adjust selector */
-    footer h2 {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-      font-weight: bold;
-      color: var(--black); /* Text color for headings */
-    }
-
-    .input-container {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-    }
-
-    /* Assuming input[type="email"] within footer, if not, adjust selector */
-    footer input[type="email"] {
-      padding: 10px;
-      border: none;
-      border-bottom: 1px solid white;
-      background-color: transparent;
-      color: white; /* Text color for input */
-      margin-right: 10px;
-      width: 200px;
-    }
-
-    footer input[type="email"]::placeholder {
-      color: lightgray; /* Placeholder text color */
-    }
-
-    /* General button style within footer, or be more specific */
-    footer button {
-      background-color: white;
-      color: var(--pink); /* Button text color */
-      border-radius: 50%;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-      font-size: 1em;
-      transition: transform 0.3s ease;
-    }
-
-    footer button:hover {
-      transform: translateX(5px); /* Example hover effect */
-    }
-
-    .footer-bottom {
-      width: 100%;
-      max-width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      font-size: 0.7em;
-      color: var(--black); /* Text color for bottom links */
-      font-weight: 700;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    .f-bottom p { /* This class was on divs containing p tags */
-      margin-right: 10px; /* Adjusted margin */
-    }
-    .f-bottom:last-child p {
-        margin-right: 0;
-    }
-
-
-    .footer-bottom a {
-      color: white; /* Link color */
-      margin: 0 5px;
-      text-decoration: none;
-    }
-
-    .footer-bottom a:hover {
-      text-decoration: underline;
-    }
-
-    .language-button { /* This class was not used */
-      border: 1px solid white;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      margin-left: 10px;
-    }
-
-    @media screen and (max-width: 768px) {
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-newsletter,
-      .footer-owl,
-      .footer-contact {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px; /* Add space between stacked columns */
-      }
-      .footer-bottom {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .f-bottom { /* The divs containing groups of links/text */
-        justify-content: center !important; /* Center their content */
-        margin-bottom: 10px;
-      }
-      .f-bottom p {
-        margin-right: 5px;
-        margin-left: 5px;
-      }
-    }
-
-    /* Outline button hover and animation styles */
-    .ob-solid:hover {
-      background: var(--yellow) !important;
-      color: white !important;
-      transition: all 0.4s ease;
-    }
-    .outline-button-hor {
-      width: 60px !important;
-      height: 60px !important;
-      padding: 0 !important;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: white !important;
-      transition: all 0.4s ease;
-      position: relative; /* Needed for ::before and ::after */
-      overflow: hidden; /* To contain text-wrap animations if they exceed bounds */
-      border: none; /* Remove default border since we use a pseudo-element for it */
-    }
-
-    .outline-button-hor .text-wrap {
-      display: block;
-      position: relative;
-      height: 1em; /* Ensure it matches line-height */
-      overflow: hidden;
-    }
-
-    .outline-button-hor .text-wrap span {
-      display: block;
-      transition: transform 0.8s ease;
-      line-height: 1em;
-    }
-
-    .outline-button-hor .text-wrap span:nth-child(2) {
-      position: absolute;
-      top: 0;
-      left: -100%; /* Start off-screen to the left */
-    }
-
-    .outline-button-hor:hover .text-wrap span:nth-child(1) {
-      transform: translateX(100%); /* Move original text to the right */
-    }
-
-    .outline-button-hor:hover .text-wrap span:nth-child(2) {
-      transform: translateX(100%); /* Move new text in from the left to the center */
-    }
-
-    .outline-button-hor::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      padding: 2px; /* Thickness of the border */
-      border-radius: inherit; /* Match parent's border-radius */
-      background: linear-gradient(
-        270deg,
-        var(--purple),
-        var(--turquois),
-        var(--yellow),
-        var(--purple)
-      );
-      background-size: 400% 400%;
-      z-index: -1; /* Behind the content */
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      animation: animatedBorder 4s linear infinite;
-      mask: /* Mask to create the border effect */
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor; /* For Safari */
-    }
-
-    .outline-button-hor:hover::before {
-      opacity: 1;
-    }
-
-    /* This ::after might not be needed if background is transparent and border is via ::before */
-    /* .outline-button-hor::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: transparent;
-      border-radius: inherit;
-      z-index: -2;
-    } */
-
-    @keyframes animatedBorder {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .outline-button-hor.hide-on-scroll { /* This class was defined but not seen in use */
-      opacity: 0;
-      transform: translateY(-10px);
-      pointer-events: none;
-    }
-
-    .hov-und {
-      position: relative;
-      display: inline-block;
-      /* border-bottom: 2px solid transparent; Removed as ::after is used */
-    }
-
-    .hov-und::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px; /* Position of the underline */
-      width: 100%;
-      height: 2px; /* Thickness of the underline */
-      background: white; /* Color of the underline */
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: none; /* Animation will be handled by keyframes */
-    }
-
-    .hov-und:hover {
-      cursor:pointer;
-    }
-
-    .hov-und:hover::after {
-      animation: underlineEaseSmooth 0.8s forwards linear;
-    }
-
-    @keyframes underlineEaseSmooth {
-      0%   { transform: scaleX(0); }
-      50%  { transform: scaleX(0.75); }
-      75%  { transform: scaleX(0.90); }
-      90%  { transform: scaleX(0.96); }
-      100% { transform: scaleX(1); }
-    }
-  </style>
+  
 </head>
 <body>
 
@@ -966,43 +71,92 @@
     <div id="blur"></div>
   </section>
 
-  <section class="section to-orange-pink" id="hero-section"> <div class="shape-container middle-left-3d">
-      <div class="cube">
-        <div class="face front"></div>
-        <div class="face back"></div>
-        <div class="face left"></div>
-        <div class="face right"></div>
-        <!-- <div class="face top"></div>
-        <div class="face bottom"></div> -->
-      </div>
-    </div>
+  <section class="section to-orange-pink" id="hero-section">
 
-    <div class="shape-container middle-right-3d">
-      <div class="sphere"></div>
-    </div>
+    <style>
+        /* --- CSS for Image Animation --- */
+
+        /* Initial state of the image before any animation */
+        #animated-ring {
+            position: absolute;
+            width: 280px; /* Adjust size as needed */
+            height: auto;
+            top: -150px; /* Start position, off-screen at the top */
+            left: 80%;
+            transform: translateX(-50%); /* Center the image */
+            opacity: 0; /* Initially invisible */
+            /* This transition handles the INITIAL slide-in animation */
+            transition: top 1s ease-out, opacity 1s ease-out;
+            z-index: 0;
+        }
+
+        /* This class triggers the initial slide-in and makes the image visible */
+        #animated-ring.animate-in {
+            top: 20px; /* Final vertical position after sliding in */
+            opacity: 1; /* Fully visible */
+        }
+    </style>
+
+    <img src="assets/imgs/ring.png" alt="A decorative ring" id="animated-ring">
 
     <div class="content">
-      <h1>
-        <span class="shaping-your">shaping your</span><br>
-        <span class="digital-future">digital future</span>
-      </h1>
-      <div class="button-wrapper">
-        <div class="gs">
-          <a href="our-approach.html">
-            <button id="replay"> <span id="purple"></span>
-              <span id="turquois"></span>
-              <span id="yellow"></span>
-              <span class="text" id="text-static">Our approach</span>
-              <span class="text" id="text-reveal">Our approach</span>
-            </button>
-          </a>
+        <h1>
+            <span class="shaping-your">shaping your</span><br>
+            <span class="digital-future">digital future</span>
+        </h1>
+        <div class="button-wrapper">
+            <div class="gs">
+                <a href="our-approach.html">
+                    <button id="replay"> <span id="purple"></span>
+                        <span id="turquois"></span>
+                        <span id="yellow"></span>
+                        <span class="text" id="text-static">Our approach</span>
+                        <span class="text" id="text-reveal">Our approach</span>
+                    </button>
+                </a>
+            </div>
+            <p class="discover-text">Discover how we craft <br>digital excellence.</p>
         </div>
-        <p class="discover-text">Discover how we craft <br>digital excellence.</p>
-      </div>
     </div>
-  </section>
 
-  <section id="work-features" class="centered-section to-green-lightorange"> <div class="work-section">
+    <script>
+        // Wait for the page to fully load
+        window.addEventListener('load', function() {
+            const animatedImage = document.getElementById('animated-ring');
+
+            // 1. Trigger the initial slide-in animation after a brief delay
+            setTimeout(function() {
+                animatedImage.classList.add('animate-in');
+            }, 1000); // 0.5 second delay, adjust as needed
+
+            // This variable will track the rotation angle for the continuous animation
+            let angle = 0;
+
+            // This function creates the continuous floating and rotating loop
+            function continuousAnimationLoop() {
+                // Increment the angle by a small, fixed amount each frame for smooth rotation
+                angle += 0.2;
+
+                // Use Math.sin() to create a smooth, periodic up-and-down floating motion
+                const floatOffset = Math.sin(angle / 30) * 15; // Floats 15px up and down
+
+                // Apply the combined transforms for centering, floating, and rotating
+                animatedImage.style.transform = `translateX(-50%) translateY(${floatOffset}px) rotate(${angle}deg)`;
+
+                // Request the next animation frame to continue the loop smoothly
+                requestAnimationFrame(continuousAnimationLoop);
+            }
+
+            // 2. Listen for when the initial CSS transition (the slide-in) has finished
+            animatedImage.addEventListener('transitionend', () => {
+                // 3. Start the continuous JavaScript animation loop ONLY after the slide-in is complete
+                requestAnimationFrame(continuousAnimationLoop);
+            }, { once: true }); // Use {once: true} to ensure this listener only runs one time.
+        });
+    </script>
+</section>
+
+  <section id="work-features" class="centered-section "> <div class="work-section">
       <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Memorable</div>
       <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
         <p>We'll craft a distinct brand <span class="ar">narrative</span> and impactful <span class="vr">experiences</span> to ensure your brand leaves a lasting <span class="web">impression</span>.</p>
@@ -1022,7 +176,309 @@
     </div>
   </section>
 
-  <section id="innovation-animation-section"> <div class="relative w-full h-screen flex items-center justify-center">
+
+
+
+    <!-- The main section based on the design -->
+    <section id="animated-section" class="relative py-24 sm:py-32 overflow-hidden">
+      
+    <style>
+      
+
+        /* Styling for the circular text elements */
+        .circular-text {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .circular-text-path {
+            fill: none;
+        }
+        .circular-text text {
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            fill: #fff; /* Indigo color for text */
+        }
+    </style>
+
+
+        <div class="container mx-auto px-6 lg:px-8">
+            <!-- Main grid layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16 items-center">
+                
+                <!-- Left Column: Text Content -->
+                <div class="relative z-10">
+                    <!-- Plant/Wheat decoration -->
+                    <div class="absolute -left-16 -top-16 w-32 h-32 text-indigo-200 opacity-50 -z-10">
+                        <img src="assets/imgs/Shape/4.png" alt="">
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight" >
+                        We Are The <span style="color:var(--yellow)">Master</span> of <span style="color:var(--orange)">Website Design</span>
+                    </h1>
+                    <p class="mt-6 text-lg leading-8">
+                        We pride ourselves on delivering engaging websites that truly make a difference. As a full-service web design agency, we provide comprehensive solutions. First and foremost, our professional designers and developers will take the time to understand your business.
+                    </p>
+                    <p class="mt-4 text-lg leading-8">
+                        Our company specializes in creating highly productive and eye-catching websites. Additionally, we offer creative website design services, which, in turn, help convey your business effectively to first-time visitors.
+                    </p>
+                </div>
+                
+                <!-- Right Column: Image -->
+                <div class="relative flex items-center justify-center h-[500px] lg:h-full">
+                    <!-- The image will rotate on scroll -->
+                    <img id="animated-image" 
+                         src="assets/imgs/Shape/1.png" 
+                         alt="App Screenshot Placeholder"
+                         onerror="this.onerror=null;this.src='https://placehold.co/350x700/cccccc/ffffff?text=Image+Error';">
+
+                    <!-- Decorative Circular Text 1 -->
+                   <!-- Decorative Circular Text 1 -->
+<div id="circular-text-container-1" class="circular-text top-0 right-0 transform translate-x-1/4 -translate-y-1/4">
+    <!-- SVG is generated by JavaScript -->
+</div>
+
+<!-- Decorative Circular Text 2 -->
+<div id="circular-text-container-2" class="circular-text bottom-0 left-0 transform -translate-x-1/4 translate-y-1/4 hidden sm:block">
+    <!-- SVG is generated by JavaScript -->
+</div>
+<script>
+    /**
+     * Generates perfectly circular text by placing each character individually.
+     * @param {string} containerId - The ID of the div to place the SVG in.
+     * @param {string} text - The text to display in a circle.
+     * @param {string} color - The color of the text.
+     */
+    const createCircularText = (containerId, text, color) => {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        // Add a dot for more even spacing if not present
+        const processedText = text.endsWith('•') ? text : text + ' •';
+        const radius = 60;
+        const centerX = 75;
+        const centerY = 75;
+        
+        const svgNS = "http://www.w3.org/2000/svg";
+        const svg = document.createElementNS(svgNS, "svg");
+        svg.setAttribute("viewBox", "0 0 150 150");
+        svg.setAttribute("width", "150");
+        svg.setAttribute("height", "150");
+
+        for (let i = 0; i < processedText.length; i++) {
+            const angle = (i / processedText.length) * 360 - 90;
+            const angleRad = angle * (Math.PI / 180);
+            const x = centerX + radius * Math.cos(angleRad);
+            const y = centerY + radius * Math.sin(angleRad);
+
+            const textElement = document.createElementNS(svgNS, "text");
+            textElement.setAttribute("x", x);
+            textElement.setAttribute("y", y);
+            textElement.setAttribute("transform", `rotate(${angle + 90}, ${x}, ${y})`);
+            textElement.setAttribute("text-anchor", "middle");
+            textElement.setAttribute("fill", color); // Use the color parameter
+            textElement.style.fontSize = "14px";
+            textElement.style.fontWeight = "600";
+            textElement.textContent = processedText[i];
+            
+            svg.appendChild(textElement);
+        }
+        container.innerHTML = ''; // Clear previous content
+        container.appendChild(svg);
+    };
+
+
+    // JavaScript for the GSAP scroll-triggered animation
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- 1. Create the circular text ---
+        createCircularText('circular-text-container-1', 'AWARD • WINNING • WEBSITE • DESIGN', '#4338ca');
+        createCircularText('circular-text-container-2', 'RELIABLE • DEVELOPMENT • COMPANY', '#4338ca');
+
+        // --- 2. Set up GSAP animations ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Set the initial states for the circular text containers
+        gsap.set("#circular-text-container-1", { rotation: -60 }); // Rotate counter-clockwise initially
+        gsap.set("#circular-text-container-2", { rotation: 60 });  // Rotate clockwise initially
+
+        // Animate the text containers along with your main image
+        // (This assumes you have another GSAP animation for #animated-image)
+        gsap.to(["#circular-text-container-1", "#circular-text-container-2"], {
+            rotation: 0, // Animate all elements to a rotation of 0
+            ease: 'none',
+            scrollTrigger: {
+                trigger: "#animated-section", // The parent section
+                start: "top center",
+                end: "center center",
+                scrub: 1,
+            },
+        });
+    });
+</script>
+
+
+    <script>
+        // JavaScript for the GSAP scroll-triggered animation
+        document.addEventListener('DOMContentLoaded', () => {
+            // Register the GSAP ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Set the initial state of the image (rotated and slightly scaled down)
+            gsap.set("#animated-image", {
+                rotation: 200,
+                scale: 0
+            });
+
+            // Create the scroll-driven animation for the image
+            gsap.to("#animated-image", {
+                // Animate to these properties
+                rotation: 0,
+                scale: 1.2,
+                ease: 'none', // Linear ease is best for a direct scrub effect
+                
+                // Configure the scroll trigger
+                scrollTrigger: {
+                    trigger: "#animated-section", // The element that triggers the animation
+                    start: "top center", // When the top of the trigger hits the center of the viewport
+                    end: "center center", // When the center of the trigger hits the center of the viewport
+                    
+                    // scrub: true links the animation progress directly to the scrollbar.
+                    // A value like '1' creates a smoother, one-second lag.
+                    scrub: 1, 
+                    
+                    // markers: true, // Uncomment for debugging to see start/end markers
+                },
+            });
+
+             // Optional: Add a fade-in animation for the whole section
+             gsap.from("#animated-section", {
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: "#animated-section",
+                    start: "top 200%",
+                    toggleActions: "play none none none" // Play animation once on enter
+                }
+            });
+        });
+    </script>
+                     <!-- Decorative Circular Text 2 -->
+                   
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+   
+    <style>
+      
+
+        .step {
+            opacity: 0.2; /* Initially fade out steps */
+            transition: opacity 0.4s ease-in-out;
+        }
+        .step.is-active {
+            opacity: 1; /* Highlight the active step */
+        }
+        /* Style for the sticky video/image element */
+        #sticky-element {
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden; /* Ensures video respects border radius */
+            
+        }
+    </style>
+
+   
+
+    <section id="sticky-section" class="py-24 sm:py-32">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 lg:gap-x-24">
+                
+                <!-- Left Column (Sticky) -->
+                <div class="lg:h-screen lg:sticky lg:-top-0 flex items-center">
+                    <div id="sticky-element" >
+                         <!-- Using a placeholder video -->
+                         <video playsinline autoplay muted loop poster="https://placehold.co/1280x720/1e293b/ffffff?text=Loading+Video..." class="w-full h-full object-cover">
+                            <source src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d5f77c104128975.5f5bdc0d6d7b6.gif" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Right Column (Scrolling Content) -->
+                <div class="flex flex-col justify-center mt-12 lg:mt-0">
+                    <div class="step py-12 lg:py-24">
+                        <p class="flex items-center  font-semibold mb-3">
+                           <span class="inline-block h-5 w-5 bg-indigo-600 rounded-full mr-3"></span>
+                           Website Design Development
+                        </p>
+                        <h2 class="text-3xl lg:text-5xl font-extrabold ">We are <span style="color: var(--yellow);">creative</span> web design company in World</h2>
+                        <p class="mt-6 text-lg  leading-8">As a creative website design and development company in World, we design and develop amazing websites that will make your business a lot easier and grow faster. We love our customers and they love our work at low cost.</p>
+                    </div>
+                    <div class="step py-12 lg:py-24">
+                        <p class="flex items-center  font-semibold mb-3">
+                           <span class="inline-block h-5 w-5 bg-indigo-600 rounded-full mr-3"></span>
+                           Award Winning Agency
+                        </p>
+                        <h2 class="text-3xl lg:text-5xl font-extrabold "><span style="color:var(--orange)">Expert team</span> of professional developers and designers</h2>
+                        <p class="mt-6 text-lg  leading-8">Orfeostory is a leading website design and development company based in World. We are an expert team of professional website developers and designers to create impressive websites for your business needs.</p>
+                    </div>
+                    <div class="step py-12 lg:py-24">
+                        <p class="flex items-center  font-semibold mb-3">
+                           <span class="inline-block h-5 w-5 bg-indigo-600 rounded-full mr-3"></span>
+                           Client Focused
+                        </p>
+                        <h2 class="text-3xl lg:text-5xl font-extrabold ">Creating <span style="color:var(--pink)">stunning websites</span> for your business needs</h2>
+                        <p class="mt-6 text-lg  leading-8">We are an award-winning agency that is capable of creating stunning websites for your business. Our ultimate goal is to ensure your success by delivering tailored digital solutions.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // --- STICKY SECTION ANIMATION ---
+            // On large screens, we pin the left column.
+            ScrollTrigger.create({
+                trigger: "#sticky-section",
+                start: "top top",
+                end: "bottom bottom",
+                pin: "#sticky-element",
+                pinSpacing: false, // Prevents extra space after pinning
+                markers: false, // Set to true for debugging
+            });
+
+            // Animate the steps in the right column
+            const steps = gsap.utils.toArray(".step");
+            steps.forEach((step, i) => {
+                ScrollTrigger.create({
+                    trigger: step,
+                    start: "top center",
+                    end: "bottom center",
+                    toggleClass: "is-active", // Add/remove is-active class
+                    // markers: true,
+                });
+            });
+        });
+    </script>
+
+    </section>
+
+
+  <!-- Box -->
+  <!-- <section id="innovation-animation-section"> <div class="relative w-full h-screen flex items-center justify-center">
       <div class="relative w-3/4 h-auto" style="min-height: 500px; perspective: 1200px;"> <div class="shapes-container absolute" style="top: 50%; left: 30%; width: 300px; height: 300px; margin-left: -150px; margin-top: -150px; z-index: 0; opacity: 1; pointer-events: none; transform-style: preserve-3d;">
           <div class="shape triangle" style="background-color: transparent;" data-index="0"></div>
           <div class="shape square2" style="background-color: var(--pink);" data-index="1"></div>
@@ -1037,14 +493,16 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <section id="project-slider-section" class="to-green-lightorange"> <div class="centered-section" style="width: 100%;"> <div class="work-section" style="justify-content: center;"> <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200" style="flex: 0 0 auto; padding-right: 20px;">Our Work</div>
-            <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200" style="flex-basis: auto; max-width: 600px;">
-                <p>We craft <span class="ar">powerful</span> <span class="vr"> innovative content</span> that delivers real results and drives<span class="web"> business success</span>.</p>
-            </div>
+  <section id="project-slider-section" class="to-green-lightorange">
+      <div class="centered-section" style="width: 100%;">
+        <div class="work-section" style="justify-content: center;"> <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200" style="flex: 0 0 auto; padding-right: 20px;">Our Work</div>
+                <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200" style="flex-basis: auto; max-width: 600px;">
+                    <p>We craft <span class="ar">powerful</span> <span class="vr"> innovative content</span> that delivers real results and drives<span class="web"> business success</span>.</p>
+                </div>
         </div>
-    </div>
+      </div>
     <div class="swiper-container-wrapper">
       <div class="swiper-container mySwiper"> 
         <div class="swiper-wrapper">
@@ -1124,7 +582,7 @@
     <div class="mouse-drag-indicator">Drag<br>to view</div>
   </section>
 
-  <section class="centered-section to-orange-pink" id="mojo-section">
+  <section class="centered-section" id="mojo-section">
     <h1 class="main-heading">our mojo</h1>
     <h5 class="sub-heading">What makes us different</h5>
     <div id="video-section">
@@ -1157,161 +615,8 @@
   <div style="height:100px;width:100%"></div>
 
 
-  <style>
-        .services-section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-
-        .section-header h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #6a11cb 0%, #fff 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .service-card {
-            position: relative;
-            padding: 50px 30px;
-            border-radius: 20px;
-            background: rgba(30, 30, 30, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border-color: rgba(106, 17, 203, 0.3);
-        }
-
-        .icon-container {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        /* Unique shapes for each icon */
-        .icon-container.strategic {
-            background: rgba(106, 17, 203, 0.2);
-            border-radius: 24px;
-            transform: rotate(45deg);
-        }
-
-        .icon-container.creative {
-            background: rgba(37, 117, 252, 0.2);
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        }
-
-        .icon-container.digital {
-            background: rgba(29, 209, 161, 0.2);
-            border-radius: 50%;
-        }
-
-        .icon-container svg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-        }
-
-        .strategic svg {
-            transform: translate(-50%, -50%) rotate(-45deg);
-        }
-
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .service-card p {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.7;
-            margin-bottom: 30px;
-            font-size: 1.05rem;
-        }
-
-        .service-card .cta {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            transition: color 0.3s ease;
-        }
-
-        .service-card .cta:hover {
-            color: #eeff00;
-        }
-
-        .service-card .cta::after {
-            content: '→';
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card .cta:hover::after {
-            transform: translateX(4px);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 1024px) {
-            .services-grid {
-                gap: 25px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-            
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .services-section {
-                padding: 70px 20px;
-            }
-            
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-            
-            .service-card {
-                padding: 40px 25px;
-            }
-        }
-  </style>
     
-  <section class="to-orange-pink" id="mojo-section" style="    display: flex;    flex-direction: column;    align-items: center;    width: 80%;    margin: 0 auto;">
+  <section class="" id="mojo-section" style="    display: flex;    flex-direction: column;    align-items: center;    width: 80%;    margin: 0 auto;">
     <h1 class="main-heading">our services</h1>
     <h5 class="sub-heading mb-5">Solutions That Deliver</h5>
         
@@ -1356,46 +661,9 @@
             </div>
         </div>
   </section>
-    
-
-  
-  <style>
-        .testimonial-slider {
-            padding: 50px 0;
-        }
-        .testimonial-item {
-            padding: 10px;
-            margin: 10px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .testimonial-item img {
-            width: 80px  !important;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            object-fit: cover;
-        }
-        .testimonial-item h4 {
-            margin-bottom: 5px;
-            color: #333;
-        }
-        .testimonial-item span {
-            display: block;
-            color: #777;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        .testimonial-item p {
-            color: #555;
-            font-style: italic;
-            line-height: 1.6;
-        }
-  </style>
 
 
+<!-- 
   <section class="to-orange-pink" id="mojo-section" style="    display: flex;    flex-direction: column;    align-items: center;    width: 100%;    margin: 0 auto;">
      
     <h1 class="main-heading">testimonials</h1>
@@ -1404,7 +672,6 @@
 
       <div class="m-auto" style="background-color: white;border-radius:10px;width: 95%;">
           <div class="owl-carousel owl-theme">
-              <!-- Testimonial 1 -->
               <div class="testimonial-item">
                   <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client">
                   <h4>Sarah Johnson</h4>
@@ -1412,7 +679,6 @@
                   <p>"This service completely transformed our workflow. The team is responsive and professional. Highly recommended!"</p>
               </div>
               
-              <!-- Testimonial 2 -->
               <div class="testimonial-item">
                   <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client">
                   <h4>Michael Chen</h4>
@@ -1420,7 +686,6 @@
                   <p>"We've seen a 40% increase in productivity since implementing their solution. The support is exceptional."</p>
               </div>
               
-              <!-- Testimonial 3 -->
               <div class="testimonial-item">
                   <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client">
                   <h4>Emma Rodriguez</h4>
@@ -1429,12 +694,110 @@
               </div>
           </div>
       </div>
-  </section>
+  </section> -->
+    <style>
+       
+        /* Custom Owl Carousel Dot Styles for the new design */
+        .owl-theme .owl-dots .owl-dot span {
+            width: 12px;
+            height: 12px;
+            margin: 5px 7px;
+            transition: all 0.3s ease;
+        }
+        .owl-theme .owl-dots .owl-dot.active span,
+        .owl-theme .owl-dots .owl-dot:hover span {
+            background: white; /* Solid white for active dot */
+        }
+    </style>
+
+    <section class="">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="main-heading">testimonials</h1>
+    <h5 class="sub-heading mb-5">Real stories from satisfied partners.</h5>
+            </div>
+            
+            <div class="mt-16 owl-carousel owl-theme">
+                <!-- Testimonial 1 -->
+                <div class="item p-4">
+                    <div class="testimonial-card bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center">
+                        <img class="w-24 h-24 rounded-full object-cover ring-4 ring-white/30" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client Sarah Johnson">
+                        <p class="mt-6 text-lg font-medium text-white/90 leading-7">"This service completely transformed our workflow. The team is responsive and professional. Highly recommended!"</p>
+                        <div class="mt-4">
+                            <h4 class="text-lg font-bold text-white">Sarah Johnson</h4>
+                            <span class="text-sm text-indigo-200 font-semibold">Marketing Director</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="item p-4">
+                     <div class="testimonial-card bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center">
+                        <img class="w-24 h-24 rounded-full object-cover ring-4 ring-white/30" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client Michael Chen">
+                        <p class="mt-6 text-lg font-medium text-white/90 leading-7">"We've seen a 40% increase in productivity since implementing their solution. The support is exceptional."</p>
+                        <div class="mt-4">
+                            <h4 class="text-lg font-bold text-white">Michael Chen</h4>
+                            <span class="text-sm text-indigo-200 font-semibold">CEO, TechStart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="item p-4">
+                     <div class="testimonial-card bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center">
+                        <img class="w-24 h-24 rounded-full object-cover ring-4 ring-white/30" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client Emma Rodriguez">
+                        <p class="mt-6 text-lg font-medium text-white/90 leading-7">"Affordable, reliable, and exactly what my growing business needed. I couldn't be happier with the results."</p>
+                        <div class="mt-4">
+                            <h4 class="text-lg font-bold text-white">Emma Rodriguez</h4>
+                            <span class="text-sm text-indigo-200 font-semibold">Small Business Owner</span>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Testimonial 4 -->
+                <div class="item p-4">
+                     <div class="testimonial-card bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center">
+                        <img class="w-24 h-24 rounded-full object-cover ring-4 ring-white/30" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client David Lee">
+                        <p class="mt-6 text-lg font-medium text-white/90 leading-7">"A fantastic partner to work with. Their strategic insights have been invaluable to our growth and success."</p>
+                        <div class="mt-4">
+                            <h4 class="text-lg font-bold text-white">David Lee</h4>
+                            <span class="text-sm text-indigo-200 font-semibold">Product Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- OWL CAROUSEL INITIALIZATION ---
+            $(document).ready(function(){
+                $('.owl-carousel').owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: false,
+                    dots: true,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        768:{
+                            items:2
+                        },
+                        1024:{
+                            items:3
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
 
 
   <div style="height:100px;width:100%"></div>
 
-  <section class="to-green-lightorange" id="contact-section" style="position: relative; color: white; padding: 80px 0;">
+  <section class="" id="contact-section" style="position: relative; color: white; padding: 80px 0;">
     <div class="section" style="position: relative; margin-top: 0;"> <div class="contact-flex" style="display:flex; justify-content: space-between; align-items:center; flex-wrap: wrap; gap: 2rem; max-width:1200px; margin:0 auto;">
         <div class="content" style="position: relative; z-index: 2; flex: 1 1 450px; max-width: 500px;"> <h1 style="line-height: 0.8; -webkit-text-stroke: 3px white; color: white; font-size: 5rem; text-align:left;">
             <span style="display: block; margin-left: -5rem;">Interested?</span><br/>
@@ -1485,16 +848,7 @@
           </div>
         </div>
       </div>
-      <style> /* Placeholder styling for floating labels */
-          .form-group input:focus + label,
-          .form-group input:not(:placeholder-shown) + label {
-              top: -10px;
-              font-size: 0.8em;
-              color: var(--purple);
-              background-color: var(--bg-color, black); /* Adjust to actual bg */
-              padding: 0 5px;
-          }
-      </style>
+     
       <div style="text-align:center; margin-top: 2rem;">
         <div class="form-check" style="margin-bottom: 1rem;">
           <input type="checkbox" id="newsletter" name="newsletter" style="margin-right: 5px;"/>
@@ -1575,355 +929,7 @@
 <!-- jQuery and Owl Carousel JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            dots: true,
-            responsive: {
-                768: {
-                    items: 3
-                },
-                992: {
-                    items: 4
-                }
-            }
-        });
-    });
-</script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Mouse tilt effect (from section 1: hero-section)
-      const heroSection = document.getElementById('hero-section');
-      if (heroSection) { // Check if heroSection exists
-          const leftShape = heroSection.querySelector('.middle-left-3d');
-          const rightShape = heroSection.querySelector('.middle-right-3d');
-
-          if(leftShape && rightShape) {
-            document.addEventListener('mousemove', (e) => {
-              const x = (e.clientX / window.innerWidth - 0.5) * 20;
-              const y = (e.clientY / window.innerHeight - 0.5) * 20;
-
-              leftShape.style.transform = `rotateY(${x}deg) rotateX(${y}deg) translateZ(0)`; // Added translateZ(0) for better transform context
-              rightShape.style.transform = `rotateY(${-x}deg) rotateX(${y}deg) translateZ(0)`;
-            });
-          }
-      }
-
-      // GSAP animations for innovation-animation-section (was section 3)
-      gsap.registerPlugin(ScrollTrigger);
-
-      const container = document.querySelector('#innovation-animation-section .relative.w-3\\/4'); // More specific selector
-      if (container) {
-        const box1 = container.querySelector('.box1');
-        const shapesContainer = container.querySelector('.shapes-container');
-        const shapes = gsap.utils.toArray(container.querySelectorAll('.shape'));
-
-        function setupBoxAnimations() {
-          if (!box1 || !shapesContainer) return;
-
-          const containerWidth = container.offsetWidth;
-          const boxWidth = box1.offsetWidth;
-
-          const maxX1 = containerWidth - boxWidth;
-          // Ensure maxXShapes calculation is logical for its movement
-          const maxXShapes = -(containerWidth / 2 - shapesContainer.offsetWidth / 2 - boxWidth / 2);
-
-
-          const scrollDistanceBox1 = window.innerHeight * 0.5;
-          const scrollDistanceShapes = window.innerHeight * 0.3;
-
-          gsap.to(box1, {
-            x: maxX1,
-            ease: "none",
-            scrollTrigger: {
-              trigger: container,
-              start: "top 50%",
-              end: `+=${scrollDistanceBox1}`,
-              scrub: true,
-            }
-          });
-
-          gsap.to(shapesContainer, {
-            x: maxXShapes,
-            ease: "none",
-            scrollTrigger: {
-              trigger: container,
-              start: "top 50%",
-              end: `+=${scrollDistanceShapes}`,
-              scrub: true,
-            }
-          });
-        }
-
-        function floatingAnimation() {
-          if (shapes.length === 0) return;
-          shapes.forEach((shape, i) => {
-            const amplitudeX = 10 + Math.random() * 15;
-            const amplitudeY = 5 + Math.random() * 10;
-            const amplitudeZ = 5 + Math.random() * 10;
-            const duration = 3 + Math.random() * 3;
-
-            gsap.to(shape, {
-              x: `+=${amplitudeX}`,
-              y: `+=${amplitudeY}`,
-              z: `+=${amplitudeZ}`,
-              duration: duration,
-              ease: "sine.inOut",
-              yoyo: true,
-              repeat: -1,
-              // yoyoEase: true, // yoyoEase is deprecated, use ease on yoyo:true
-              repeatRefresh: true,
-              delay: i * 0.3,
-            });
-          });
-        }
-        
-        setupBoxAnimations();
-        floatingAnimation();
-
-        window.addEventListener('resize', () => {
-          ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Kill all ScrollTriggers
-          gsap.killTweensOf([box1, shapesContainer, ...shapes]); // Kill all tweens
-          setupBoxAnimations();
-          floatingAnimation();
-          ScrollTrigger.refresh(); // Refresh ScrollTrigger after re-applying animations
-        });
-      }
-      
-      // Swiper initialization for #project-slider-section
-      const swiperEl = document.querySelector('#project-slider-section .mySwiper');
-      let projectSwiperInstance = null; // Declare here to be accessible by scroll handler
-
-      if (swiperEl) {
-        projectSwiperInstance = new Swiper(swiperEl, {
-          effect: "coverflow",
-          grabCursor: true,
-          centeredSlides: true,
-          slidesPerView: "auto",
-          loop: true,
-          speed: 800,
-          coverflowEffect: {
-            rotate: 0,
-            stretch: -60,
-            depth: 150,
-            modifier: 1,
-            slideShadows: false,
-          },
-          autoplay: { // Added autoplay from the second config, can be removed if not desired
-            delay: 3000, // Adjusted delay
-            disableOnInteraction: true,
-          },
-        });
-
-        if (projectSwiperInstance.slides.length > 1) {
-          projectSwiperInstance.slideToLoop(1, 0, false);
-        }
-
-        const sliderWrapper = document.querySelector('#project-slider-section .swiper-container-wrapper');
-        const mouseIndicator = document.querySelector('#project-slider-section .mouse-drag-indicator');
-
-        if (sliderWrapper && mouseIndicator) {
-          sliderWrapper.addEventListener('mouseenter', () => {
-            mouseIndicator.classList.add('visible');
-          });
-          sliderWrapper.addEventListener('mouseleave', () => {
-            mouseIndicator.classList.remove('visible');
-          });
-          sliderWrapper.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-            mouseIndicator.style.left = x + 'px';
-            mouseIndicator.style.top = y + 'px';
-          });
-        }
-      }
-
-      // Scroll-based Swiper navigation for #project-slider-section
-      const projectSliderSection = document.getElementById('project-slider-section');
-      if (projectSliderSection && projectSwiperInstance) { // Ensure both exist
-        let lastScrollTop = window.scrollY;
-        const scrollObserverForSwiper = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              window.addEventListener('scroll', handleSwiperScroll);
-            } else {
-              window.removeEventListener('scroll', handleSwiperScroll);
-            }
-          });
-        }, { threshold: 0.3 });
-
-        scrollObserverForSwiper.observe(projectSliderSection);
-
-        function handleSwiperScroll() {
-          const currentScroll = window.scrollY;
-          if (projectSwiperInstance) { // Check if instance exists
-            if (currentScroll > lastScrollTop) {
-              projectSwiperInstance.slideNext();
-            } else if (currentScroll < lastScrollTop) {
-              projectSwiperInstance.slidePrev();
-            }
-          }
-          lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        }
-      }
-
-      // Custom video player for #mojo-section
-      const video = document.getElementById("customVideo");
-      const playPauseBtn = document.getElementById("playPauseBtn");
-      const progressFill = document.getElementById("progressFill");
-      const thumbnailWrapper = document.getElementById("thumbnailWrapper");
-      const thumbnailPlayBtn = document.getElementById("thumbnailPlayBtn");
-      
-      if (video && playPauseBtn && progressFill && thumbnailWrapper && thumbnailPlayBtn) {
-        const icon = playPauseBtn.querySelector("i");
-        let animationFrameId;
-
-        function updateProgressBar() {
-          if (!video.duration) return; // Ensure duration is available
-          const percent = (video.currentTime / video.duration) * 100;
-          progressFill.style.width = percent + "%";
-          if (!video.paused) { // Only request next frame if playing
-             animationFrameId = requestAnimationFrame(updateProgressBar);
-          }
-        }
-
-        function togglePlayPause() {
-          if (video.paused) {
-            video.play();
-            icon.className = "fa fa-pause";
-            updateProgressBar(); // Start progress updates
-          } else {
-            video.pause();
-            icon.className = "fa fa-play";
-            cancelAnimationFrame(animationFrameId); // Stop progress updates
-          }
-        }
-
-        thumbnailPlayBtn.addEventListener("click", () => {
-          thumbnailWrapper.style.display = "none";
-          video.play();
-          icon.className = "fa fa-pause";
-          updateProgressBar();
-        });
-
-        playPauseBtn.addEventListener("click", togglePlayPause);
-
-        const progressContainer = document.getElementById("progressContainer");
-        if (progressContainer) {
-            progressContainer.addEventListener("click", (e) => {
-                if (!video.duration) return;
-                const rect = e.currentTarget.getBoundingClientRect();
-                const percent = (e.clientX - rect.left) / rect.width;
-                video.currentTime = percent * video.duration;
-                progressFill.style.width = (percent * 100) + "%";
-            });
-        }
-        
-
-        video.addEventListener("loadedmetadata", () => {
-          progressFill.style.width = "0%";
-        });
-
-        video.addEventListener('play', updateProgressBar); // Keep updating on play
-        video.addEventListener('pause', () => cancelAnimationFrame(animationFrameId)); // Stop on pause
-        video.addEventListener('ended', () => { // Reset on ended
-            icon.className = "fa fa-play";
-            progressFill.style.width = "100%"; // Or 0% if you prefer reset
-            cancelAnimationFrame(animationFrameId);
-        });
-
-      }
-
-      // Footer scroll effect
-      const footer = document.getElementById("footer");
-      const footerContainer = document.getElementById("footerContainer"); // Observe container for better trigger
-      if (footer && footerContainer) {
-        const footerObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                footer.classList.add("scrolled");
-              } else {
-                footer.classList.remove("scrolled");
-              }
-            });
-          },
-          { threshold: 0.1 } // Trigger when 10% of the footer container is visible
-        );
-        footerObserver.observe(footerContainer);
-      }
-
-      // GSAP animations for .giant-rectangle (if these elements exist)
-      gsap.utils.toArray(".giant-rectangle").forEach(el => {
-        gsap.to(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: "top 60%",
-            end: "bottom top",
-            scrub: true,
-          },
-          x: 800,
-          opacity: 0,
-          ease: "power2.out"
-        });
-      });
-      
-      gsap.utils.toArray(".giant-rectangle-rtl").forEach(el => {
-        gsap.to(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: "top 60%",
-            end: "bottom top",
-            scrub: true,
-          },
-          x: -800,
-          opacity: 0,
-          ease: "power2.out"
-        });
-      });
-
-
-      // Gradient blob observer
-      const gradientBlobObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const gradientClass = Array.from(entry.target.classList)
-              .find(cls => cls.startsWith('to-'));
-            
-            if (gradientClass) {
-              document.documentElement.style.setProperty('--gradient-opacity', '0.6');
-              setTimeout(() => {
-                const blobElement = document.querySelector('.gradient-blob');
-                if (blobElement) {
-                    blobElement.className = 'gradient-blob ' + gradientClass;
-                }
-                setTimeout(() => {
-                  document.documentElement.style.setProperty('--gradient-opacity', '0.8');
-                }, 100);
-              }, 50);
-            }
-          }
-        });
-      }, {
-        threshold: 0.5,
-        rootMargin: '0px 0px -30% 0px'
-      });
-      
-      document.querySelectorAll('section[class*="to-"]').forEach(section => { // Target sections with 'to-' class
-        gradientBlobObserver.observe(section);
-      });
-
-      // AOS Initialization
-      AOS.init();
-
-    }); // End DOMContentLoaded
-  </script>
+<script src="assets/home.js"></script>
 
   <script src="assets/script.js"></script>
 </body>

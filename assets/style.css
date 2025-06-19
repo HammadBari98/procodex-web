@@ -75,7 +75,7 @@ h1 , h2 , h3 , h4 , h5 , h6{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  filter: blur(60px);
+  filter: blur(120px);
   z-index: -1;
   opacity: var(--gradient-opacity);
   

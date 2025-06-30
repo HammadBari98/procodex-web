@@ -826,41 +826,50 @@
       </div>
     </div>
     
-    <form style="width: 90%; max-width: 900px; margin: 100px auto 0 auto;">
-      <div class="styled-form-container" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-        <div class="form-left" style="flex: 1 1 300px;">
-          <div class="form-group" style="margin-bottom: 1.5rem; position: relative;">
-            <input type="text" id="name" name="name" required placeholder=" " style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background: transparent; color:white;"/>
-            <label for="name" style="position: absolute; left: 10px; top: 10px; color: #aaa; transition: all 0.2s; pointer-events: none;">Name</label>
-          </div>
-          <div class="form-group" style="margin-bottom: 1.5rem; position: relative;">
-            <input type="email" id="email" name="email" required placeholder=" " style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background: transparent; color:white;"/>
-            <label for="email" style="position: absolute; left: 10px; top: 10px; color: #aaa; transition: all 0.2s; pointer-events: none;">Email</label>
-          </div>
-          <div class="form-group" style="margin-bottom: 1.5rem; position: relative;">
-            <input type="text" id="date" name="date" placeholder=" " style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background: transparent; color:white;"/>
-            <label for="date" style="position: absolute; left: 10px; top: 10px; color: #aaa; transition: all 0.2s; pointer-events: none;">Preferred Date (Optional)</label>
-          </div>
+    <form style="width: 90%; margin:auto;margin-top:100px;">
+    <div class="styled-form-container">
+      
+      <!-- Left Fields -->
+      <div class="form-left">
+        <div class="form-group">
+          <input type="text" id="name" required placeholder=" " />
+          <label for="name">Name</label>
         </div>
-        <div class="form-right" style="flex: 1 1 300px;">
-          <div class="message-box">
-            <textarea name="message" rows="8" placeholder="Your Message" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; background: transparent; color:white;"></textarea>
-          </div>
+        <div class="form-group">
+          <input type="name" id="name" required placeholder=" " />
+          <label for="name">Email</label>
+        </div>
+        <div class="form-group">
+          <input type="text" id="date" required placeholder=" " />
+          <label for="date">date</label>
         </div>
       </div>
-     
-      <div style="text-align:center; margin-top: 2rem;">
-        <div class="form-check" style="margin-bottom: 1rem;">
-          <input type="checkbox" id="newsletter" name="newsletter" style="margin-right: 5px;"/>
-          <label for="newsletter"> Subscribe to our newsletter</label>
+
+      <!-- Right Message Field -->
+      <div class="form-right">
+        <div class="message-box">
+          <textarea rows="8" placeholder="Your Message"></textarea>
         </div>
-        <button type="submit" class="btn outline-button ob-solid"> <span class="text-wrap">
-            <span>Submit</span>
-            <span>Submit</span>
-          </span>
-        </button>
       </div>
-    </form>
+
+    </div>
+
+    <div style="text-align:center; margin-top: 2rem;">
+      <div class="form-check">
+        <input type="checkbox" id="newsletter" />
+        <label for="newsletter"> Subscribe to our newsletter</label>
+      </div>
+
+      <button type="button" class="btn outline-button ob-solid">
+        <span class="text-wrap">
+          <span>Submit</span>
+          <span>Submit</span>
+          <span>Submit</span>
+        </span>
+      </button>
+    </div>
+
+  </form>
   </section>
 
   <section class="footer-wrapper-section" style="background-color: transparent;"> <div class="footer-container" id="footerContainer">

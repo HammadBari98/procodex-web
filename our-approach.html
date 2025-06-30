@@ -82,17 +82,17 @@
 
   <!-- LEFT CORNER SHAPE -->
   <div class="shape-container left-corner">
-    <div class="pyramid"></div>
+   <img src="assets/imgs/Shape/2.png" style="width:150px">
   </div>
 
   <!-- CENTER RIGHT SHAPE -->
-  <div class="shape-container center-right">
-    <div class="prism"></div>
-  </div>
+  <!-- <div class="shape-container center-right">
+    <img src="assets/imgs/Shape/3.png" style="width:100px">
+  </div> -->
 
   <!-- RIGHT CORNER SHAPE -->
   <div class="shape-container right-corner">
-    <div class="diamond"></div>
+    <img src="assets/imgs/Shape/5.png" style="width:150px">
   </div>
 
   <style>
@@ -147,58 +147,55 @@
 
     /* SHAPES COMMON */
     .shape-container {
-      position: absolute;
-      transform-style: preserve-3d;
-      perspective: 1000px;
-      animation: float 6s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
+            position: absolute;
+            z-index: 1; /* Place shapes above the background but below the main content */
+            opacity: 0; /* Initially hidden, GSAP will handle this */
+            will-change: transform; /* Hint to the browser for better performance */
+        }
 
+        /* You can adjust these positions to match your design */
+        .left-corner { top: 15%; left: 10%; }
+        .center-right { top: 25%; right: 15%; }
+        .right-corner { bottom: 20%; right: 10%; }
 
-    .left-corner {
-      top: 20%;
-      left: 15%;
-    }
+   
 
-    .center-right {
-      top: 50%;
-      right: 20%;
-    }
-
-    .right-corner {
-      bottom: 10%;
-      right: 5%;
-    }
-
-    /* PYRAMID SHAPE */
-    .pyramid {
-      width: 0;
-      height: 0;
-      border-left: 130px solid transparent;
-      border-right: 130px solid transparent;
-      border-bottom: 130px solid #ff6a00;
-      transform: rotateX(10deg) rotateY(40deg);
-    }
-
-    /* PRISM SHAPE */
-    .prism {
-      width: 100px;
-      height: 150px;
-      background: linear-gradient(135deg, #36d1dc, #5b86e5);
-      transform: skewY(-20deg) rotateX(20deg) rotateY(20deg);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-
-    /* DIAMOND SHAPE */
-    .diamond {
-      width: 160px;
-      height: 160px;
-      background: linear-gradient(135deg, #ffcc00, #ff6a00);
-      transform: rotate(45deg) scaleY(1.5);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
   </style>
 
+ <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- GSAP SHAPE ANIMATION ---
+            const shapes = gsap.utils.toArray('.shape-container');
+
+            // Set initial state (off-screen top and invisible)
+            gsap.set(shapes, { y: -250, opacity: 0, rotation: -30 });
+
+            // Animate shapes into view
+            gsap.to(shapes, {
+                y: 0,
+                opacity: 1, // Animate to 30% opacity
+                rotation: 0,
+                duration: 1.5,
+                stagger: 0.2, // Animate one after another
+                ease: "power2.out",
+                delay: 0.5, // Start animation after a short delay
+                onComplete: () => {
+                    // Start the continuous floating animation after they appear
+                    shapes.forEach(shape => {
+                        gsap.to(shape, {
+                            y: "+=30", // Move up and down by 30px
+                            rotation: "+=15", // Slightly rotate back and forth
+                            duration: 5, // Duration of one float cycle
+                            repeat: -1, // Infinite loop
+                            yoyo: true, // Animate back and forth
+                            ease: "sine.inOut",
+                            delay: Math.random() * 2 // Randomize start times for a natural look
+                        });
+                    });
+                }
+            });
+        });
+    </script>
 </section>
 <div style="height:100px;width:100%"></div>
 
@@ -575,7 +572,8 @@
     </div>
 
     <div class="floating-shape shape-2 shape-cube-3d"></div>
-    <div class="floating-shape shape-3 shape-sphere2-3d"></div>
+    <!-- <div class="floating-shape shape-3 shape-sphere2-3d"></div> -->
+   
     <div class="floating-shape shape-4 shape-cube2-3d"></div>
 
 
@@ -589,7 +587,7 @@
             <div class="two-column-section">
                 <div class="column-half" data-aos="fade-right" data-aos-delay="200">
                     <div class="feature-image">
-                        <img src="https://static.vecteezy.com/system/resources/previews/008/470/778/non_2x/3d-render-basic-shape-ico-sphere-primitive-icon-illustration-with-glossy-finish-element-free-png.png" alt="360 Camera">
+                        <img src="assets/imgs/Shape/7.png" alt="360 Camera">
                     </div>
                     <div class="feature-content">
                         <h2 style="color: var(--pink);">Branding and design</h2>

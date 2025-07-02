@@ -71,18 +71,19 @@
 <section  class="section to-orange-pink" id="section">
   <div class="content">
     <h1>
-      <span class="headline-main">
-        we don’t guess. We define, design,<br>and deploy brands with precision.
+      <span class="headline-main-about" style="font-size: 8rem;">
+        about us
       </span><br>
       <span class="headline-sub">
-        because great brands aren’t discovered,<br>they’re engineered.
+       Discover how we craft <br>
+digital excellence.
       </span>
     </h1>
   </div>
 
   <!-- LEFT CORNER SHAPE -->
   <div class="shape-container left-corner">
-   <img src="assets/imgs/Shape/2.png" style="width:150px">
+   <img src="assets/imgs/Shape/3.png" style="width:150px">
   </div>
 
   <!-- CENTER RIGHT SHAPE -->
@@ -92,7 +93,7 @@
 
   <!-- RIGHT CORNER SHAPE -->
   <div class="shape-container right-corner">
-    <img src="assets/imgs/Shape/5.png" style="width:150px">
+    <img src="assets/imgs/Shape/4.png" style="width:150px">
   </div>
 
   <style>
@@ -111,23 +112,17 @@
     /* .content h1{
       max-width: 900px;
     } */
-     h1 {
-      font-family: "Antique Olive Std", sans-serif;
-      font-weight: bolder;
-      margin-bottom: 20px;
-      color: white;
-      line-height: 1.4;
-    }
+  
 
-    .headline-main {
+    .headline-main-about {
       display: inline-block;
-      font-size: 3rem !important;
+     font-weight:bold;
       -webkit-text-stroke: 2px white;
     }
 
     .headline-sub {
       display: inline-block;
-      font-size: 2.5rem !important;
+      font-size: 2rem !important;
       font-weight: normal;
     }
 
@@ -199,6 +194,197 @@
 </section>
 <div style="height:100px;width:100%"></div>
 
+<section>
+    <style>
+    /* Timeline container styling */
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* The central vertical line */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: rgba(255, 255, 255, 0.1); /* Lighter, semi-transparent line */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: 1;
+        }
+        
+        /* The animated "drawing" line that will go on top */
+        #timeline-path {
+            position: absolute;
+            width: 4px;
+            background-color: var(--green); /* Indigo-400 */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: 2;
+            height: 0; /* Initially hidden, will be animated by GSAP */
+        }
+
+        /* Container for each timeline item */
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 0; /* Initially hidden */
+        }
+
+        /* Position items to the left */
+        .timeline-item.left {
+            left: 0;
+        }
+
+        /* Position items to the right */
+        .timeline-item.right1 {
+            left: 47.6%;
+        }
+
+        /* The circle on the timeline */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -12px !important;
+            background-color: #111827; /* Match body background */
+            border: 4px solid var(--green); /* Indigo-400 */
+            top: 30px;
+            border-radius: 50%;
+            z-index: 3;
+        }
+
+        .timeline-item.right1::after {
+            left: 12px;
+        }
+        
+        /* The content card with glass effect */
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+            backdrop-filter: blur(10px); /* The blur effect */
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+            position: relative;
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+    </style>
+
+    <section class="py-24 sm:py-32">
+        <div class="text-center mb-20">
+            <h2 class="text-5xl font-extrabold tracking-tight text-white sm:text-5xl"></h2>
+            <p class="mt-4 text-lg leading-8 text-white"></p>
+        </div>
+<h1 style="text-align: center;">
+      <span class="headline-main-about" style="font-size: 5rem; ">
+      our journey
+      </span><br>
+      <span class="headline-sub">
+      A timeline of our milestones<br>and achievements.
+      </span>
+    </h1>
+        <div class="timeline-container">
+            <div id="timeline-path"></div>
+            
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3 class="text-2xl font-bold" style="color:var(--orange)">2018</h3>
+                    <h4 class="text-xl font-semibold text-white">The Foundation</h4>
+                    <p class="mt-2 text-white">Our company was founded with a small, passionate team and a big vision: to revolutionize the digital landscape.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item right1">
+                <div class="timeline-content">
+                    <h3 class="text-2xl font-bold" style="color:var(--orange)">2019</h3>
+                    <h4 class="text-xl font-semibold text-white">First Major Project</h4>
+                    <p class="mt-2 text-white">Landed our first enterprise-level client, delivering a successful project that set the standard for our future work.</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3 class="text-2xl font-bold" style="color:var(--orange)">2021</h3>
+                    <h4 class="text-xl font-semibold text-white">Team Expansion</h4>
+                    <p class="mt-2 text-white">Doubled our team size, bringing in diverse talent from across the industry to fuel our growth and innovation.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item right1">
+                <div class="timeline-content">
+                    <h3 class="text-2xl font-bold" style="color:var(--orange)">2023</h3>
+                    <h4 class="text-xl font-semibold text-white">Award Winning Agency</h4>
+                    <p class="mt-2 text-white">Recognized with the "Innovator of the Year" award for our groundbreaking work in user experience design.</p>
+                </div>
+            </div>
+
+             <!-- Timeline Item 5 -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3 class="text-2xl font-bold" style="color:var(--orange)">2024</h3>
+                    <h4 class="text-xl font-semibold text-white">Global Reach</h4>
+                    <p class="mt-2 text-white">Opened our first international office, expanding our services to a global clientele and marking a new chapter in our story.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animate the timeline path
+            gsap.to("#timeline-path", {
+                height: "100%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".timeline-container",
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true
+                }
+            });
+
+            // Animate each timeline item
+            const items = gsap.utils.toArray(".timeline-item");
+            items.forEach(item => {
+                // Determine animation direction based on class
+                const isLeft = item.classList.contains("left");
+                const xStart = isLeft ? -200 : 200;
+
+                gsap.fromTo(item, 
+                    { x: xStart, opacity: 0 }, // from state
+                    {
+                        x: 0,
+                        opacity: 1,
+                        ease: "power2.out",
+                        duration: 1,
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 85%", // Start animation when item is 85% from the top of the viewport
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });
+        });
+    </script>
+</section>
+
 <section id="usecase-section" style="position: relative; overflow: hidden; padding: 100px 0;">
 
   <!-- Floating 3D shapes -->
@@ -213,8 +399,8 @@
       <!-- Left content -->
       <div class="content w-1/2" style="position: relative; z-index: 2;">
         <h1 style="position: relative; z-index: 2; line-height: 0.8; -webkit-text-stroke: 5px white; color: white; font-size:8rem !important; text-align: left !important;">
-          <span style="display: block;">our use</span>
-          <span style="display: block;">cases</span>
+          <span style="display: block;">our </span>
+          <span style="display: block;">mantra</span>
         </h1>
         <p class="text-lg pt-4" style="font-size: 1.1rem; color: white; max-width: 500px;">
           We leverage the power of different technologies and platforms to deliver a wide range of immersive experiences.
@@ -243,45 +429,76 @@
 
   <div style="height: 100px;"></div> <!-- Spacer -->
 
-  <!-- Second block: Our Process -->
-  <div style="padding-left: 100px; align-items: start !important; text-align:left !important">
-    <div class="d-flex" style="display:flex; gap: 40px;">
-      
-      <!-- Left accordion -->
-      <div class="content w-1/2" style="position: relative; z-index: 2;">
-        <div class="usecase-accordion">
-          <div class="usecase-accordion-item">
-            <button class="usecase-accordion-header">Discovery & Research</button>
-            <div class="usecase-accordion-body">We begin by understanding your goals, target audience, and challenges.</div>
-          </div>
-          <div class="usecase-accordion-item">
-            <button class="usecase-accordion-header">Ideation & Planning</button>
-            <div class="usecase-accordion-body">Our team brainstorms creative solutions and builds a project roadmap.</div>
-          </div>
-          <div class="usecase-accordion-item">
-            <button class="usecase-accordion-header">Design & Development</button>
-            <div class="usecase-accordion-body">We craft interactive prototypes and refine them through feedback.</div>
-          </div>
-          <div class="usecase-accordion-item">
-            <button class="usecase-accordion-header">Testing & Launch</button>
-            <div class="usecase-accordion-body">After rigorous QA, we deploy and monitor the live experience.</div>
-          </div>
+ 
+<section class="py-24 sm:py-32">
+        <div class="container mx-auto px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">our guiding principles</h2>
+                <p class="mt-4 text-lg leading-8 text-slate-400">The core beliefs that drive our company, our actions, and our success.</p>
+            </div>
+
+            <!-- Grid for Vision, Mission, Values -->
+            <div class="mt-20 grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
+                
+                <!-- Vision Card -->
+                <div class="flex flex-col items-center text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all duration-300 hover:bg-white/10">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-white/10 text-indigo-400">
+                            <!-- Heroicons: eye -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-2xl font-bold text-white">Our Vision</h3>
+                        <p class="mt-4 text-base text-slate-300">To be the most trusted and innovative leader in our industry, creating a future where technology empowers everyone to achieve more.</p>
+                    </div>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="flex flex-col items-center text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all duration-300 hover:bg-white/10">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-white/10 text-indigo-400">
+                            <!-- Heroicons: rocket-launch -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-2xl font-bold text-white">Our Mission</h3>
+                        <p class="mt-4 text-base text-slate-300">To deliver exceptional value to our clients through groundbreaking solutions, outstanding service, and an unwavering commitment to quality and integrity.</p>
+                    </div>
+                </div>
+
+                <!-- Core Values Card -->
+                <div class="flex flex-col items-center text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all duration-300 hover:bg-white/10">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-white/10 text-indigo-400">
+                            <!-- Heroicons: heart -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.672l1.318-1.354a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-2xl font-bold text-white">Core Values</h3>
+                        <ul class="mt-4 space-y-2 text-base text-slate-300">
+                            <li><strong class="text-white/90">Customer First:</strong> Our success is tied to our clients' success.</li>
+                            <li><strong class="text-white/90">Integrity:</strong> We are honest, transparent, and ethical in all we do.</li>
+                            <li><strong class="text-white/90">Innovation:</strong> We constantly seek better ways to solve problems.</li>
+                          
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
-
-      <!-- Right content -->
-      <div class="content w-1/2" style="position: relative; z-index: 2;">
-        <h1 style="position: relative; z-index: 2; line-height: 0.8; -webkit-text-stroke: 5px white; color: white; font-size:8rem !important; text-align: left !important;">
-          <span style="display: block;">our</span>
-          <span style="display: block;">process</span>
-        </h1>
-        <p class="text-lg pt-4" style="font-size: 1.1rem; color: white; max-width: 500px;">
-          We follow a structured, creative, and iterative process to deliver meaningful results tailored to your needs.
-        </p>
-      </div>
-    </div>
-  </div>
-
+    </section>
   <!-- STYLES -->
   <style>
     .usecase-accordion { width: 90%; }
@@ -385,326 +602,6 @@
 </section>
 
 
-
-<div style="height:100px;width:100%"></div>
-
-<section style="position: relative;">
-    <style>
-     
-        /* 3D Floating Shapes CSS */
-        .floating-shape {
-            position: absolute;
-            opacity: 0.6;
-            animation: float 6s ease-in-out infinite;
-            z-index: 1;
-        }
-
-        /* Basic 3D effect for shapes */
-        .shape-sphere-3d {
-            background: radial-gradient(circle at 30% 30%, #cc05ab, #e2346e);
-            border-radius: 50%;
-            box-shadow: 
-                inset -5px -5px 10px rgba(0, 0, 0, 0.2),
-                5px 5px 15px rgba(0, 0, 0, 0.3);
-        }
-         .shape-sphere2-3d {
-            background: radial-gradient(circle at 30% 30%, #31ec02, #437008);
-            border-radius: 50%;
-            box-shadow: 
-                inset -5px -5px 10px rgba(0, 0, 0, 0.2),
-                5px 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .shape-cube-3d {
-            background: linear-gradient(135deg, #ff9b74, #c1cc5b);
-            border-radius: 5px;
-            transform: rotateX(25deg) rotateY(-25deg); /* Slight rotation for 3D feel */
-            
-        }
-
-         .shape-cube2-3d {
-            background: linear-gradient(135deg, #74ff9e, #cc5b64);
-            border-radius: 5px;
-            transform: rotateX(25deg) rotateY(-25deg); /* Slight rotation for 3D feel */
-            
-        }
-
-        /* Positioning and animation for floating shapes */
-        .shape-1 {
-            top: 5%;
-            left: 5%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 0s;
-        }
-
-        .shape-2 {
-            bottom: 5%;
-            right: 5%;
-            width: 100px;
-            height: 100px;
-            animation-delay: 2s;
-        }
-
-        .shape-3 {
-            top: 15%;
-            right: 10%;
-            width: 70px;
-            height: 70px;
-            animation-delay: 1s;
-        }
-
-        .shape-4 {
-            bottom: 10%;
-            left: 10%;
-            width: 90px;
-            height: 90px;
-            animation-delay: 3s;
-        }
-
-      
-
-        /* Curved Section Container for the top curve */
-        .curved-section-container-top {
-            position: relative;
-            height: 180px; /* Needs to be tall enough to contain the curve */
-            overflow: hidden;
-            background-color: transparent; /* Allows background from section to show through */
-        }
-
-        /* Top Curve (concave) */
-        .curved-top-transition {
-            background-color: rgb(252, 252, 252);
-            height: 150px;
-            position: absolute;
-            bottom: 0; /* Position at the bottom of its container */
-            left: 0;
-            width: 100%;
-            border-top-left-radius: 50% 100px;
-            border-top-right-radius: 50% 100px;
-        }
-
-        /* Main content area, now including the bottom curve */
-        .content-area-below-curve {
-            padding: 40px 0;
-            background-color: rgb(252, 252, 252);
-            position: relative;
-            /* Added styles for the bottom curve directly to this element */
-            border-bottom-left-radius: 50% 100px; /* Same curve shape as top, but at bottom */
-            border-bottom-right-radius: 50% 100px; /* Same curve shape as top, but at bottom */
-            margin-bottom: 20px; /* Add some space below the section if needed */
-        }
-
-        .content-area-below-curve h1 {
-            font-size: 7rem;
-            line-height: 0.8 !important;
-            font-weight: bold;
-            -webkit-text-stroke: 5px #000;
-            color: #000;
-            text-align: center;
-        }
-
-        .two-column-section {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            gap: 20px;
-        }
-
-        .column-half {
-            width: calc(50% - 10px);
-            box-sizing: border-box;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .feature-image {
-            flex-shrink: 0;
-            margin-right: 20px;
-        }
-
-        /* Image for feature headings */
-        .feature-image img {
-            max-width: 100px; /* Adjust size of icon images */
-            height: auto;
-        }
-
-        .feature-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-family: "Antique Olive Std", sans-serif;
-            font-weight: 400 !important;
-            letter-spacing: -.06em;
-        }
-
-        .feature-content p {
-            font-size: 1.1rem;
-            color: var(--black);
-            line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
-            .column-half {
-                width: 100%;
-                padding: 20px 0;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .feature-image {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-            
-            .content-area-below-curve h1 {
-                font-size: 4rem;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-            }
-        }
-    </style>
-
-    <div class="curved-section-container-top" style="background-color: transparent;">
-        <div class="curved-top-transition" style="background-color: rgb(252, 252, 252);"></div>
-    </div>
-
-    <div class="floating-shape shape-2 shape-cube-3d"></div>
-    <!-- <div class="floating-shape shape-3 shape-sphere2-3d"></div> -->
-   
-    <div class="floating-shape shape-4 shape-cube2-3d"></div>
-
-
-    <div class="content-area-below-curve">
-        <h1 style="margin-left: -100px;" data-aos="fade-right">what makes</h1>
-        <h1 style="margin-left: 100px;" data-aos="fade-left">us different</h1>
-
-        <div style="width: 90%; margin: 100px auto;"></div>
-
-        <div data-aos="fade-up" data-aos-delay="100">
-            <div class="two-column-section">
-                <div class="column-half" data-aos="fade-right" data-aos-delay="200">
-                    <div class="feature-image">
-                        <img src="assets/imgs/Shape/7.png" alt="360 Camera">
-                    </div>
-                    <div class="feature-content">
-                        <h2 style="color: var(--pink);">Branding and design</h2>
-                        <p>
-                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
-                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="100">
-            <div class="two-column-section" style="justify-content: flex-end;">
-                <div class="column-half" data-aos="fade-left" data-aos-delay="200">
-                    <div class="feature-image">
-                        <img src="assets/imgs/Shape/3.png" alt="360 Camera">
-                    </div>
-                    <div class="feature-content">
-                        <h2 style="color: var(--orange);">T-Shaped Marketing</h2>
-                        <p>
-                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
-                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="100">
-            <div class="two-column-section">
-                <div class="column-half" data-aos="fade-right" data-aos-delay="200">
-                    <div class="feature-image">
-                        <img src="assets/imgs/Shape/1.png" alt="360 Camera">
-                    </div>
-                    <div class="feature-content">
-                        <h2 style="color: var(--green);">Video and Photography</h2>
-                        <p>
-                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
-                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="100">
-            <div class="two-column-section" style="justify-content: flex-end;">
-                <div class="column-half" data-aos="fade-left" data-aos-delay="200">
-                    <div class="feature-image">
-                        <img src="assets/imgs/Shape/2.png" alt="360 Camera">
-                    </div>
-                    <div class="feature-content">
-                        <h2 style="color: var(--pink);">Campaign Launch</h2>
-                        <p>
-                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
-                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div data-aos="fade-up" data-aos-delay="100">
-            <div class="two-column-section">
-                <div class="column-half" data-aos="fade-right" data-aos-delay="200">
-                    <div class="feature-image">
-                        <img src="assets/imgs/Shape/8.png" alt="360 Camera">
-                    </div>
-                    <div class="feature-content">
-                        <h2 style="color: var(--light-orange);">Conversion Rate Optimization</h2>
-                        <p>
-                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
-                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="100">
-            <div class="two-column-section" style="justify-content: flex-end;">
-                <div class="column-half" data-aos="fade-left" data-aos-delay="200">
-                    <div class="feature-image">
-                        <img src="assets/imgs/Shape/9.png" alt="360 Camera">
-                    </div>
-                    <div class="feature-content">
-                        <h2 style="color: var(--light-green);">AI Based Content</h2>
-                        <p>
-                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
-                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="100">
-            <div class="two-column-section">
-                <div class="column-half" data-aos="fade-right" data-aos-delay="200">
-                    <div class="feature-image">
-                        <img src="assets/imgs/Shape/5.png" alt="360 Camera">
-                    </div>
-                    <div class="feature-content">
-                        <h2 style="color: var(--orange);">Immersive Content</h2>
-                        <p>
-                            Extremely high-resolution 360-degree photos, meticulously stitched together and polished for
-                            a sharp, immersive experience. Shot entirely on camera or in combination with CGI.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-
-<div style="width: 90%; margin: 100px auto;"></div>
 
 <section class="to-green-lightorange" id="contact-section" style="position: relative;  color: white; padding: 80px 0;">
 

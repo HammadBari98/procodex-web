@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ProCodeX</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="../assets/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Tailwind CSS (Optional, for styling) -->
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+ <script src="https://unpkg.com/lucide@latest"></script>
 
 </head>
 <body>
@@ -20,7 +21,7 @@
 <!-- HTML Markup -->
 <header class="header" id="main-header">
   <a href="#" class="logo-text" style="color: white;">
-    <img src="logo-dark.png" width="100" alt="">
+    <img src="../logo-dark.png" width="100" alt="">
   </a>
   <div class="menu-toggle" id="open-menu">
     <button type="button" class="btn outline-button">
@@ -36,7 +37,7 @@
 <div class="fullscreen-menu" id="fullscreen-menu">
   <div class="menu-header">
     <div class="logo-text">
-        <img src="logo-dark.png" width="100" style=" padding-left: 10px;" alt="">
+        <img src="../logo-dark.png" width="100" style=" padding-left: 10px;" alt="">
     </div>
     <button class="close-btn" id="close-menu">
       <i class="fa-solid fa-x"></i>
@@ -72,7 +73,7 @@
   <div class="content">
     <h1>
       <span class="headline-main-about" style="font-size: 8rem;">
-        about us
+        creative 3D
       </span><br>
       <span class="headline-sub">
        Discover how we craft <br>
@@ -83,17 +84,17 @@ digital excellence.
 
   <!-- LEFT CORNER SHAPE -->
   <div class="shape-container left-corner">
-   <img src="assets/imgs/Shape/3.png" style="width:150px">
+   <img src="../assets/imgs/Shape/6.png" style="width:150px">
   </div>
 
   <!-- CENTER RIGHT SHAPE -->
   <!-- <div class="shape-container center-right">
-    <img src="assets/imgs/Shape/3.png" style="width:100px">
+    <img src="../assets/imgs/Shape/3.png" style="width:100px">
   </div> -->
 
   <!-- RIGHT CORNER SHAPE -->
   <div class="shape-container right-corner">
-    <img src="assets/imgs/Shape/4.png" style="width:150px">
+    <img src="../assets/imgs/Shape/9.png" style="width:150px">
   </div>
 
   <style>
@@ -192,416 +193,159 @@ digital excellence.
         });
     </script>
 </section>
-<div style="height:100px;width:100%"></div>
 
-<section>
+
+<section class="mt-5" style="margin-top:50px">
     <style>
-    /* Timeline container styling */
-        .timeline-container {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* The central vertical line */
-        .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: rgba(255, 255, 255, 0.1); /* Lighter, semi-transparent line */
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-            z-index: 1;
-        }
-        
-        /* The animated "drawing" line that will go on top */
-        #timeline-path {
-            position: absolute;
-            width: 4px;
-            background-color: var(--orange); /* Indigo-400 */
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-            z-index: 2;
-            height: 0; /* Initially hidden, will be animated by GSAP */
-        }
-
-        /* Container for each timeline item */
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-            opacity: 0; /* Initially hidden */
-        }
-
-        /* Position items to the left */
-        .timeline-item.left {
-            left: 0;
-        }
-
-        /* Position items to the right */
-        .timeline-item.right1 {
-            left: 47.6%;
-        }
-
-        /* The circle on the timeline */
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            right: -12px !important;
-            background-color: #111827; /* Match body background */
-            border: 4px solid var(--orange); /* Indigo-400 */
-            top: 30px;
-            border-radius: 50%;
-            z-index: 3;
-        }
-
-        .timeline-item.right1::after {
-            left: 12px;
-        }
-        
-        /* The content card with glass effect */
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
-            backdrop-filter: blur(10px); /* The blur effect */
-            -webkit-backdrop-filter: blur(10px); /* For Safari */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
-            position: relative;
-            border-radius: 0.75rem; /* 12px */
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        .service-card {
+            /* GSAP will animate from these initial states */
+            opacity: 0;
+            transform: scale(0.9) translateY(30px);
         }
     </style>
-
-    <section class="py-24 sm:py-32">
-        <div class="text-center mb-20">
-            <h2 class="text-5xl font-extrabold tracking-tight text-white sm:text-5xl"></h2>
-            <p class="mt-4 text-lg leading-8 text-white"></p>
-        </div>
-<h1 style="text-align: center;">
-      <span class="headline-main-about" style="font-size: 5rem; ">
-      our journey
-      </span><br>
-      <span class="headline-sub">
-      A timeline of our milestones<br>and achievements.
-      </span>
-    </h1>
-        <div class="timeline-container">
-            <div id="timeline-path"></div>
+       <div class="container mx-auto px-6 lg:px-8 ">
             
-            <!-- Timeline Item 1 -->
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <h3 class="text-2xl font-bold" style="color:var(--orange)">2018</h3>
-                    <h4 class="text-xl font-semibold text-white">The Foundation</h4>
-                    <p class="mt-2 text-white">Our company was founded with a small, passionate team and a big vision: to revolutionize the digital landscape.</p>
-                </div>
-            </div>
+           
 
-            <!-- Timeline Item 2 -->
-            <div class="timeline-item right1">
-                <div class="timeline-content">
-                    <h3 class="text-2xl font-bold" style="color:var(--orange)">2019</h3>
-                    <h4 class="text-xl font-semibold text-white">First Major Project</h4>
-                    <p class="mt-2 text-white">Landed our first enterprise-level client, delivering a successful project that set the standard for our future work.</p>
-                </div>
-            </div>
-
-            <!-- Timeline Item 3 -->
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <h3 class="text-2xl font-bold" style="color:var(--orange)">2021</h3>
-                    <h4 class="text-xl font-semibold text-white">Team Expansion</h4>
-                    <p class="mt-2 text-white">Doubled our team size, bringing in diverse talent from across the industry to fuel our growth and innovation.</p>
-                </div>
-            </div>
-            
-            <!-- Timeline Item 4 -->
-            <div class="timeline-item right1">
-                <div class="timeline-content">
-                    <h3 class="text-2xl font-bold" style="color:var(--orange)">2023</h3>
-                    <h4 class="text-xl font-semibold text-white">Award Winning Agency</h4>
-                    <p class="mt-2 text-white">Recognized with the "Innovator of the Year" award for our groundbreaking work in user experience design.</p>
-                </div>
-            </div>
-
-             <!-- Timeline Item 5 -->
-            <div class="timeline-item left">
-                <div class="timeline-content">
-                    <h3 class="text-2xl font-bold" style="color:var(--orange)">2024</h3>
-                    <h4 class="text-xl font-semibold text-white">Global Reach</h4>
-                    <p class="mt-2 text-white">Opened our first international office, expanding our services to a global clientele and marking a new chapter in our story.</p>
-                </div>
-            </div>
+            <!-- Services Grid -->
+             
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+    <!-- Updated Service Cards -->
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="film" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Motion Graphics</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="bar-chart" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Infographics</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="book" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">White Papers</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="mail-open" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Newsletters</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="briefcase" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Case Studies</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="pen-line" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Copywriting</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="video" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Short Form Videos</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="monitor" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Display Ads</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="youtube" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Video Marketing</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="sliders" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Presentation Templates</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="box" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Product Demos</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="calendar-clock" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Webinars</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="cpu" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">CGI Videos</h3>
+        </div>
+    </a>
+    <a href="#" class="service-card block">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full flex items-center space-x-4 transition-all duration-300 ease-in-out hover:bg-white/10 hover:-translate-y-2">
+            <i data-lucide="pen-tool" class="w-7 h-7 text-indigo-400"></i>
+            <h3 class="text-lg font-bold text-white">Whiteboard Animation</h3>
+        </div>
+    </a>
+</div>
 
         </div>
-    </section>
 
-    <script>
+         <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
             gsap.registerPlugin(ScrollTrigger);
 
-            // Animate the timeline path
-            gsap.to("#timeline-path", {
-                height: "100%",
-                ease: "none",
+            // Animate each service card
+            gsap.to(".service-card", {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                stagger: 0.1, // Stagger the animation of each card
                 scrollTrigger: {
-                    trigger: ".timeline-container",
-                    start: "top center",
-                    end: "bottom center",
-                    scrub: true
+                    trigger: ".grid", // The container for the cards
+                    start: "top 80%", // Start when the top of the grid is 80% from the top of the viewport
+                    end: "bottom 60%",
+                    toggleActions: "play none none none",
+                    // markers: true, // Uncomment for debugging
                 }
-            });
-
-            // Animate each timeline item
-            const items = gsap.utils.toArray(".timeline-item");
-            items.forEach(item => {
-                // Determine animation direction based on class
-                const isLeft = item.classList.contains("left");
-                const xStart = isLeft ? -200 : 200;
-
-                gsap.fromTo(item, 
-                    { x: xStart, opacity: 0 }, // from state
-                    {
-                        x: 0,
-                        opacity: 1,
-                        ease: "power2.out",
-                        duration: 1,
-                        scrollTrigger: {
-                            trigger: item,
-                            start: "top 85%", // Start animation when item is 85% from the top of the viewport
-                            toggleActions: "play none none none"
-                        }
-                    }
-                );
             });
         });
     </script>
 </section>
 
-<section id="usecase-section" style="position: relative; overflow: hidden; padding: 100px 0;">
-
-  <!-- Floating 3D shapes -->
-  <div class="usecase-shape usecase-cube"></div>
-  <div class="usecase-shape usecase-sphere"></div>
-  <div class="usecase-shape usecase-pyramid"></div>
-  <div class="usecase-shape usecase-prism"></div>
-
-  <!-- First block: Our Use Cases -->
-  <div style="padding-left: 100px; align-items: start !important; text-align:left !important">
-    <div class="d-flex" style="display:flex; gap: 40px;">
-      <!-- Left content -->
-      <div class="content w-1/2" style="position: relative; z-index: 2;">
-        <h1 style="position: relative; z-index: 2; line-height: 0.8; -webkit-text-stroke: 5px white; color: white; font-size:8rem !important; text-align: left !important;">
-          <span style="display: block;">our </span>
-          <span style="display: block;">mantra</span>
-        </h1>
-        <p class="text-lg pt-4" style="font-size: 1.1rem; color: white; max-width: 500px;">
-          We leverage the power of different technologies and platforms to deliver a wide range of immersive experiences.
-        </p>
-      </div>
-
-      <!-- Right accordion -->
-      <div class="content w-1/2" style="position: relative; z-index: 2;">
-        <div class="usecase-accordion">
-          <div class="usecase-accordion-item">
-            <button class="usecase-accordion-header">Metaverse experiences</button>
-            <div class="usecase-accordion-body">We craft interactive metaverse spaces...</div>
-          </div>
-          <div class="usecase-accordion-item">
-            <button class="usecase-accordion-header">Premium virtual tours</button>
-            <div class="usecase-accordion-body">High-quality 360° virtual tours...</div>
-          </div>
-          <div class="usecase-accordion-item">
-            <button class="usecase-accordion-header">Digital twins</button>
-            <div class="usecase-accordion-body">We build precise digital replicas...</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div style="height: 100px;"></div> <!-- Spacer -->
-
- 
-<section class="py-24 sm:py-32">
-        <div class="container mx-auto px-6 lg:px-8">
-            
-            <!-- Section Header -->
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">our guiding principles</h2>
-                <p class="mt-4 text-lg leading-8 text-slate-400">The core beliefs that drive our company, our actions, and our success.</p>
-            </div>
-
-            <!-- Grid for Vision, Mission, Values -->
-            <div class="mt-20 grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
-                
-                <!-- Vision Card -->
-                <div class="flex flex-col items-center text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all duration-300 hover:bg-white/10">
-                    <div class="flex-shrink-0">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-white/10 text-indigo-400">
-                            <!-- Heroicons: eye -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <h3 class="text-2xl font-bold text-white">Our Vision</h3>
-                        <p class="mt-4 text-base text-slate-300">To be the most trusted and innovative leader in our industry, creating a future where technology empowers everyone to achieve more.</p>
-                    </div>
-                </div>
-
-                <!-- Mission Card -->
-                <div class="flex flex-col items-center text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all duration-300 hover:bg-white/10">
-                    <div class="flex-shrink-0">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-white/10 text-indigo-400">
-                            <!-- Heroicons: rocket-launch -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <h3 class="text-2xl font-bold text-white">Our Mission</h3>
-                        <p class="mt-4 text-base text-slate-300">To deliver exceptional value to our clients through groundbreaking solutions, outstanding service, and an unwavering commitment to quality and integrity.</p>
-                    </div>
-                </div>
-
-                <!-- Core Values Card -->
-                <div class="flex flex-col items-center text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all duration-300 hover:bg-white/10">
-                    <div class="flex-shrink-0">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-white/10 text-indigo-400">
-                            <!-- Heroicons: heart -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.672l1.318-1.354a4.5 4.5 0 116.364 6.364L12 20.364l-7.682-7.682a4.5 4.5 0 010-6.364z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <h3 class="text-2xl font-bold text-white">Core Values</h3>
-                        <ul class="mt-4 space-y-2 text-base text-slate-300">
-                            <li><strong class="text-white/90">Customer First:</strong> Our success is tied to our clients' success.</li>
-                            <li><strong class="text-white/90">Integrity:</strong> We are honest, transparent, and ethical in all we do.</li>
-                            <li><strong class="text-white/90">Innovation:</strong> We constantly seek better ways to solve problems.</li>
-                          
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-  <!-- STYLES -->
-  <style>
-    .usecase-accordion { width: 90%; }
-    .usecase-accordion-item {
-      margin-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .usecase-accordion-header {
-      width: 100%;
-      background: none;
-      border: none;
-      outline: none;
-      text-align: left;
-      padding: 12px 0;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: white;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .usecase-accordion-header:hover { color: #ffcc00; }
-    .usecase-accordion-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.4s ease;
-      opacity: 0;
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.8);
-      padding-left: 10px;
-    }
-    .usecase-accordion-item.active .usecase-accordion-body {
-      max-height: 200px;
-      opacity: 1;
-      margin-bottom: 10px;
-    }
-
-    /* Shape styles */
-    .usecase-shape {
-      position: absolute;
-      z-index: 0;
-      opacity: 0.6;
-      transition: transform 6s ease-in-out;
-    }
-    .usecase-cube {
-      width: 80px; height: 80px;
-      background: linear-gradient(45deg, #ff6b6b, #ffcc00);
-      top: 20px; left: 20px;
-      border-radius: 8px;
-    }
-    .usecase-sphere {
-      width: 60px; height: 60px;
-      background: radial-gradient(circle, #4facfe, #00f2fe);
-      border-radius: 50%;
-      top: 40%; right: 40px;
-    }
-    .usecase-pyramid {
-      width: 0; height: 0;
-      border-left: 40px solid transparent;
-      border-right: 40px solid transparent;
-      border-bottom: 70px solid #a18cd1;
-      bottom: 20px; left: 40px;
-    }
-    .usecase-prism {
-      width: 50px; height: 100px;
-      background: linear-gradient(to top, #f093fb, #f5576c);
-      bottom: 30px; right: 50px;
-      transform: skewY(-20deg);
-    }
-  </style>
-
-  <!-- SCRIPTS -->
-  <script>
-    // Accordion toggle
-    document.querySelectorAll('.usecase-accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const item = header.parentElement;
-        document.querySelectorAll('.usecase-accordion-item').forEach(i => {
-          if (i !== item) i.classList.remove('active');
-        });
-        item.classList.toggle('active');
-      });
-    });
-
-    // Random floating animation
-    function randomFloat(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-
-    function animateShapes() {
-      document.querySelectorAll('.usecase-shape').forEach(shape => {
-        const x = randomFloat(-30, 30);  // left/right drift
-        const y = randomFloat(-30, 30);  // up/down drift
-        const rotate = randomFloat(-20, 20);
-        shape.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
-      });
-    }
-
-    setInterval(animateShapes, 5000); // every 5 seconds
-    animateShapes(); // initial run
-  </script>
-</section>
+    
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    
 
 <section class="to-green-lightorange" id="contact-section" style="position: relative;  color: white; padding: 80px 0;">
 
@@ -1386,7 +1130,7 @@ digital excellence.
 
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-  <script src="assets/script.js"></script>
+  <script src="../assets/script.js"></script>
 <!-- GSAP + ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

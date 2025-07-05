@@ -1,189 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProCodeX</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProCodeX</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css">
 
-  <link rel="stylesheet" href="assets/home.css">
-  
-    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="assets/home.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-  
-  
-</head>
-<body>
-
-  <header class="header" id="main-header">
-    <a href="#" class="logo-text" style="color: white;">
-      <img src="logo-dark.png" width="100" alt="ProCodeX Logo">
-    </a>
-    <div class="menu-toggle" id="open-menu">
-      <button type="button" class="btn outline-button">
-        <span class="text-wrap">
-          <span>Get in touch</span>
-          <span>Get in touch</span>
-        </span>
-      </button>
-      <i class="fa-solid fa-bars"></i>
-    </div>
-  </header>
-
-  <div class="fullscreen-menu" id="fullscreen-menu">
-    <div class="menu-header">
-      <div class="logo-text">
-        <img src="logo-dark.png" width="100" style="padding-left: 10px;" alt="ProCodeX Logo">
-      </div>
-      <button class="close-btn" id="close-menu">
-        <i class="fa-solid fa-x"></i>
-      </button>
-    </div>
-    <div class="menu-content">
-      <div class="contact-info">
-        <p class="">Get in touch</p>
-        <p style="font-size:2rem !important">hello@procodex.com</p>
-        <p>+1 234 567 890</p>
-        <p>123 Creative Street</p>
-        <p>Digital City, 10001</p>
-      </div>
-      <ul class="menu-links">
-        <li><a href="#">WORK</a></li>
-        <li><a href="#">ABOUT us</a></li>
-        <li><a href="#">SERVICES</a></li>
-        <li><a href="#">INSIGHTS</a></li>
-      </ul>
-    </div>
-  </div>
-    
-  <section id="background">
-    <div id="blob"class="gradient-blob"></div>
-    <div id="blur"></div>
-  </section>
-
-  <section class="section to-orange-pink" id="hero-section">
 
     <style>
         /* --- CSS for Image Animation --- */
-
-        /* Initial state of the image before any animation */
         #animated-ring {
             position: absolute;
-            width: 280px; /* Adjust size as needed */
+            width: 280px;
             height: auto;
-            top: -150px; /* Start position, off-screen at the top */
+            top: -150px;
             left: 80%;
-            transform: translateX(-50%); /* Center the image */
-            opacity: 0; /* Initially invisible */
-            /* This transition handles the INITIAL slide-in animation */
+            transform: translateX(-50%);
+            opacity: 0;
             transition: top 1s ease-out, opacity 1s ease-out;
             z-index: 0;
         }
 
-        /* This class triggers the initial slide-in and makes the image visible */
         #animated-ring.animate-in {
-            top: 20px; /* Final vertical position after sliding in */
-            opacity: 1; /* Fully visible */
+            top: 20px;
+            opacity: 1;
         }
-    </style>
-
-    <img src="assets/imgs/ring.png" alt="A decorative ring" id="animated-ring">
-
-    <div class="content">
-        <h1>
-            <span class="shaping-your">shaping your</span><br>
-            <span class="digital-future">digital future</span>
-        </h1>
-        <div class="button-wrapper">
-            <div class="gs">
-                <a href="our-approach.html">
-                    <button id="replay"> <span id="purple"></span>
-                        <span id="turquois"></span>
-                        <span id="yellow"></span>
-                        <span class="text" id="text-static">Our approach</span>
-                        <span class="text" id="text-reveal">Our approach</span>
-                    </button>
-                </a>
-            </div>
-            <p class="discover-text">Discover how we craft <br>digital excellence.</p>
-        </div>
-    </div>
-
-    <script>
-        // Wait for the page to fully load
-        window.addEventListener('load', function() {
-            const animatedImage = document.getElementById('animated-ring');
-
-            // 1. Trigger the initial slide-in animation after a brief delay
-            setTimeout(function() {
-                animatedImage.classList.add('animate-in');
-            }, 1000); // 0.5 second delay, adjust as needed
-
-            // This variable will track the rotation angle for the continuous animation
-            let angle = 0;
-
-            // This function creates the continuous floating and rotating loop
-            function continuousAnimationLoop() {
-                // Increment the angle by a small, fixed amount each frame for smooth rotation
-                angle += 0.2;
-
-                // Use Math.sin() to create a smooth, periodic up-and-down floating motion
-                const floatOffset = Math.sin(angle / 30) * 15; // Floats 15px up and down
-
-                // Apply the combined transforms for centering, floating, and rotating
-                animatedImage.style.transform = `translateX(-50%) translateY(${floatOffset}px) rotate(${angle}deg)`;
-
-                // Request the next animation frame to continue the loop smoothly
-                requestAnimationFrame(continuousAnimationLoop);
-            }
-
-            // 2. Listen for when the initial CSS transition (the slide-in) has finished
-            animatedImage.addEventListener('transitionend', () => {
-                // 3. Start the continuous JavaScript animation loop ONLY after the slide-in is complete
-                requestAnimationFrame(continuousAnimationLoop);
-            }, { once: true }); // Use {once: true} to ensure this listener only runs one time.
-        });
-    </script>
-</section>
-
-  <section id="work-features" class="centered-section "> <div class="work-section">
-      <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Memorable</div>
-      <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-        <p>We'll craft a distinct brand <span class="ar">narrative</span> and impactful <span class="vr">experiences</span> to ensure your brand leaves a lasting <span class="web">impression</span>.</p>
-      </div>
-    </div>
-    <div class="work-section">
-      <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Scalable</div>
-      <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-        <p>We'll build your brand to <span class="web">scale</span> efficiently across <span class="ar">web</span>, augmented reality, and <span class="vr">virtual</span> reality experiences.</p>
-      </div>
-    </div>
-    <div class="work-section">
-      <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Unstoppable</div>
-      <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-        <p>We'll empower your brand with <span class="ar">resilience</span> and <span class="vr">innovation</span>, ensuring it thrives in any environment and consistently overcomes <span class="web">challenges</span>.</p>
-      </div>
-    </div>
-  </section>
-
-
-
-
-    <!-- The main section based on the design -->
-    <section id="animated-section" class="relative py-24 sm:py-32 overflow-hidden">
-      
-    <style>
-      
 
         /* Styling for the circular text elements */
         .circular-text {
@@ -194,29 +48,147 @@
             justify-content: center;
             align-items: center;
         }
+
         .circular-text-path {
             fill: none;
         }
+
         .circular-text text {
             font-size: 19px;
             font-weight: 600;
             letter-spacing: 1.5px;
-            fill: #fff; /* Indigo color for text */
+            fill: #fff;
+        }
+
+        .step {
+            opacity: 0.2;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .step.is-active {
+            opacity: 1;
+        }
+
+        #sticky-element {
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        /* Custom Owl Carousel Dot Styles */
+        .owl-theme .owl-dots .owl-dot span {
+            width: 12px;
+            height: 12px;
+            margin: 5px 7px;
+            transition: all 0.3s ease;
+        }
+
+        .owl-theme .owl-dots .owl-dot.active span,
+        .owl-theme .owl-dots .owl-dot:hover span {
+            background: white;
         }
     </style>
 
+</head>
+<body>
 
+    <header class="header" id="main-header">
+        <a href="#" class="logo-text" style="color: white;">
+            <img src="logo-dark.png" width="100" alt="ProCodeX Logo">
+        </a>
+        <div class="menu-toggle" id="open-menu">
+            <button type="button" class="btn outline-button">
+                <span class="text-wrap">
+                    <span>Get in touch</span>
+                    <span>Get in touch</span>
+                </span>
+            </button>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <div class="fullscreen-menu" id="fullscreen-menu">
+        <div class="menu-header">
+            <div class="logo-text">
+                <img src="logo-dark.png" width="100" style="padding-left: 10px;" alt="ProCodeX Logo">
+            </div>
+            <button class="close-btn" id="close-menu">
+                <i class="fa-solid fa-x"></i>
+            </button>
+        </div>
+        <div class="menu-content">
+            <div class="contact-info">
+                <p class="">Get in touch</p>
+                <p style="font-size:2rem !important">hello@procodex.com</p>
+                <p>+1 234 567 890</p>
+                <p>123 Creative Street</p>
+                <p>Digital City, 10001</p>
+            </div>
+            <ul class="menu-links">
+                <li><a href="#">WORK</a></li>
+                <li><a href="#">ABOUT us</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">INSIGHTS</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="background">
+        <div id="blob"class="gradient-blob"></div>
+        <div id="blur"></div>
+    </section>
+
+    <section class="section to-orange-pink" id="hero-section">
+        <img src="assets/imgs/ring.png" alt="A decorative ring" id="animated-ring">
+        <div class="content">
+            <h1>
+                <span class="shaping-your">shaping your</span><br>
+                <span class="digital-future">digital future</span>
+            </h1>
+            <div class="button-wrapper">
+                <div class="gs">
+                    <a href="our-approach.html">
+                        <button id="replay"> <span id="purple"></span>
+                            <span id="turquois"></span>
+                            <span id="yellow"></span>
+                            <span class="text" id="text-static">Our approach</span>
+                            <span class="text" id="text-reveal">Our approach</span>
+                        </button>
+                    </a>
+                </div>
+                <p class="discover-text">Discover how we craft <br>digital excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work-features" class="centered-section ">
+        <div class="work-section">
+            <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Memorable</div>
+            <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                <p>We'll craft a distinct brand <span class="ar">narrative</span> and impactful <span class="vr">experiences</span> to ensure your brand leaves a lasting <span class="web">impression</span>.</p>
+            </div>
+        </div>
+        <div class="work-section">
+            <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Scalable</div>
+            <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                <p>We'll build your brand to <span class="web">scale</span> efficiently across <span class="ar">web</span>, augmented reality, and <span class="vr">virtual</span> reality experiences.</p>
+            </div>
+        </div>
+        <div class="work-section">
+            <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Unstoppable</div>
+            <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                <p>We'll empower your brand with <span class="ar">resilience</span> and <span class="vr">innovation</span>, ensuring it thrives in any environment and consistently overcomes <span class="web">challenges</span>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="animated-section" class="relative py-24 sm:py-32 overflow-hidden">
         <div class="container mx-auto px-6 lg:px-8">
-            <!-- Main grid layout -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16 items-center">
-                
-                <!-- Left Column: Text Content -->
                 <div class="relative z-10">
-                    <!-- Plant/Wheat decoration -->
                     <div class="absolute -left-16 -top-16 w-32 h-32 text-indigo-200 opacity-50 -z-10">
                         <img src="assets/imgs/Shape/4.png" alt="">
                     </div>
-
                     <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight" >
                         We Are The <span style="color:var(--yellow)">Master</span> of <span style="color:var(--orange)">Website Design</span>
                     </h1>
@@ -227,402 +199,186 @@
                         Our company specializes in creating highly productive and eye-catching websites. Additionally, we offer creative website design services, which, in turn, help convey your business effectively to first-time visitors.
                     </p>
                 </div>
-                
-                <!-- Right Column: Image -->
                 <div class="relative flex items-center justify-center h-[500px] lg:h-full">
-                    <!-- The image will rotate on scroll -->
-                    <img id="animated-image" 
-                         src="assets/imgs/Shape/1.png" 
+                    <img id="animated-image"
+                         src="assets/imgs/Shape/1.png"
                          alt="App Screenshot Placeholder"
                          onerror="this.onerror=null;this.src='https://placehold.co/350x700/cccccc/ffffff?text=Image+Error';">
 
-                    <!-- Decorative Circular Text 1 -->
-                   <!-- Decorative Circular Text 1 -->
-<div id="circular-text-container-1" class="circular-text top-0 right-0 transform translate-x-1/4 -translate-y-1/4">
-    <!-- SVG is generated by JavaScript -->
-</div>
+                    <div id="circular-text-container-1" class="circular-text top-0 right-0 transform translate-x-1/4 -translate-y-1/4"></div>
 
-<!-- Decorative Circular Text 2 -->
-<div id="circular-text-container-2" class="circular-text bottom-0 left-0 transform -translate-x-1/4 translate-y-1/4 hidden sm:block">
-    <!-- SVG is generated by JavaScript -->
-</div>
-<script>
-    /**
-     * Generates perfectly circular text by placing each character individually.
-     * @param {string} containerId - The ID of the div to place the SVG in.
-     * @param {string} text - The text to display in a circle.
-     * @param {string} color - The color of the text.
-     */
-    const createCircularText = (containerId, text, color) => {
-        const container = document.getElementById(containerId);
-        if (!container) return;
-
-        // Add a dot for more even spacing if not present
-        const processedText = text.endsWith('•') ? text : text + ' •';
-        const radius = 60;
-        const centerX = 75;
-        const centerY = 75;
-        
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, "svg");
-        svg.setAttribute("viewBox", "0 0 150 150");
-        svg.setAttribute("width", "150");
-        svg.setAttribute("height", "150");
-
-        for (let i = 0; i < processedText.length; i++) {
-            const angle = (i / processedText.length) * 360 - 90;
-            const angleRad = angle * (Math.PI / 180);
-            const x = centerX + radius * Math.cos(angleRad);
-            const y = centerY + radius * Math.sin(angleRad);
-
-            const textElement = document.createElementNS(svgNS, "text");
-            textElement.setAttribute("x", x);
-            textElement.setAttribute("y", y);
-            textElement.setAttribute("transform", `rotate(${angle + 90}, ${x}, ${y})`);
-            textElement.setAttribute("text-anchor", "middle");
-            textElement.setAttribute("fill", color); // Use the color parameter
-            textElement.style.fontSize = "14px";
-            textElement.style.fontWeight = "600";
-            textElement.textContent = processedText[i];
-            
-            svg.appendChild(textElement);
-        }
-        container.innerHTML = ''; // Clear previous content
-        container.appendChild(svg);
-    };
-
-
-    // JavaScript for the GSAP scroll-triggered animation
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- 1. Create the circular text ---
-        createCircularText('circular-text-container-1', 'AWARD • WINNING • WEBSITE • DESIGN', '#4338ca');
-        createCircularText('circular-text-container-2', 'RELIABLE • DEVELOPMENT • COMPANY', '#4338ca');
-
-        // --- 2. Set up GSAP animations ---
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Set the initial states for the circular text containers
-        gsap.set("#circular-text-container-1", { rotation: -60 }); // Rotate counter-clockwise initially
-        gsap.set("#circular-text-container-2", { rotation: 60 });  // Rotate clockwise initially
-
-        // Animate the text containers along with your main image
-        // (This assumes you have another GSAP animation for #animated-image)
-        gsap.to(["#circular-text-container-1", "#circular-text-container-2"], {
-            rotation: 0, // Animate all elements to a rotation of 0
-            ease: 'none',
-            scrollTrigger: {
-                trigger: "#animated-section", // The parent section
-                start: "top center",
-                end: "center center",
-                scrub: 1,
-            },
-        });
-    });
-</script>
-
-
-    <script>
-        // JavaScript for the GSAP scroll-triggered animation
-        document.addEventListener('DOMContentLoaded', () => {
-            // Register the GSAP ScrollTrigger plugin
-            gsap.registerPlugin(ScrollTrigger);
-
-            // Set the initial state of the image (rotated and slightly scaled down)
-            gsap.set("#animated-image", {
-                rotation: 200,
-                scale: 0
-            });
-
-            // Create the scroll-driven animation for the image
-            gsap.to("#animated-image", {
-                // Animate to these properties
-                rotation: 0,
-                scale: 1.2,
-                ease: 'none', // Linear ease is best for a direct scrub effect
-                
-                // Configure the scroll trigger
-                scrollTrigger: {
-                    trigger: "#animated-section", // The element that triggers the animation
-                    start: "top center", // When the top of the trigger hits the center of the viewport
-                    end: "center center", // When the center of the trigger hits the center of the viewport
-                    
-                    // scrub: true links the animation progress directly to the scrollbar.
-                    // A value like '1' creates a smoother, one-second lag.
-                    scrub: 1, 
-                    
-                    // markers: true, // Uncomment for debugging to see start/end markers
-                },
-            });
-
-             // Optional: Add a fade-in animation for the whole section
-             gsap.from("#animated-section", {
-                opacity: 0,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: "#animated-section",
-                    start: "top 200%",
-                    toggleActions: "play none none none" // Play animation once on enter
-                }
-            });
-        });
-    </script>
-                     <!-- Decorative Circular Text 2 -->
-                   
+                    <div id="circular-text-container-2" class="circular-text bottom-0 left-0 transform -translate-x-1/4 translate-y-1/4 hidden sm:block"></div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section>
-   
-    <style>
-      
-
-        .step {
-            opacity: 0.2; /* Initially fade out steps */
-            transition: opacity 0.4s ease-in-out;
-        }
-        .step.is-active {
-            opacity: 1; /* Highlight the active step */
-        }
-        /* Style for the sticky video/image element */
-        #sticky-element {
-            border-radius: 1.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            overflow: hidden; /* Ensures video respects border radius */
-            
-        }
-    </style>
-
-   
-
     <section id="sticky-section" class="py-24 sm:py-32">
         <div class="container mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 lg:gap-x-24">
-                
-                <!-- Left Column (Sticky) -->
                 <div class="lg:h-screen lg:sticky lg:-top-0 flex items-center">
                     <div id="sticky-element" >
-                         <!-- Using a placeholder video -->
-                         <video playsinline autoplay muted loop poster="https://placehold.co/1280x720/1e293b/ffffff?text=Loading+Video..." class="w-full h-full object-cover">
+                        <video playsinline autoplay muted loop poster="https://placehold.co/1280x720/1e293b/ffffff?text=Loading+Video..." class="w-full h-full object-cover">
                             <source src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d5f77c104128975.5f5bdc0d6d7b6.gif" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
                 </div>
 
-                <!-- Right Column (Scrolling Content) -->
                 <div class="flex flex-col justify-center mt-12 lg:mt-0">
                     <div class="step py-12 lg:py-24">
                         <p class="flex items-center  font-semibold mb-3">
-                           <span class="inline-block h-5 w-5 bg-indigo-600 rounded-full mr-3"></span>
-                           Website Design Development
+                            <span class="inline-block h-5 w-5 bg-indigo-600 rounded-full mr-3"></span>
+                            Website Design Development
                         </p>
                         <h2 class="text-3xl lg:text-5xl font-extrabold ">We are <span style="color: var(--yellow);">creative</span> web design company in World</h2>
                         <p class="mt-6 text-lg  leading-8">As a creative website design and development company in World, we design and develop amazing websites that will make your business a lot easier and grow faster. We love our customers and they love our work at low cost.</p>
                     </div>
                     <div class="step py-12 lg:py-24">
                         <p class="flex items-center  font-semibold mb-3">
-                           <span class="inline-block h-5 w-5 bg-indigo-600 rounded-full mr-3"></span>
-                           Award Winning Agency
+                            <span class="inline-block h-5 w-5 bg-indigo-600 rounded-full mr-3"></span>
+                            Award Winning Agency
                         </p>
                         <h2 class="text-3xl lg:text-5xl font-extrabold "><span style="color:var(--orange)">Expert team</span> of professional developers and designers</h2>
                         <p class="mt-6 text-lg  leading-8">Orfeostory is a leading website design and development company based in World. We are an expert team of professional website developers and designers to create impressive websites for your business needs.</p>
                     </div>
                     <div class="step py-12 lg:py-24">
                         <p class="flex items-center  font-semibold mb-3">
-                           <span class="inline-block h-5 w-5 bg-indigo-600 rounded-full mr-3"></span>
-                           Client Focused
+                            <span class="inline-block h-5 w-5 bg-indigo-600 rounded-full mr-3"></span>
+                            Client Focused
                         </p>
                         <h2 class="text-3xl lg:text-5xl font-extrabold ">Creating <span style="color:var(--pink)">stunning websites</span> for your business needs</h2>
                         <p class="mt-6 text-lg  leading-8">We are an award-winning agency that is capable of creating stunning websites for your business. Our ultimate goal is to ensure your success by delivering tailored digital solutions.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            gsap.registerPlugin(ScrollTrigger);
-
-            // --- STICKY SECTION ANIMATION ---
-            // On large screens, we pin the left column.
-            ScrollTrigger.create({
-                trigger: "#sticky-section",
-                start: "top top",
-                end: "bottom bottom",
-                pin: "#sticky-element",
-                pinSpacing: false, // Prevents extra space after pinning
-                markers: false, // Set to true for debugging
-            });
-
-            // Animate the steps in the right column
-            const steps = gsap.utils.toArray(".step");
-            steps.forEach((step, i) => {
-                ScrollTrigger.create({
-                    trigger: step,
-                    start: "top center",
-                    end: "bottom center",
-                    toggleClass: "is-active", // Add/remove is-active class
-                    // markers: true,
-                });
-            });
-        });
-    </script>
-
-    </section>
-
-
-  <!-- Box -->
-  <!-- <section id="innovation-animation-section"> <div class="relative w-full h-screen flex items-center justify-center">
-      <div class="relative w-3/4 h-auto" style="min-height: 500px; perspective: 1200px;"> <div class="shapes-container absolute" style="top: 50%; left: 30%; width: 300px; height: 300px; margin-left: -150px; margin-top: -150px; z-index: 0; opacity: 1; pointer-events: none; transform-style: preserve-3d;">
-          <div class="shape triangle" style="background-color: transparent;" data-index="0"></div>
-          <div class="shape square2" style="background-color: var(--pink);" data-index="1"></div>
-          <div class="shape square" style="background-color: var(--orange);" data-index="2"></div>
-          <div class="shape circle2" style="background-color: var(--light-green);" data-index="3"></div>
-        </div>
-        <div class="animate-box1 absolute top-1/2 left-0 bg-gradient-to-r from-pink-500 to-yellow-400 flex items-center justify-center rounded transform -translate-y-1/2 box1" style="z-index: 10;">
-          <div>
-            <h1>ProCodeX Powers Innovation</h1>
-            <p>Explore creative digital solutions with modern design and interactivity.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <section id="project-slider-section" class="to-green-lightorange">
-      <div class="centered-section" style="width: 100%;">
-        <div class="work-section" style="justify-content: center;"> <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200" style="flex: 0 0 auto; padding-right: 20px;">Our Work</div>
-                <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200" style="flex-basis: auto; max-width: 600px;">
-                    <p>We craft <span class="ar">powerful</span> <span class="vr"> innovative content</span> that delivers real results and drives<span class="web"> business success</span>.</p>
-                </div>
+    <div class="centered-section" style="width: 100%;">
+        <div class="work-section" style="justify-content: center;">
+            <div class="left" data-aos="fade-right" data-aos-duration="800" data-aos-delay="200" style="flex: 0 0 auto; padding-right: 20px;">Our Work</div>
+            <div class="right" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200" style="flex-basis: auto; max-width: 600px;">
+                <p>We craft <span class="ar">powerful</span> <span class="vr"> innovative content</span> that delivers real results and drives<span class="web"> business success</span>.</p>
+            </div>
         </div>
-      </div>
+    </div>
     <div class="swiper-container-wrapper">
-      <div class="swiper-container mySwiper"> 
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="https://c4.wallpaperflare.com/wallpaper/12/1008/45/earth-4k-best-desktop-download-wallpaper-preview.jpg" alt="Project One">
-            <div class="slide-content">
-              <h3>FILMSECESSION</h3>
-              <p>Digital art & cinema.</p>
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/12/1008/45/earth-4k-best-desktop-download-wallpaper-preview.jpg" alt="Project One">
+                    <div class="slide-content">
+                        <h3>FILMSECESSION</h3>
+                        <p>Digital art & cinema.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/448/174/357/neon-4k-hd-best-for-desktop-wallpaper-preview.jpg" alt="Project Two">
+                    <div class="slide-content">
+                        <h3>SIX MILLION VOICES</h3>
+                        <p>Immersive virtual tours.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/996/638/569/city-dubai-arabic-dream-burj-khalifa-united-arab-emirates-desktop-wallpaper-hd-2560%C3%971440-wallpaper-preview.jpg" alt="Project Three">
+                    <div class="slide-content">
+                        <h3>Puratos</h3>
+                        <p>Bakery & chocolate solutions.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/174/141/137/5bd321bdb324e-wallpaper-preview.jpg" alt="Project Four">
+                    <div class="slide-content">
+                        <h3>Urban Explorer</h3>
+                        <p>Interactive 360° city tours.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://c1.wallpaperflare.com/preview/623/487/747/technology-code-coding-computer.jpg" alt="Project Five">
+                    <div class="slide-content">
+                        <h3>FutureScapes</h3>
+                        <p>VR architectural designs.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/12/1008/45/earth-4k-best-desktop-download-wallpaper-preview.jpg" alt="Project One">
+                    <div class="slide-content">
+                        <h3>FILMSECESSION</h3>
+                        <p>Digital art & cinema.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/448/174/357/neon-4k-hd-best-for-desktop-wallpaper-preview.jpg" alt="Project Two">
+                    <div class="slide-content">
+                        <h3>SIX MILLION VOICES</h3>
+                        <p>Immersive virtual tours.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/996/638/569/city-dubai-arabic-dream-burj-khalifa-united-arab-emirates-desktop-wallpaper-hd-2560%C3%971440-wallpaper-preview.jpg" alt="Project Three">
+                    <div class="slide-content">
+                        <h3>Puratos</h3>
+                        <p>Bakery & chocolate solutions.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/174/141/137/5bd321bdb324e-wallpaper-preview.jpg" alt="Project Four">
+                    <div class="slide-content">
+                        <h3>Urban Explorer</h3>
+                        <p>Interactive 360° city tours.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://c1.wallpaperflare.com/preview/623/487/747/technology-code-coding-computer.jpg" alt="Project Five">
+                    <div class="slide-content">
+                        <h3>FutureScapes</h3>
+                        <p>VR architectural designs.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://c4.wallpaperflare.com/wallpaper/448/174/357/neon-4k-hd-best-for-desktop-wallpaper-preview.jpg" alt="Project Two">
-            <div class="slide-content">
-              <h3>SIX MILLION VOICES</h3>
-              <p>Immersive virtual tours.</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://c4.wallpaperflare.com/wallpaper/996/638/569/city-dubai-arabic-dream-burj-khalifa-united-arab-emirates-desktop-wallpaper-hd-2560%C3%971440-wallpaper-preview.jpg" alt="Project Three">
-            <div class="slide-content">
-              <h3>Puratos</h3>
-              <p>Bakery & chocolate solutions.</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://c4.wallpaperflare.com/wallpaper/174/141/137/5bd321bdb324e-wallpaper-preview.jpg" alt="Project Four">
-            <div class="slide-content">
-              <h3>Urban Explorer</h3>
-              <p>Interactive 360° city tours.</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://c1.wallpaperflare.com/preview/623/487/747/technology-code-coding-computer.jpg" alt="Project Five">
-            <div class="slide-content">
-              <h3>FutureScapes</h3>
-              <p>VR architectural designs.</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://c4.wallpaperflare.com/wallpaper/12/1008/45/earth-4k-best-desktop-download-wallpaper-preview.jpg" alt="Project One">
-            <div class="slide-content">
-              <h3>FILMSECESSION</h3>
-              <p>Digital art & cinema.</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://c4.wallpaperflare.com/wallpaper/448/174/357/neon-4k-hd-best-for-desktop-wallpaper-preview.jpg" alt="Project Two">
-            <div class="slide-content">
-              <h3>SIX MILLION VOICES</h3>
-              <p>Immersive virtual tours.</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://c4.wallpaperflare.com/wallpaper/996/638/569/city-dubai-arabic-dream-burj-khalifa-united-arab-emirates-desktop-wallpaper-hd-2560%C3%971440-wallpaper-preview.jpg" alt="Project Three">
-            <div class="slide-content">
-              <h3>Puratos</h3>
-              <p>Bakery & chocolate solutions.</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://c4.wallpaperflare.com/wallpaper/174/141/137/5bd321bdb324e-wallpaper-preview.jpg" alt="Project Four">
-            <div class="slide-content">
-              <h3>Urban Explorer</h3>
-              <p>Interactive 360° city tours.</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://c1.wallpaperflare.com/preview/623/487/747/technology-code-coding-computer.jpg" alt="Project Five">
-            <div class="slide-content">
-              <h3>FutureScapes</h3>
-              <p>VR architectural designs.</p>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
     <div class="mouse-drag-indicator">Drag<br>to view</div>
-  </section>
+</section>
 
-  <section class="centered-section" id="mojo-section">
-    <h1 class="main-heading">our mojo</h1>
-    <h5 class="sub-heading">What makes us different</h5>
-    <div id="video-section">
-      <div class="video-container">
-        <div class="video-thumbnail-wrapper" id="thumbnailWrapper">
-          <img src="assets/imgs/thumb3.PNG" alt="Video thumbnail" class="video-thumbnail" id="videoThumbnail" />
-          <button class="thumbnail-play-btn" id="thumbnailPlayBtn">
-            <i class="fa fa-play"></i>
-          </button>
+    <section class="centered-section" id="mojo-section">
+        <h1 class="main-heading">our mojo</h1>
+        <h5 class="sub-heading">What makes us different</h5>
+        <div id="video-section">
+            <div class="video-container">
+                <div class="video-thumbnail-wrapper" id="thumbnailWrapper">
+                    <img src="assets/imgs/thumb3.PNG" alt="Video thumbnail" class="video-thumbnail" id="videoThumbnail" />
+                    <button class="thumbnail-play-btn" id="thumbnailPlayBtn">
+                        <i class="fa fa-play"></i>
+                    </button>
+                </div>
+                <video id="customVideo" src="assets/imgs/video.mp4" preload="metadata"></video>
+                <div class="video-controls" id="videoControls">
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <button id="playPauseBtn"><i class="fa fa-play"></i></button>
+                </div>
+            </div>
         </div>
-        <video id="customVideo" src="assets/imgs/video.mp4" preload="metadata"></video>
-        <div class="video-controls" id="videoControls">
-          <div class="progress-container" id="progressContainer">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
-          <button id="playPauseBtn"><i class="fa fa-play"></i></button>
+        <div class="top-button-center" style="margin-top: 20px;">
+            <button type="button" class="btn outline-button ob-solid mojo-btn">
+                <span class="text-wrap">
+                    <span>View More</span>
+                    <span>View More</span>
+                </span>
+            </button>
         </div>
-      </div>
-    </div>
-    <div class="top-button-center" style="margin-top: 20px;">
-      <button type="button" class="btn outline-button ob-solid mojo-btn">
-        <span class="text-wrap">
-          <span>View More</span>
-          <span>View More</span>
-        </span>
-      </button>
-    </div>
-  </section>
+    </section>
 
-  <div style="height:100px;width:100%"></div>
+    <div style="height:100px;width:100%"></div>
 
-
-    
-  <section class="" id="mojo-section" style="    display: flex;    flex-direction: column;    align-items: center;    width: 80%;    margin: 0 auto;">
-    <h1 class="main-heading">our services</h1>
-    <h5 class="sub-heading mb-5">Solutions That Deliver</h5>
-        
-
+    <section class="" id="services-section" style="display: flex; flex-direction: column; align-items: center; width: 80%; margin: 0 auto;">
+        <h1 class="main-heading">our services</h1>
+        <h5 class="sub-heading mb-5">Solutions That Deliver</h5>
         <div class="services-grid">
-            <!-- Strategic -->
             <div class="service-card">
                 <div class="icon-container strategic">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -633,8 +389,6 @@
                 <p>Data-driven business strategies that align with your objectives and drive measurable results through careful planning and execution.</p>
                 <a href="#" class="cta">Find out more</a>
             </div>
-            
-            <!-- Creative -->
             <div class="service-card">
                 <div class="icon-container creative">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -646,8 +400,6 @@
                 <p>Innovative design solutions that capture attention and communicate your brand's unique story through compelling visuals.</p>
                 <a href="#" class="cta">Find out more</a>
             </div>
-            
-            <!-- Digital -->
             <div class="service-card">
                 <div class="icon-container digital">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -660,65 +412,15 @@
                 <a href="#" class="cta">Find out more</a>
             </div>
         </div>
-  </section>
+    </section>
 
-
-<!-- 
-  <section class="to-orange-pink" id="mojo-section" style="    display: flex;    flex-direction: column;    align-items: center;    width: 100%;    margin: 0 auto;">
-     
-    <h1 class="main-heading">testimonials</h1>
-    <h5 class="sub-heading mb-5">Real stories from satisfied partners.</h5>
-
-
-      <div class="m-auto" style="background-color: white;border-radius:10px;width: 95%;">
-          <div class="owl-carousel owl-theme">
-              <div class="testimonial-item">
-                  <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client">
-                  <h4>Sarah Johnson</h4>
-                  <span>Marketing Director</span>
-                  <p>"This service completely transformed our workflow. The team is responsive and professional. Highly recommended!"</p>
-              </div>
-              
-              <div class="testimonial-item">
-                  <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client">
-                  <h4>Michael Chen</h4>
-                  <span>CEO, TechStart</span>
-                  <p>"We've seen a 40% increase in productivity since implementing their solution. The support is exceptional."</p>
-              </div>
-              
-              <div class="testimonial-item">
-                  <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client">
-                  <h4>Emma Rodriguez</h4>
-                  <span>Small Business Owner</span>
-                  <p>"Affordable, reliable, and exactly what my growing business needed. I couldn't be happier with the results."</p>
-              </div>
-          </div>
-      </div>
-  </section> -->
-    <style>
-       
-        /* Custom Owl Carousel Dot Styles for the new design */
-        .owl-theme .owl-dots .owl-dot span {
-            width: 12px;
-            height: 12px;
-            margin: 5px 7px;
-            transition: all 0.3s ease;
-        }
-        .owl-theme .owl-dots .owl-dot.active span,
-        .owl-theme .owl-dots .owl-dot:hover span {
-            background: white; /* Solid white for active dot */
-        }
-    </style>
-
-    <section class="">
+    <section class="py-24 sm:py-32">
         <div class="container mx-auto px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="main-heading">testimonials</h1>
-    <h5 class="sub-heading mb-5">Real stories from satisfied partners.</h5>
+                <h5 class="sub-heading mb-5">Real stories from satisfied partners.</h5>
             </div>
-            
             <div class="mt-16 owl-carousel owl-theme">
-                <!-- Testimonial 1 -->
                 <div class="item p-4">
                     <div class="testimonial-card bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center">
                         <img class="w-24 h-24 rounded-full object-cover ring-4 ring-white/30" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client Sarah Johnson">
@@ -729,10 +431,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Testimonial 2 -->
                 <div class="item p-4">
-                     <div class="testimonial-card bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center">
+                    <div class="testimonial-card bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center">
                         <img class="w-24 h-24 rounded-full object-cover ring-4 ring-white/30" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client Michael Chen">
                         <p class="mt-6 text-lg font-medium text-white/90 leading-7">"We've seen a 40% increase in productivity since implementing their solution. The support is exceptional."</p>
                         <div class="mt-4">
@@ -741,36 +441,261 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Testimonial 3 -->
-                <div class="item p-4">
-                     <div class="testimonial-card bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center">
-                        <img class="w-24 h-24 rounded-full object-cover ring-4 ring-white/30" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client Emma Rodriguez">
-                        <p class="mt-6 text-lg font-medium text-white/90 leading-7">"Affordable, reliable, and exactly what my growing business needed. I couldn't be happier with the results."</p>
-                        <div class="mt-4">
-                            <h4 class="text-lg font-bold text-white">Emma Rodriguez</h4>
-                            <span class="text-sm text-indigo-200 font-semibold">Small Business Owner</span>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Testimonial 4 -->
-                <div class="item p-4">
-                     <div class="testimonial-card bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center">
-                        <img class="w-24 h-24 rounded-full object-cover ring-4 ring-white/30" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client David Lee">
-                        <p class="mt-6 text-lg font-medium text-white/90 leading-7">"A fantastic partner to work with. Their strategic insights have been invaluable to our growth and success."</p>
-                        <div class="mt-4">
-                            <h4 class="text-lg font-bold text-white">David Lee</h4>
-                            <span class="text-sm text-indigo-200 font-semibold">Product Manager</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
+    <div style="height:100px;width:100%"></div>
+
+    <section class="" id="contact-section" style="position: relative; color: white; padding: 80px 0;">
+        <div class="section" style="position: relative; margin-top: 0;">
+            <div class="contact-flex" style="display:flex; justify-content: space-between; align-items:center; flex-wrap: wrap; gap: 2rem; max-width:1200px; margin:0 auto;">
+                <div class="content" style="position: relative; z-index: 2; flex: 1 1 450px; max-width: 500px;">
+                    <h1 style="line-height: 0.8; -webkit-text-stroke: 3px white; color: white; font-size: 5rem; text-align:left;">
+                        <span style="display: block; margin-left: -5rem;">Interested?</span><br/>
+                        <span style="display: block; margin-left: -1rem;">set meeting</span>
+                    </h1>
+                    <div style="margin-left: -80px; border-radius: 2rem; background-color: rgba(66, 66, 66, 1); width: 27rem; height: 18.5rem; transform: rotate(-8deg); overflow: hidden; margin-top: -10px; position: relative; z-index: -10;">
+                        <img src="https://www.poppr.be/assets/general/_jpgTransform/Screenshot-2022-07-07-at-14.51.33.jpg" style="object-fit: cover; width: 100%; height: 100%;" alt="Meeting Visual">
+                    </div>
+                    <div class="icon-3d-container" style="position: absolute; bottom: -30px; right: 0; z-index: 5;">
+                        <div class="icon-3d-box" id="icon3d" style="font-size: 3rem; color: var(--purple); transform: rotateX(20deg) rotateY(-20deg);"> <i class="fa-solid fa-location-dot"></i></div>
+                    </div>
+                </div>
+                <div class="contact-description" style="flex: 1 1 400px; text-align: left; max-width: 450px; font-size:1.25rem; padding-left: 20px;">
+                    Together, we'll make your organization thrive through premium, personalized immersive experiences. <br><br>
+                    Curious about how we can help you with your projects?<br><br>
+                    Reach out and we'll be happy to discuss your plans!
+                </div>
+            </div>
+        </div>
+
+        <form style="width: 90%; margin:auto;margin-top:100px;">
+            <div class="styled-form-container">
+                <div class="form-left">
+                    <div class="form-group">
+                        <input type="text" id="name" required placeholder=" " />
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required placeholder=" " />
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="date" required placeholder=" " />
+                        <label for="date">Date</label>
+                    </div>
+                </div>
+                <div class="form-right">
+                    <div class="message-box">
+                        <textarea rows="8" placeholder="Your Message"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top: 2rem;">
+                <div class="form-check">
+                    <input type="checkbox" id="newsletter" />
+                    <label for="newsletter"> Subscribe to our newsletter</label>
+                </div>
+                <button type="button" class="btn outline-button ob-solid">
+                    <span class="text-wrap">
+                        <span>Submit</span>
+                        <span>Submit</span>
+                        <span>Submit</span>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <section class="footer-wrapper-section" style="background-color: transparent;">
+        <div class="footer-container" id="footerContainer">
+            <footer id="footer">
+                <div class="footer-content">
+                    <div class="footer-newsletter">
+                        <div class="" style="margin-bottom: 10px; font-weight:bold;font-size:0.8rem;">STAY UP TO DATE</div>
+                        <p style="font-size: 4.5rem;margin-bottom:50px; font-weight: bold; color:var(--black);line-height:0.8; -webkit-text-stroke: 3px var(--black);">get our newsletter</p>
+                        <div class="input-container">
+                            <div class="form-group" style="width:80%;margin-right: 20px; position:relative;">
+                                <input type="email" id="footer-email" name="footer-email" required placeholder=" " style="width: 100%; padding: 10px 0; border: none; border-bottom: 1px solid white; background: transparent; color:white;" />
+                                <label for="footer-email" style="position: absolute; left: 0; top: 10px; color: #ccc; transition: all 0.2s; pointer-events: none;">Email</label>
+                            </div>
+                            <button type="button" class="btn outline-button-hor ob-solid">
+                                <span class="text-wrap">
+                                    <span> <i class="fa fa-arrow-right-long"></i> </span> <span> <i class="fa fa-arrow-right-long"></i> </span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="footer-owl">
+                        <img src="https://i.gifer.com/3V1k.gif" alt="ProCodeX Owl Animation" style="max-width: 150px; height: auto; margin: auto;" />
+                    </div>
+                    <div class="footer-contact">
+                        <div class="" style="margin-bottom: 10px; font-weight:bold;font-size:0.8rem;">GET IN TOUCH</div>
+                        <p class="hov-und" style="color: var(--black); font-size: 30px; font-weight: 500; letter-spacing: -2px;line-height: 1.2;">
+                            hello@procodex<span style="color:white">.</span>com
+                        </p>
+                        <p class="hov-und" style="color: var(--black); font-size: 30px; font-weight: 500; letter-spacing: -2px;line-height: 1.2;">
+                            +32 (0)9 335 33 33
+                        </p>
+                        <br>
+                        <p class="hov-und" style="margin-top: 10px; font-size: 1em; color:var(--black); font-weight: 500; line-height: 1.2;">Stapelplein 70/303<br />9000 Ghent</p>
+                    </div>
+                </div>
+                <div style="background-color: var(--purple); width: 95%; margin:auto; height:1px;opacity: 0.5; margin-top: 50px;"></div>
+                <div class="footer-bottom">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px;" class="f-bottom">
+                        <p>PRIVACY POLICY</p>
+                        <p>DISCLAIMER</p>
+                        <p>TERMS AND CONDITIONS</p>
+                        <p>BE017 327 189</p>
+                    </div>
+                    <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 10px 15px;" class="f-bottom">
+                        <p style="margin-bottom:0;">SEE WHAT WE'RE UP TO</p>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px;" class="f-bottom">
+                        <p>NEDERLANDS</p>
+                        <p>ENGLISH</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/home.js"></script>
+    <script src="assets/script.js"></script>
+
     <script>
+        window.addEventListener('load', function() {
+            const animatedImage = document.getElementById('animated-ring');
+            setTimeout(function() {
+                animatedImage.classList.add('animate-in');
+            }, 1000);
+
+            let angle = 0;
+            function continuousAnimationLoop() {
+                angle += 0.2;
+                const floatOffset = Math.sin(angle / 30) * 15;
+                animatedImage.style.transform = `translateX(-50%) translateY(${floatOffset}px) rotate(${angle}deg)`;
+                requestAnimationFrame(continuousAnimationLoop);
+            }
+
+            animatedImage.addEventListener('transitionend', () => {
+                requestAnimationFrame(continuousAnimationLoop);
+            }, { once: true });
+        });
+
+        const createCircularText = (containerId, text, color) => {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const processedText = text.endsWith('•') ? text : text + ' •';
+            const radius = 60;
+            const centerX = 75;
+            const centerY = 75;
+
+            const svgNS = "http://www.w3.org/2000/svg";
+            const svg = document.createElementNS(svgNS, "svg");
+            svg.setAttribute("viewBox", "0 0 150 150");
+            svg.setAttribute("width", "150");
+            svg.setAttribute("height", "150");
+
+            for (let i = 0; i < processedText.length; i++) {
+                const angle = (i / processedText.length) * 360 - 90;
+                const angleRad = angle * (Math.PI / 180);
+                const x = centerX + radius * Math.cos(angleRad);
+                const y = centerY + radius * Math.sin(angleRad);
+
+                const textElement = document.createElementNS(svgNS, "text");
+                textElement.setAttribute("x", x);
+                textElement.setAttribute("y", y);
+                textElement.setAttribute("transform", `rotate(${angle + 90}, ${x}, ${y})`);
+                textElement.setAttribute("text-anchor", "middle");
+                textElement.setAttribute("fill", color);
+                textElement.style.fontSize = "14px";
+                textElement.style.fontWeight = "600";
+                textElement.textContent = processedText[i];
+                svg.appendChild(textElement);
+            }
+            container.innerHTML = '';
+            container.appendChild(svg);
+        };
+
         document.addEventListener('DOMContentLoaded', () => {
-            // --- OWL CAROUSEL INITIALIZATION ---
+            createCircularText('circular-text-container-1', 'AWARD • WINNING • WEBSITE • DESIGN', '#4338ca');
+            createCircularText('circular-text-container-2', 'RELIABLE • DEVELOPMENT • COMPANY', '#4338ca');
+
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.set("#circular-text-container-1", { rotation: -60 });
+            gsap.set("#circular-text-container-2", { rotation: 60 });
+
+            gsap.to(["#circular-text-container-1", "#circular-text-container-2"], {
+                rotation: 0,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: "#animated-section",
+                    start: "top center",
+                    end: "center center",
+                    scrub: 1,
+                },
+            });
+
+            gsap.set("#animated-image", {
+                rotation: 200,
+                scale: 0
+            });
+
+            gsap.to("#animated-image", {
+                rotation: 0,
+                scale: 1.2,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: "#animated-section",
+                    start: "top center",
+                    end: "center center",
+                    scrub: 1,
+                },
+            });
+
+            gsap.from("#animated-section", {
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: "#animated-section",
+                    start: "top 200%",
+                    toggleActions: "play none none none"
+                }
+            });
+
+            ScrollTrigger.create({
+                trigger: "#sticky-section",
+                start: "top top",
+                end: "bottom bottom",
+                pin: "#sticky-element",
+                pinSpacing: false,
+            });
+
+            const steps = gsap.utils.toArray(".step");
+            steps.forEach((step, i) => {
+                ScrollTrigger.create({
+                    trigger: step,
+                    start: "top center",
+                    end: "bottom center",
+                    toggleClass: "is-active",
+                });
+            });
+
             $(document).ready(function(){
                 $('.owl-carousel').owlCarousel({
                     loop: true,
@@ -792,154 +717,5 @@
             });
         });
     </script>
-
-
-
-  <div style="height:100px;width:100%"></div>
-
-  <section class="" id="contact-section" style="position: relative; color: white; padding: 80px 0;">
-    <div class="section" style="position: relative; margin-top: 0;"> <div class="contact-flex" style="display:flex; justify-content: space-between; align-items:center; flex-wrap: wrap; gap: 2rem; max-width:1200px; margin:0 auto;">
-        <div class="content" style="position: relative; z-index: 2; flex: 1 1 450px; max-width: 500px;"> <h1 style="line-height: 0.8; -webkit-text-stroke: 3px white; color: white; font-size: 5rem; text-align:left;">
-            <span style="display: block; margin-left: -5rem;">Interested?</span><br/>
-            <span style="display: block; margin-left: -1rem;">set meeting</span> </h1>
-          <div style="
-            margin-left: -80px;
-            border-radius: 2rem;
-            background-color: rgba(66, 66, 66, 1);
-            width: 27rem;
-            height: 18.5rem;
-            transform: rotate(-8deg);
-            overflow: hidden;
-            margin-top: -10px;
-            position: relative;
-            z-index: -10;">
-            <img src="https://www.poppr.be/assets/general/_jpgTransform/Screenshot-2022-07-07-at-14.51.33.jpg" style="object-fit: cover; width: 100%; height: 100%;" alt="Meeting Visual">
-          </div>
-          <div class="icon-3d-container" style="position: absolute; bottom: -30px; right: 0; z-index: 5;"> <div class="icon-3d-box" id="icon3d" style="font-size: 3rem; color: var(--purple); transform: rotateX(20deg) rotateY(-20deg);"> <i class="fa-solid fa-location-dot"></i>
-            </div>
-          </div>
-        </div>
-        <div class="contact-description" style="flex: 1 1 400px; text-align: left; max-width: 450px; font-size:1.25rem; padding-left: 20px;"> Together, we'll make your organization thrive through premium, personalized immersive experiences. <br><br>
-          Curious about how we can help you with your projects?<br><br>
-          Reach out and we'll be happy to discuss your plans!
-        </div>
-      </div>
-    </div>
-    
-    <form style="width: 90%; margin:auto;margin-top:100px;">
-    <div class="styled-form-container">
-      
-      <!-- Left Fields -->
-      <div class="form-left">
-        <div class="form-group">
-          <input type="text" id="name" required placeholder=" " />
-          <label for="name">Name</label>
-        </div>
-        <div class="form-group">
-          <input type="name" id="name" required placeholder=" " />
-          <label for="name">Email</label>
-        </div>
-        <div class="form-group">
-          <input type="text" id="date" required placeholder=" " />
-          <label for="date">date</label>
-        </div>
-      </div>
-
-      <!-- Right Message Field -->
-      <div class="form-right">
-        <div class="message-box">
-          <textarea rows="8" placeholder="Your Message"></textarea>
-        </div>
-      </div>
-
-    </div>
-
-    <div style="text-align:center; margin-top: 2rem;">
-      <div class="form-check">
-        <input type="checkbox" id="newsletter" />
-        <label for="newsletter"> Subscribe to our newsletter</label>
-      </div>
-
-      <button type="button" class="btn outline-button ob-solid">
-        <span class="text-wrap">
-          <span>Submit</span>
-          <span>Submit</span>
-          <span>Submit</span>
-        </span>
-      </button>
-    </div>
-
-  </form>
-  </section>
-
-  <section class="footer-wrapper-section" style="background-color: transparent;"> <div class="footer-container" id="footerContainer">
-      <footer id="footer">
-        <div class="footer-content">
-          <div class="footer-newsletter">
-            <div class="" style="margin-bottom: 10px; font-weight:bold;font-size:0.8rem;">STAY UP TO DATE</div>
-            <p style="font-size: 4.5rem;margin-bottom:50px; font-weight: bold; color:var(--black);line-height:0.8; -webkit-text-stroke: 3px var(--black);">get our newsletter</p>
-            <div class="input-container">
-              <div class="form-group" style="width:80%;margin-right: 20px; position:relative;">
-                <input type="email" id="footer-email" name="footer-email" required placeholder=" " style="width: 100%; padding: 10px 0; border: none; border-bottom: 1px solid white; background: transparent; color:white;" />
-                <label for="footer-email" style="position: absolute; left: 0; top: 10px; color: #ccc; transition: all 0.2s; pointer-events: none;">Email</label>
-              </div>
-              <button type="button" class="btn outline-button-hor ob-solid">
-                <span class="text-wrap">
-                  <span> <i class="fa fa-arrow-right-long"></i> </span> <span> <i class="fa fa-arrow-right-long"></i> </span>
-                </span>
-              </button>
-            </div>
-          </div>
-          <div class="footer-owl">
-            <img src="https://i.gifer.com/3V1k.gif" alt="ProCodeX Owl Animation" style="max-width: 150px; height: auto; margin: auto;" />
-          </div>
-          <div class="footer-contact">
-            <div class="" style="margin-bottom: 10px; font-weight:bold;font-size:0.8rem;">GET IN TOUCH</div>
-            <p class="hov-und" style="color: var(--black); font-size: 30px; font-weight: 500; letter-spacing: -2px;line-height: 1.2;">
-              hello@procodex<span style="color:white">.</span>com
-            </p>
-            <p class="hov-und" style="color: var(--black); font-size: 30px; font-weight: 500; letter-spacing: -2px;line-height: 1.2;">
-              +32 (0)9 335 33 33
-            </p>
-            <br>
-            <p class="hov-und" style="margin-top: 10px; font-size: 1em; color:var(--black); font-weight: 500; line-height: 1.2;">Stapelplein 70/303<br />9000 Ghent</p>
-          </div>
-        </div>
-        <div style="background-color: var(--purple); width: 95%; margin:auto; height:1px;opacity: 0.5; margin-top: 50px;"></div>
-        <div class="footer-bottom">
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px;" class="f-bottom">
-            <p>PRIVACY POLICY</p>
-            <p>DISCLAIMER</p>
-            <p>TERMS AND CONDITIONS</p>
-            <p>BE017 327 189</p>
-          </div>
-          <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 10px 15px;" class="f-bottom">
-            <p style="margin-bottom:0;">SEE WHAT WE'RE UP TO</p>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 20px;" class="f-bottom">
-            <p>NEDERLANDS</p>
-            <p>ENGLISH</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </section>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-  
-<!-- jQuery and Owl Carousel JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="assets/home.js"></script>
-
-  <script src="assets/script.js"></script>
 </body>
 </html>
